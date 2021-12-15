@@ -1,0 +1,12 @@
+# 配置详情请参考：https://docs.halo.run/zh/developer-guide/theme/config-files
+id: halo_Yimolan
+name: Yimolan
+author:
+  name: dnxrzl
+  website: https://www.dnxrzl.com/
+description: Yimolan theme for halo
+logo: https://use.sevencdn.com/avatar/6e412b94f92443acc015ead3cca2c7b1?s=32&r=G&d=identicon
+website: 
+repo: 
+version: 1.0.0
+require: 1.4.2
