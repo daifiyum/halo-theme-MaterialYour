@@ -1,7 +1,7 @@
-<#include "module/macro.ftl"> <#-- 对于不是ftl标签的纯文本生效 -->
+<#include "module/macro.ftl">
 
-<@layout title="${blog_title!}">
-<main class="self-container mdui-container">
+<@layout title="搜索 - ${blog_title!}">
+    <main class="self-container mdui-container">
     <div class="containerLeft">
         <div class="index-cover">
             <div class="mdui-card">
@@ -128,6 +128,5 @@
         </div>
     </div>
 </main>
-
-
+    
 </@layout>

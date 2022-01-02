@@ -1,1 +1,296 @@
-style.css
+:root {
+    --bttextcolor: #000000;
+    --background-color-button: transparent;
+    
+}
+/*重写滚动条*/
+body::-webkit-scrollbar {
+	width:8px;
+	height:8px;
+	background:transparent;
+	-webkit-box-shadow:inset 2px 0 2px 0 rgba(0,0,0,.25);
+	box-shadow:inset 2px 0 2px 0 rgba(0,0,0,.25)
+}
+body::-webkit-scrollbar-thumb {
+	background:rgba(0,0,0,.2)
+}
+body { /*修复抽屉打开时自增宽度*/
+    width: auto !important;
+    padding-top: 70px;
+}
+
+.self-container {
+    max-width: 896px;/*窗口最大时的容器固定宽度*/
+}
+
+/*自适应搜索框*/
+.mobile :not(form,form input,.i1,i) {
+    display: none;
+}
+.mobile a:nth-child(1),.mobile a:nth-child(2),.mobile div:nth-child(1) { /*兼容微信浏览*/
+    display: none;
+}
+.mdui-toolbar form {
+    width: 100%;
+    border-radius: 25px;
+    background-color: white;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7px;
+    opacity: .1;
+}
+.mdui-toolbar form input {
+    width: calc(100% - 28px);
+    border: 0;
+    height: 100%;
+    outline: none;
+    
+}
+.i1:hover {
+    background-color: transparent !important;
+}
+
+@media (min-width: 1024px) {
+    .mdui-drawer { /*桌面端时抽屉高度*/
+        top: 64px;
+    }
+    .headerLogo {
+        display: none !important;
+    }
+    .mdui-toolbar form {
+        opacity: 1 !important;
+        width: 20%; /*最大窗口时改变宽度*/
+        display: flex !important; /*修复手机端关闭搜索框时导致桌面端不显示*/
+    }
+    .i1 {
+        display: none;
+    }
+    .mobile :not(form,form input,.i1,i) {
+        display: initial;
+    }
+    .mobile a:nth-child(1),.mobile a:nth-child(2),.mobile div:nth-child(1) {
+        display: initial;
+    }
+}
+@media (max-width: 1024px) {
+    .mdui-toolbar form {
+        display: none;
+        
+    }    
+    
+}
+/*自适应搜索框结束*/
+
+/*抽屉相关*/
+.headerLogo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid rgb(128 128 128 / 30%);
+}
+.headerLogo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+/*抽屉相关结束*/
+
+/*主体结构区*/
+.mdui-card {
+    border-radius: 10px !important;
+}
+@media (max-width: 1023px) {
+    .mdui-container {
+        padding: 0;
+    }
+}
+.index-cover .mdui-card-content {
+    padding: 0;
+    font-size: 17px !important;
+    
+}
+.index-cover .mdui-card-primary {
+    display: flex;
+    align-items: center;
+}
+.self-container { /*主体双栏布局*/
+    display: flex;
+}
+
+.containerLeft>* {
+    margin-bottom: 20px;
+}
+.containerLeft {
+    width: 100%;
+}
+.indexImg { /*镇站图*/
+    height: 176px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.containerRight {
+    width: 40%;
+    min-width: 250px;
+    margin-left: 20px;
+
+}
+.sticky { /*粘性布局，固定主体右边栏*/
+    position: sticky;
+    top: 70px;
+}
+@media (min-width: 800px) {
+    .mdui-toolbar form {
+        opacity: 1 !important;
+        width: 20%; /*最大窗口时改变宽度*/
+        display: flex !important; /*修复手机端关闭搜索框时导致桌面端不显示*/
+    }
+    .i1 {
+        display: none;
+    }
+    .mobile :not(form,form input,.i1,i) {
+        display: initial;
+    }
+    .mobile a:nth-child(1),.mobile a:nth-child(2),.mobile div:nth-child(1) {
+        display: initial;
+    }
+}
+@media (max-width: 800px) {
+    .containerRight {
+        display: none;
+    }  
+    
+}
+/*主体结构区结束*/
+
+/*文章卡片*/
+.selfLayout {
+    display: flex;
+    justify-content: space-between;
+}
+.left .mdui-card-primary {
+    padding: 16px !important;
+}
+.left .mdui-card-content {
+    padding: 0 16px 16px 16px !important;
+}
+.right {
+    padding: 40px 16px 16px 0;
+}
+.right img {
+    width: 110px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.postBottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 16px 16px;
+}
+article a {
+    text-decoration: none;
+}
+@media (min-width: 1024px) {
+    .right img {
+        width: 130px !important;
+        height: 110px !important;
+    }
+}
+/*文章卡片结束*/
+
+
+/*文章页*/
+.pwidth {
+    width: 100%;
+}
+.postBackground {
+    height: 220px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+.post .mdui-card-primary-title {
+    word-break: break-all;
+}
+.postFront {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.pleft {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.pleft img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.pleft div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+#id {
+    display: none !important;
+}
+
+.comments,.pbottom,.noimg {
+    padding: 16px;
+}
+
+/*侧边栏*/
+.sticky>.mdui-card {
+    margin-bottom: 20px;
+    padding: 16px;
+}
+.sticky .mdui-typo-title {
+    margin-bottom: 10px;
+}
+.sticky a {
+    text-decoration: none;
+}
+
+/*nextpage*/
+.nextpage.mdui-card {
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.nextpage a {
+    color: black;
+}
+
+.nextpage .mdui-btn:hover {
+    color: var(--bttextcolor);
+    background-color: var(--background-color-button) !important;
+}
+
+/*页脚*/
+footer {
+    padding: 16px;
+    background-color: #f9f9f9;
+}
+.innerfooter {
+    max-width: 896px;/*窗口最大时的容器固定宽度*/
+    display: flex;
+    flex-direction: column;
+    
+}
+.innerfooter>div {
+    margin-bottom: 10px;
+}

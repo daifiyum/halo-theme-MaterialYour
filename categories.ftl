@@ -1,7 +1,10 @@
 <#include "module/macro.ftl">
 <@layout title="分类列表 - ${blog_title!}">
-    <h1>分类列表</h1>
-    <ul>
+<main class="self-container mdui-container">
+  <div class="containerLeft pwidth">
+    <article class="post">
+      <div class="mdui-card">
+        <ul>
         <@categoryTag method="list">
             <#if categories?? && categories?size gt 0>
                 <#list categories as category>
@@ -10,4 +13,10 @@
             </#if>
         </@categoryTag>
     </ul>
+      </div>
+    </article>
+  </div>  
+</main>
+
+
 </@layout>

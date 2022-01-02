@@ -7,3 +7,31 @@ genernal:
       label: 首页公告
       type: textarea
       default: 'Yimolan正在开发中ing...'
+
+style:
+  label: 样式设置
+  items:
+    mdui_theme:
+      name: mdui_theme
+      label: 主题色
+      type: select
+      default: ''
+      options:
+        - value: ''
+          label: '无'
+        - value: 'mdui-theme-primary-blue'
+          label: '宝石蓝'
+        - value: 'mdui-theme-primary-green'
+          label: '原谅绿'
+        - value: 'mdui-theme-primary-red'
+          label: '姨妈红'
+        - value: 'mdui-theme-primary-pink'
+          label: '少女粉'
+        - value: 'mdui-theme-primary-purple'
+          label: '基佬紫'
+    indeximg:
+      name: indeximg               
+      label: 镇站图              
+      type: attachment               
+      placeholder: '图片地址'           
+      default: ''               
