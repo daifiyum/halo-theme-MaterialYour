@@ -7,6 +7,17 @@ genernal:
       label: 首页公告
       type: textarea
       default: 'Yimolan正在开发中ing...'
+    github:
+      name: github               
+      label: github              
+      type: text                
+      placeholder: 'github个人主页链接'       
+    email:
+      name: email               
+      label: 邮箱              
+      type: text                
+      placeholder: '个人邮箱'      
+
 
 style:
   label: 样式设置

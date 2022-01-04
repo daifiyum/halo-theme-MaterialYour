@@ -120,7 +120,14 @@ $(".mdui-toolbar form input").blur(function(){
     $(".mdui-toolbar form").removeClass('mdui-shadow-1');
 });
 
-$(document).scroll(function(){dnScroll();});
+
+
+
+
+
+$(document).scroll(function(){
+    dnScroll();
+});
 
 $('.btSearch').click(function(){
     search();

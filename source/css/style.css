@@ -3,6 +3,52 @@
     --background-color-button: transparent;
     
 }
+
+/*锚点偏移*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding-top: 80px;
+    margin-top: -80px;
+}
+/*网络字体*/
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../icons/icomoon/icomoon.eot?kg04oy');
+    src:  url('../icons/icomoon/icomoon.eot?kg04oy#iefix') format('embedded-opentype'),
+      url('../icons/icomoon/icomoon.ttf?kg04oy') format('truetype'),
+      url('../icons/icomoon/icomoon.woff?kg04oy') format('woff'),
+      url('../icons/icomoon/icomoon.svg?kg04oy#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon';
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-github:before {
+    content: "\e900";
+  }
+  .icon-mail:before {
+    content: "\e901";
+  }
+/*网络字体结束*/
 /*重写滚动条*/
 body::-webkit-scrollbar {
 	width:8px;
@@ -20,7 +66,7 @@ body { /*修复抽屉打开时自增宽度*/
 }
 
 .self-container {
-    max-width: 896px;/*窗口最大时的容器固定宽度*/
+    max-width: 1000px;/*窗口最大时的容器固定宽度*/
 }
 
 /*自适应搜索框*/
@@ -126,7 +172,8 @@ body { /*修复抽屉打开时自增宽度*/
     margin-bottom: 20px;
 }
 .containerLeft {
-    width: 100%;
+    width: 60%;
+    flex-grow: 1;
 }
 .indexImg { /*镇站图*/
     height: 176px;
@@ -134,9 +181,9 @@ body { /*修复抽屉打开时自增宽度*/
     background-position: center;
 }
 .containerRight {
-    width: 40%;
-    min-width: 250px;
-    margin-left: 20px;
+    width: 30%;
+    margin: 0 0 20px 0;
+    padding-left: 20px;
 
 }
 .sticky { /*粘性布局，固定主体右边栏*/
@@ -163,6 +210,9 @@ body { /*修复抽屉打开时自增宽度*/
     .containerRight {
         display: none;
     }  
+    .containerLeft {
+        width: 100%;
+    }
     
 }
 /*主体结构区结束*/
@@ -206,9 +256,6 @@ article a {
 
 
 /*文章页*/
-.pwidth {
-    width: 100%;
-}
 .postBackground {
     height: 220px;
     background-repeat: no-repeat;
@@ -249,6 +296,13 @@ article a {
 .comments,.pbottom,.noimg {
     padding: 16px;
 }
+.nextPost {
+    display: flex;
+    justify-content: space-between;
+}
+.post .mdui-card-content img {
+    width: 100%;
+}
 
 /*侧边栏*/
 .sticky>.mdui-card {
@@ -261,6 +315,61 @@ article a {
 .sticky a {
     text-decoration: none;
 }
+.postSticky {
+    top: -220px;
+}
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+.pcontact {
+    display: flex;
+    margin-bottom: 20px;
+}
+.pcontact a {
+    margin: 0 5px 0 5px;
+}
+.profileinner {
+    padding: 20px;
+    width: calc(100% - 40px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+.profileinner div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.profileinner span:nth-child(1) {
+    margin-bottom: 10px;
+}
+.pindex {
+    max-height: calc(100vh - 155px);
+    overflow-y: auto !important; 
+}
+.pindex ol {
+    list-style: none;
+}
+
+.pindex >.toc-list {
+    position: relative;
+    overflow: hidden;
+}
+.scrollbar {
+    max-height: 150px;
+    overflow-y: auto;
+}
 
 /*nextpage*/
 .nextpage.mdui-card {
@@ -271,14 +380,22 @@ article a {
     justify-content: space-between;
     align-items: center;
 }
-.nextpage a {
+.nextpage a,
+.nextPost a {
     color: black;
 }
 
-.nextpage .mdui-btn:hover {
+.nextpage .mdui-btn:hover,
+.nextPost .mdui-btn:hover {
     color: var(--bttextcolor);
     background-color: var(--background-color-button) !important;
 }
+.nextPost .mdui-btn {
+    border: 1px solid var(--background-color-button);
+}
+/* .nextpage {
+    box-shadow: none !important;
+} */
 
 /*页脚*/
 footer {

@@ -18,8 +18,10 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="${theme_base!}/source/css/mdui.min.css"/>
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/tocbot.css">
     <!-- <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css"> -->
     <script src="${theme_base!}/source/js/jquery.min.js"></script>
+    <script src="${theme_base!}/source/js/tocbot.min.js"></script>
 </head>
 <body class="mdui-drawer-body-left ${settings.mdui_theme!'mdui-theme-primary-blue'}">
     

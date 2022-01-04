@@ -101,8 +101,42 @@
 
     <div class="containerRight">
         <div class="sticky">
+                        <div class="mdui-card">
+              <div class="profile">
+              <img class="mdui-img-circle mdui-shadow-2" src="${blog_logo!}" alt="">
+              <div class="pcontact">
+                <a href="${settings.github!}" target="_blank" class="mdui-btn mdui-btn-icon mdui-color-theme-100 mdui-text-color-theme">
+                  <i class="mdui-icon icon-github"></i>
+                </a>
+                <a href="mailto:${settings.email!}" class="mdui-btn mdui-btn-icon mdui-color-theme-100 mdui-text-color-theme">
+                  <i class="mdui-icon icon-mail"></i>
+                </a>
+              </div>
+              <div class="profileinner mdui-color-theme-100 mdui-text-color-theme">
+                <div>
+                  <span>文章</span>
+                  <@postTag method="count">
+                  <span>${count!0}</span>
+                  </@postTag>
+                </div>
+                <div>
+                  <span>分类</span>
+                  <@categoryTag method="count">
+                  <span>${count!0}</span>
+                  </@categoryTag>
+                </div>
+                <div>
+                  <span>标签</span>
+                  <@tagTag method="count">
+                  <span>${count!0}</span>
+                  </@tagTag>
+                </div>
+              </div>
+              </div>
+            </div>
              <div class="mdui-card">
               <div class="mdui-typo-title">分类</div>
+              <div class="scrollbar">
               <@categoryTag method="list">
                     <#list categories as category>
                         <a href="${category.fullPath!}">
@@ -112,18 +146,21 @@
                         </a>
                     </#list>
                 </@categoryTag>
+                </div>
             </div>
             <div class="mdui-card">
               <div class="mdui-typo-title">标签</div>
+              <div class="scrollbar">
               <@tagTag method="list">
                 <#list tags as tag>
-                <a href="${tag.fullPath!}"></a>
+                <a href="${tag.fullPath!}">
                     <div class="mdui-chip mdui-color-theme-100 mdui-text-color-theme">
                     <span class="mdui-chip-title">${tag.name!}（${tag.postCount!}）</span> 
                     </div>
                 </a>  
-                </#list>
-                </@tagTag>
+            </#list>
+            </@tagTag>
+            </div>
             </div>
         </div>
     </div>
