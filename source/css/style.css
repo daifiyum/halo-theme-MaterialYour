@@ -5,15 +5,14 @@
 }
 
 /*锚点偏移*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    padding-top: 80px;
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+    display: block;
+    content: " ";
+    height: 80px;
     margin-top: -80px;
+    visibility: hidden;
 }
+
 /*网络字体*/
 @font-face {
     font-family: 'icomoon';
@@ -302,7 +301,13 @@ article a {
     display: flex;
     justify-content: space-between;
 }
-
+/*代码高亮样式*/
+.mdui-typo pre {
+    background-color: #f6f8fa !important;
+}
+.line-numbers .line-numbers-rows {
+    border-right: 1px solid rgb(153 153 153 / 28%) !important;
+}
 /*侧边栏*/
 .sticky>.mdui-card {
     margin-bottom: 20px;

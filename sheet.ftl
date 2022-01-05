@@ -28,11 +28,12 @@
                         </div>
                     </div>
                     <div class="pright">
-                        <button class="copylink mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme"><i
-                                class="mdui-icon material-icons">share</i></button>
+                        <button class="copylink mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme">
+                            <i class="mdui-icon material-icons">share</i>
+                        </button>
                     </div>
                 </div>
-                <div class="mdui-card-content">
+                <div class="mdui-typo mdui-card-content">
                     ${sheet.formatContent!}
                 </div>
             </div>

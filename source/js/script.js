@@ -141,7 +141,6 @@ function welcome(){
     } 
 }
 
-
 $(document).scroll(function(){
     dnScroll();
 });
@@ -165,4 +164,5 @@ $(document).ready(function () {
     gettime();
     testindex();
     welcome();
+
 });    

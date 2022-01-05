@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="${post.title!} - ${blog_title!}">
-<main class="self-container mdui-container">
+<main class="self-container mdui-container line-numbers">
     <div class="containerLeft">
         <article class="post">
             <div class="mdui-card">
@@ -28,8 +28,9 @@
                         </div>
                     </div>
                     <div class="pright">
-                        <button class="copylink mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme"><i
-                                class="mdui-icon material-icons">share</i></button>
+                        <button class="copylink mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme">
+                            <i class="mdui-icon material-icons">share</i>
+                        </button>
                     </div>
                 </div>
                 <div class="mdui-card-content mdui-typo js-toc-content">

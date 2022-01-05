@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="${theme_base!}/source/css/mdui.min.css"/>
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/tocbot.css">
-    <!-- <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css"> -->
+    <link rel="stylesheet" href="${theme_base!}/source/css/prism.css">
     <script src="${theme_base!}/source/js/jquery.min.js"></script>
     <script src="${theme_base!}/source/js/tocbot.min.js"></script>
 </head>
@@ -36,7 +36,7 @@
     <@global.footer />
     <#include "footer.ftl">
     <@footer/>
-   
+<script src="${theme_base!}/source/js/prism.js"></script>
 <script src="${theme_base!}/source/js/mdui.min.js"></script>
 <script src="${theme_base!}/source/js/script.js"></script>
 </body>
