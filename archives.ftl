@@ -1,19 +1,28 @@
 <#include "module/macro.ftl">
 <@layout title="归档 - ${blog_title!}">
 <main class="self-container mdui-container">
-  <div class="containerLeft pwidth">
+  <div class="containerLeft">
     <article class="post">
       <div class="mdui-card">
-        <ul>
+      <div class="archives">
+      <h3 class="pagetitle">归档</h3>
         <#list archives as archive>
-            <h2>${archive.year?c}</h2>
-            <#list archive.posts as post>
-                <li>
-                    <a href="${post.fullPath!}">${post.title!}</a>
-                </li>
-            </#list>
+              <div class="archiveyear">
+                  ${archive.year?c}
+              </div>
+      
+              <#list archive.posts as post>
+              <div class="timenode">
+              <a href="${post.fullPath!}" class="focircle">
+                  <time>${post.createTime?string["MMM d"]}</time>
+                  <span>
+                    ${post.title!}
+                  </span>
+              </a>
+              </div>
+              </#list>
         </#list>
-        </ul>
+      </div>
       </div>
     </article>
     <#if posts.totalPages gt 1>

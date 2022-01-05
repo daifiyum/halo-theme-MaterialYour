@@ -121,8 +121,25 @@ $(".mdui-toolbar form input").blur(function(){
 });
 
 
+function testindex(){
+    if($('.pindex').children().length == 0){
+        $('.pindex').append('<p>文章无目录</p>');
+    }
+}
 
-
+function welcome(){
+   
+    var welcome = $('.welcome');
+    //alert(welcome.text());
+    var hour = new Date().getHours();
+    if (hour < 12) {
+        welcome.text('早上好!');
+    } else if (hour < 18) {
+        welcome.text('下午好!');
+    } else {
+        welcome.text('晚上好!');
+    } 
+}
 
 
 $(document).scroll(function(){
@@ -146,4 +163,6 @@ $(document).ready(function () {
     autoImg();
     autocolor();
     gettime();
+    testindex();
+    welcome();
 });    

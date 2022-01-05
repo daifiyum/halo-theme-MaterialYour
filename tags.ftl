@@ -1,13 +1,30 @@
 <#include "module/macro.ftl">
 <@layout title="标签列表 - ${blog_title!}">
-    <h1>标签列表</h1>
-    <ul>
+<main class="self-container mdui-container">
+  <div class="containerLeft">
+    <article class="post">
+      <div class="mdui-card">
+      <div class="tags">
+        <h3 class="pagetitle">标签</h3>
+        <ul>
         <@tagTag method="list">
             <#if tags?? && tags?size gt 0>
                 <#list tags as tag>
-                    <li><a href="${tag.fullPath!}">${tag.name}</a></li>
+                <li>
+                    <a href="${tag.fullPath!}">
+                        <div class="mdui-chip mdui-color-theme-100 mdui-text-color-theme">
+                            <span class="mdui-chip-title">${tag.name!}（${tag.postCount!}）</span>
+                        </div>
+                    </a>
+                </li>
                 </#list>
             </#if>
         </@tagTag>
-    </ul>
+        </ul>
+      </div>
+        
+      </div>
+    </article>
+  </div>  
+</main>
 </@layout>
