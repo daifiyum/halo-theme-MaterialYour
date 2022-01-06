@@ -10,7 +10,7 @@
 
 ### 安装
 
-github
+[github](https://github.com/daifiyum/halo-MaterialYour/releases)
 
 ### 注意
 
