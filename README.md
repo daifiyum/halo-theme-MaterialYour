@@ -8,7 +8,7 @@
 
 [DEMO](http://demo.dnxrzl.com/)
 
-### 安装
+### 下载
 
 [github](https://github.com/daifiyum/halo-MaterialYour/releases)
 
