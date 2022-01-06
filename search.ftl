@@ -18,6 +18,7 @@
                 </div>
             </div>
         </div>
+        <#if posts.content?size gt 0>
         <#list posts.content as post>
             <article>
                 <a href="${post.fullPath!}">
@@ -52,7 +53,13 @@
                 </a>
             </article>
         </#list>
-
+        <#else>
+        <div class="mdui-card">
+            <div class="nothings">
+                
+            </div>
+        </div>
+        </#if>
         <#if posts.totalPages gt 1>
             <div class="nextpage mdui-card">
                 <@paginationTag method="search" page="${posts.number}" total="${posts.totalPages}" display="3" keyword="${keyword!}">

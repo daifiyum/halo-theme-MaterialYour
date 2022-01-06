@@ -5,7 +5,7 @@
         <div class="index-cover">
             <div class="mdui-card">
                 <div class="mdui-card-media">
-                    <div class="indexImg" style="background-image: url('${settings.indeximg!}')"></div>
+                    <div class="indexImg" style="background-image: url('${settings.indeximg!}');"></div>
                     <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
                         <div class="mdui-card-primary">
                             <div class="mdui-card-primary-title"><span class="welcome"></span></div>
@@ -18,6 +18,7 @@
                 </div>
             </div>
         </div>
+        <#if posts.content?size gt 0>
         <#list posts.content as post>
             <article>
                 <a href="${post.fullPath!}">
@@ -53,7 +54,13 @@
                 </a>
             </article>
         </#list>
-
+        <#else>
+        <div class="mdui-card">
+            <div class="nothings">
+                
+            </div>
+        </div>
+        </#if>
         <#if posts.totalPages gt 1>
             <div class="nextpage mdui-card">
                 <@paginationTag method="index" page="${posts.number}" total="${posts.totalPages}"

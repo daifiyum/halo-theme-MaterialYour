@@ -180,6 +180,7 @@ body { /*修复抽屉打开时自增宽度*/
     height: 176px;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 }
 .containerRight {
     width: 30%;
@@ -417,6 +418,10 @@ footer {
 .innerfooter>div {
     margin-bottom: 10px;
 }
+footer a {
+    text-decoration: none;
+    color: var(--bttextcolor);
+}
 
 /*归档*/
 .archives {
@@ -521,7 +526,12 @@ footer {
     opacity: .6;
     margin: 0 20px 0 20px;
 }
+.catelist li {
+    display: flex;
+    flex-grow: 1;
+}
 .catelist li a {
+    width: 100%;
     color: rgb(0 0 0 / 73%);
 }
 .catelist li a:hover {
@@ -546,3 +556,19 @@ footer {
     margin: 4px;
 }
 
+.totop {
+    padding: 11px;
+    position: fixed;
+    border-radius: 50px;
+    cursor: pointer;
+    right: 25px;
+    bottom: 25px;
+    display: none;
+}
+/*无内容样式*/
+.nothings {
+    height: calc(100vh - 450px);
+    padding: 16px;
+    background: url(../images/nothing.svg) no-repeat;
+    background-position: center center;
+}
