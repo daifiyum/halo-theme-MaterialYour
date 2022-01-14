@@ -5,7 +5,7 @@ genernal:
       name: index_notice
       label: 首页公告
       type: textarea
-      default: 'Yimolan正在开发中ing...'
+      default: '不以物喜不以己悲'
     github:
       name: github               
       label: github              
@@ -56,3 +56,9 @@ style:
       type: attachment               
       placeholder: '图片地址'           
       default: ''               
+    drawimg:
+      name: drawimg               
+      label: 抽屉图              
+      type: attachment               
+      placeholder: '图片地址'           
+      default: ''       

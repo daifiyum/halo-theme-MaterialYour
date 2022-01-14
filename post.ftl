@@ -33,7 +33,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="mdui-card-content mdui-typo js-toc-content">
+                <div id="images" class="mdui-card-content mdui-typo js-toc-content">
                     ${post.formatContent!}
                 </div>
                 <div class="pbottom mdui-card-primary-subtitle">
@@ -127,25 +127,57 @@
             </div>
             <div class="mdui-card">
                 <div class="mdui-typo-title">目录</div>
-                <div class="pindex">
-
+                <div class="pindex index">
+                
                 </div>
             </div>
 
         </div>
     </div>
 </main>
-
+<div class="mdui-dialog" id="indexDialog">
+    <div class="mdui-dialog-content">
+      <div class="mdui-dialog-title">目录</div>
+      <div class="mobileIndex indexs">
+        
+      </div>
+    </div>
+    <div class="mdui-dialog-actions">
+      <button class="mdui-btn mdui-ripple" mdui-dialog-close>OK</button>
+    </div>
+</div>
 <script>
-    tocbot.init({
-        // Where to render the table of contents.
-        tocSelector: '.pindex',
-        // Where to grab the headings to build the table of contents.
-        contentSelector: '.js-toc-content',
-        // Which headings to grab inside of the contentSelector element.
-        headingSelector: 'h1, h2, h3, h4, h5, h6',
-        // For headings inside relative or absolute positioned containers within content.
-        hasInnerContainers: true,
-    });
+    function switchIndex(){
+            var d = 0;
+            if(window.innerWidth < 800){
+                    tocbot.init({
+                    tocSelector: '.indexs',
+                    contentSelector: '.js-toc-content',
+                    headingSelector: 'h1, h2, h3, h4, h5, h6',
+                    hasInnerContainers: true,
+                });
+            }else{
+                    tocbot.init({
+                    tocSelector: '.index',
+                    contentSelector: '.js-toc-content',
+                    headingSelector: 'h1, h2, h3, h4, h5, h6',
+                    hasInnerContainers: true,
+                    });
+            }
+
+            $(window).resize(function(){
+                if(d == 0){
+                    d++;
+                    switchIndex();
+                }
+                
+            });
+        }
+    
+    
+    $(document).ready(function () {
+        switchIndex();
+        $('#images').viewer();
+    });    
 </script>
 </@layout>

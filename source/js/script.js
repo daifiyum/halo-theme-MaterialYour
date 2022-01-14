@@ -76,7 +76,10 @@ function copyLink() {
     try {
         var successful = document.execCommand('copy');
         var msg = successful ? '链接已复制' : 'unsuccessful';
-        alert(msg);
+        mdui.snackbar({
+            message: msg,
+            position: 'right-top',
+          });
     } catch (err) {
         alert('Oops, unable to copy');
     }
@@ -89,17 +92,17 @@ function gettime(){
     $('#timeyear').text(date.getFullYear());
 }
 
-function autocolor(){
-    var bc = $('.mdui-appbar').css('background-color');
-    var bct = $('.mdui-appbar').css('color');
-    $('body').css('--background-color-button',bc);
-    $('body').css('--bttextcolor',bct);
+function getcolor(){
+    var bc = $('.mdui-toolbar').css('background-color');
+    var bct = $('.mdui-toolbar').css('color');
+    $('body').css('--themeColor',bc);
+    $('body').css('--fontColor',bct);
 }
 
 
 function testindex(){
-    if($('.pindex').children().length == 0){
-        $('.pindex').append('<p>文章无目录</p>');
+    if($('.pindex,.mobileIndex').children().length == 0){
+        $('.pindex,.mobileIndex').append('<p>文章无目录</p>');
     }
 }
 
@@ -143,11 +146,11 @@ function totop(){
 
 
 $(document).ready(function () {
+    getcolor();
     dnScroll();
     search();
     focus();
     autoImg();
-    autocolor();
     gettime();
     copyLink();
     testindex();

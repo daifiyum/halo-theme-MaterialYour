@@ -15,8 +15,12 @@
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/tocbot.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/prism.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/viewer.min.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/prism-material-light.css">
     <script src="${theme_base!}/source/js/jquery.min.js"></script>
     <script src="${theme_base!}/source/js/tocbot.min.js"></script>
+    <script src="${theme_base!}/source/js/viewer.min.js"></script>
+    <script src="${theme_base!}/source/js/jquery-viewer.min.js"></script>
 </head>
 <body class="mdui-drawer-body-left ${settings.mdui_theme!default}">
     

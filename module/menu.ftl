@@ -1,16 +1,16 @@
 <@menuTag method="list">
       <header>
-        <div class="mdui-appbar mdui-appbar-fixed mdui-color-theme-100 mdui-text-color-theme mdui-shadow-0" id="selfAppbar">
-          <div class="mdui-toolbar">
+        <div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0" id="selfAppbar">
+          <div class="mdui-toolbar mdui-color-theme-100 mdui-text-color-theme">
               <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}">
                 <i class="mdui-icon material-icons">menu</i>
               </a>
               <a href="${blog_url!}" class="mdui-typo-title">${blog_title!}</a>
               <div class="mdui-toolbar-spacer"></div>
               
-              <form method="get" action="/search" role="search">
+              <form class="mdui-color-theme-50 mdui-text-color-theme" method="get" action="/search" role="search">
                 <i class="mdui-icon material-icons">search</i>
-                <input type="text" placeholder="搜索一下..." name="keyword">
+                <input class="mdui-textfield-input" type="text" placeholder="搜索一下..." name="keyword">
 
               </form>
             
@@ -18,13 +18,21 @@
                 <i class="btSearch mdui-icon material-icons">search</i>
               </a>
               
+              <#if is_post??>
+              <a href="javascript:;" class="mdui-btn mdui-btn-icon nodesk" mdui-dialog="{target: '#indexDialog'}">
+                <i class="mdui-icon material-icons">assignment</i>
+              </a>
+              </#if>
           </div>
         </div>
       </header>
+      
+        
+      
       <aside class="mdui-drawer" id="left-drawer">
-        <div class="headerLogo mdui-text-color-theme">
-          <img class="mdui-img-circle" src="${blog_logo!}" alt="">
-          <span class="mdui-typo-title">${blog_title!}</span>
+        <div class="headerLogo" style="background-image: url('${settings.drawimg!}')">
+          <img class="mdui-img-circle mdui-shadow-2" src="${blog_logo!}" alt="">
+          <span class="drawTitle">${user.nickname!}</span>
         </div>
         <ul class="mdui-list">
           <#list menus?sort_by('priority') as menu>
@@ -37,4 +45,5 @@
           </#list>
         </ul>
       </aside>
+      
 </@menuTag>
