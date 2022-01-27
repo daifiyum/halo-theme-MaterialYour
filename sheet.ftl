@@ -9,7 +9,7 @@
                         <div class="postBackground" style="background-image: url('${post.thumbnail!}')"></div>
                         <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
                             <div class="mdui-card-primary">
-                                <div class="mdui-card-primary-title">${post.title!}</div>
+                                <div class="mdui-card-primary-title">${sheet.title!}</div>
                             </div>
                         </div>
                     </div>

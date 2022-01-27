@@ -155,6 +155,8 @@
                     contentSelector: '.js-toc-content',
                     headingSelector: 'h1, h2, h3, h4, h5, h6',
                     hasInnerContainers: true,
+                    headingsOffset: 80, 
+                    scrollSmoothOffset: -80, 
                 });
             }else{
                     tocbot.init({
@@ -162,6 +164,8 @@
                     contentSelector: '.js-toc-content',
                     headingSelector: 'h1, h2, h3, h4, h5, h6',
                     hasInnerContainers: true,
+                    headingsOffset: 80, 
+                    scrollSmoothOffset: -80, 
                     });
             }
 

@@ -62,3 +62,18 @@ style:
       type: attachment               
       placeholder: '图片地址'           
       default: ''       
+
+others:
+  label: 其他
+  items:
+    adimg:
+      name: adimg               
+      label: 广告图片              
+      type: attachment               
+      placeholder: '图片地址'           
+      default: ''               
+    adlink:
+      name: adlink
+      label: 广告链接
+      type: text
+      placeholder: '填写广告链接'

@@ -21,6 +21,9 @@
     <script src="${theme_base!}/source/js/tocbot.min.js"></script>
     <script src="${theme_base!}/source/js/viewer.min.js"></script>
     <script src="${theme_base!}/source/js/jquery-viewer.min.js"></script>
+    <#if is_index?? || is_archives??>
+        <script src="${theme_base!}/source/js/myajax.js"></script>
+    </#if>
 </head>
 <body class="mdui-drawer-body-left ${settings.mdui_theme!default}">
     

@@ -143,7 +143,30 @@ function totop(){
     });
 }
 
-
+function journlike(){
+        $('.likeb').click(function(){
+            var likeNum = $(this).attr('id');
+            let lid = $(this);
+            $.ajax({
+                url: '/api/content/journals/'+likeNum+'/likes',
+                type: 'POST',
+                async: true,
+                crossDomain: true,
+                headers: {},
+                success: function(data){
+                    lid.addClass('journliked');
+                    lid.prev().text((parseInt(lid.prev().text())+1));
+                },
+                timeout: 3000,
+                error: function(){
+                    mdui.snackbar({
+                        message: '已点赞或错误',
+                        position: 'right-top',
+                    });
+                }
+            });
+        });
+}
 
 $(document).ready(function () {
     getcolor();
@@ -156,4 +179,5 @@ $(document).ready(function () {
     testindex();
     welcome();
     totop();
+    journlike();
 });    
