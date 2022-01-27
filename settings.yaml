@@ -66,6 +66,18 @@ style:
 others:
   label: 其他
   items:
+    ad_enabled:
+      name: ad_enabled
+      label: 侧边栏广告
+      type: radio
+      data-type: bool
+      default: false
+      description: '是否开启侧边栏广告，默认为 false'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     adimg:
       name: adimg               
       label: 广告图片              

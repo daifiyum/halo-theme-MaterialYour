@@ -1,5 +1,6 @@
 function ajaxPostLists(pageUrl){
     if($('button.ajaxPostLists').attr('data-href') != 'null'){
+        $('.ajaxPostLists').text('正在加载...');
         $.ajax({
             url: pageUrl,
             type: 'GET',
@@ -8,7 +9,6 @@ function ajaxPostLists(pageUrl){
             crossDomain: true,
             headers: {},
             success: function(data){
-                $('.ajaxPostLists').text('正在加载...');
                 setTimeout(function(){
                     $('.ajaxPostLists').before($(data).find('.containerLeft > article')); /*用啥正则表达式，啊呸*/
                     $('.ajaxPostLists').text('加载更多');

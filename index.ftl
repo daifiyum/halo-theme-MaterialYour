@@ -141,6 +141,7 @@
                 </div>
             </div>
 
+            <#if settings.ad_enabled!false>
             <div class="mdui-card">
                 <div class="mdui-typo-title">广告</div>
                 <div class="ad">
@@ -149,6 +150,7 @@
                     </a>
                 </div>
             </div>
+            </#if>
         </div>
     </div>
 </main>
