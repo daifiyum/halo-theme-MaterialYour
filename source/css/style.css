@@ -91,11 +91,11 @@ body { /*修复抽屉打开时自增宽度*/
     opacity: .1;
 }
 .mdui-toolbar form input {
-    width: calc(100% - 28px);
     border: 0;
     height: 100%;
     outline: none;
     background-color: transparent;
+    padding-left: 7px;
     
 }
 .mdui-toolbar form .mdui-textfield-input:not([disabled]):hover {
