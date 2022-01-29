@@ -17,11 +17,13 @@
     <link rel="stylesheet" href="${theme_base!}/source/css/prism.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/viewer.min.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/prism-material-light.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/fjGallery.css">
     <script src="${theme_base!}/source/js/jquery.min.js"></script>
     <script src="${theme_base!}/source/js/tocbot.min.js"></script>
     <script src="${theme_base!}/source/js/viewer.min.js"></script>
     <script src="${theme_base!}/source/js/jquery-viewer.min.js"></script>
-    <#if is_index?? || is_archives??>
+    <script src="${theme_base!}/source/js/fjGallery.min.js"></script>
+    <#if is_index??>
         <script src="${theme_base!}/source/js/myajax.js"></script>
     </#if>
 </head>

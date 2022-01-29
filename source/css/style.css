@@ -763,3 +763,28 @@ aside.mdui-drawer {
 .journliked { /*已点赞样式*/
     color: pink;
 }
+
+/*photos*/
+.photos {
+    padding: 16px;
+}
+.photos img {
+    filter: brightness(1);
+    transition: all .3s;
+}
+.fj-gallery-item:hover img {
+    filter: brightness(.5);
+}
+.fj-gallery-item:hover p {
+    opacity: 1;
+}
+.fj-gallery-item p {
+    color: #fff;
+    font-size: 17px;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .3s;
+}

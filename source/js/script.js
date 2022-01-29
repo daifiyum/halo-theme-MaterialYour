@@ -168,6 +168,11 @@ function journlike(){
         });
 }
 
+/*others*/
+function photoalt(){
+    $('#images').viewer({title: [1,(image, imageData) => `${image.alt}`]});
+}
+
 $(document).ready(function () {
     getcolor();
     dnScroll();
@@ -180,4 +185,4 @@ $(document).ready(function () {
     welcome();
     totop();
     journlike();
-});    
+}); 
