@@ -1,12 +1,12 @@
 <#include "module/macro.ftl">
-<@layout title="图库 - ${blog_title!}">
-<#--  偷懒，水个图库页  -->
+<@layout title="相册 - ${blog_title!}">
+<#--  偷懒，水个相册页  -->
 <main class="self-container mdui-container">
   <div class="containerLeft">
     <article class="post">
       <div class="mdui-card">
       <div class="photos">
-        <h3 class="pagetitle">图库</h3>
+        <h3 class="pagetitle">相册</h3>
             <div id="images" class="fj-gallery">
                 <@photoTag method="list">
                     <#list photos as photo>
