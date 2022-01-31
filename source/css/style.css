@@ -701,8 +701,9 @@ aside.mdui-drawer {
 
 /*journals*/
 .journals {
-    padding: 16px;
+    padding: 16px 16px 30px 16px;
     height: 100%;
+    
 }
 .journalList>li {
     margin: 10px 0px;
@@ -714,6 +715,7 @@ aside.mdui-drawer {
 .journalList {
     padding-left: 0px;
     list-style: none;
+    margin-bottom: 30px;
 }
 
 .journalList li {

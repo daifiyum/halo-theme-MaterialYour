@@ -10,7 +10,11 @@ function ajaxPostLists(pageUrl){
             headers: {},
             success: function(data){
                 setTimeout(function(){
-                    $('.ajaxPostLists').before($(data).find('.containerLeft > article')); /*用啥正则表达式，啊呸*/
+                    if(pageUrl.search('journals') != -1 ){
+                        $('.journalList li:last-child').after($(data).find('.journalList li'));//日志页
+                    }else{
+                        $('.ajaxPostLists').before($(data).find('.containerLeft > article')); //用啥正则表达式，啊呸
+                    }
                     $('.ajaxPostLists').text('加载更多');
                 }, 400);
                 var a = $(data).find('button.ajaxPostLists').attr('data-href');

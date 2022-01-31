@@ -23,7 +23,7 @@
     <script src="${theme_base!}/source/js/viewer.min.js"></script>
     <script src="${theme_base!}/source/js/jquery-viewer.min.js"></script>
     <script src="${theme_base!}/source/js/fjGallery.min.js"></script>
-    <#if is_index??>
+    <#if is_index?? || is_journals??>
         <script src="${theme_base!}/source/js/myajax.js"></script>
     </#if>
 </head>

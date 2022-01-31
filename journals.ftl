@@ -29,50 +29,15 @@
           </li>
         </#list>
         </ul>
+        <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
+          <#if pagination.hasNext>
+              <button data-href="${pagination.nextPageFullPath!}" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-ripple mdui-center ajaxPostLists">加载更多</button>
+          </#if>
+        </@paginationTag>
       </div>
       </div>
     </article>
-
-            <#if journals.totalPages gt 1>
-            <div class="nextpage mdui-card">
-                <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
-                    <div>
-                        <#if pagination.hasPrev>
-                            <a href="${pagination.prevPageFullPath!}">
-                                <button class="mdui-btn">
-                                    上一页
-                                </button>
-                            </a>
-                            <#else>
-                                <button class="mdui-btn">
-                                    没有了
-                                </button>
-                        </#if>
-                    </div>
-                    <div>
-                        <#list pagination.rainbowPages as number>
-                            <#if number.isCurrent>
-                                <p>第${number.page!}页</p>
-                                
-                            </#if>
-                        </#list>
-                    </div>
-                    <div>
-                        <#if pagination.hasNext>
-                            <a href="${pagination.nextPageFullPath!}">
-                                <button class="mdui-btn">
-                                    下一页
-                                </button>
-                            </a>
-                            <#else>
-                                <button class="mdui-btn">
-                                    没有了
-                                </button>
-                        </#if>
-                    </div>
-                </@paginationTag>
-            </div>
-        </#if>
+   
   </div>  
 </main>
 
