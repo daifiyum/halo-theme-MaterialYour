@@ -686,7 +686,7 @@ button.mdui-btn.ajaxPostLists {
 .ad img {
  width: 100%;
 } 
-i.mdui-list-item-icon.mdui-icon.material-icons {
+i.mdui-list-item-icon.mdui-icon.material-icons { /*抽屉栏图标颜色*/
     color: var(--fontColor);
 }
 /*MaterialYou化*/
