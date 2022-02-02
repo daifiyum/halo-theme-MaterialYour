@@ -12,6 +12,7 @@
     <@global.head />
     <title>${title}</title>
     <link rel="stylesheet" href="${theme_base!}/source/css/mdui.min.css"/>
+    <link rel="stylesheet" href="${theme_base!}/source/css/selfIcons.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/tocbot.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/prism.css">
@@ -25,6 +26,13 @@
     <script src="${theme_base!}/source/js/fjGallery.min.js"></script>
     <#if is_index?? || is_journals??>
         <script src="${theme_base!}/source/js/myajax.js"></script>
+    </#if>
+    <#if settings.mdui_icons == 'MIO'>
+        <style>
+            .material-icons {
+                font-family: 'Material Icons Outlined' !important;
+            }
+        </style>
     </#if>
 </head>
 <body class="mdui-drawer-body-left ${settings.mdui_theme!default}">

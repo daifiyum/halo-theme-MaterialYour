@@ -61,7 +61,17 @@ style:
       label: 抽屉图              
       type: attachment               
       placeholder: '图片地址'           
-      default: ''       
+      default: ''     
+    mdui_icons:
+      name: mdui_icons
+      label: 字体图标样式
+      type: select
+      default: 'MI'
+      options:
+        - value: 'MI'
+          label: 'Material-Icons'
+        - value: 'MIO'
+          label: 'Material Icons Outlined'      
 
 others:
   label: 其他
