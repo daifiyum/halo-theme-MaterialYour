@@ -689,7 +689,6 @@ button.mdui-btn.ajaxPostLists {
 /*MaterialYou化*/
 aside.mdui-drawer {
     margin: 10px;
-    background-color: #fff;
 }
 .mdui-list-item:hover {
     background-color: rgb(0 0 0 / 4%);
