@@ -14,11 +14,17 @@ function ajaxPostLists(pageUrl){
                         $('.journalList li:last-child').after($(data).find('.journalList li'));//日志页
                     }else{
                         $('.ajaxPostLists').before($(data).find('.containerLeft > article')); //用啥正则表达式，啊呸
+                        if(a == undefined){
+                            $('.ajaxPostLists').text('没有了');
+                        }else{
+                            $('.ajaxPostLists').text('加载更多');
+                        }
+                        
                     }
-                    $('.ajaxPostLists').text('加载更多');
+                    
                 }, 400);
+                
                 var a = $(data).find('button.ajaxPostLists').attr('data-href');
-
                 if(a == undefined){
                     $('button.ajaxPostLists').attr('data-href','null');
                 }else{
@@ -35,8 +41,6 @@ function ajaxPostLists(pageUrl){
                 });
             }
         });
-    }else{
-        $('.ajaxPostLists').text('没有啦');
     }
     
     
