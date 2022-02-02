@@ -686,6 +686,9 @@ button.mdui-btn.ajaxPostLists {
 .ad img {
  width: 100%;
 } 
+i.mdui-list-item-icon.mdui-icon.material-icons {
+    color: var(--fontColor);
+}
 /*MaterialYou化*/
 aside.mdui-drawer {
     margin: 10px;
