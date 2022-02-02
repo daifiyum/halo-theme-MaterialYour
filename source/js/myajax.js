@@ -9,22 +9,21 @@ function ajaxPostLists(pageUrl){
             crossDomain: true,
             headers: {},
             success: function(data){
+                var a = $(data).find('button.ajaxPostLists').attr('data-href');
                 setTimeout(function(){
                     if(pageUrl.search('journals') != -1 ){
                         $('.journalList li:last-child').after($(data).find('.journalList li'));//日志页
                     }else{
                         $('.ajaxPostLists').before($(data).find('.containerLeft > article')); //用啥正则表达式，啊呸
-                        if(a == undefined){
-                            $('.ajaxPostLists').text('没有了');
-                        }else{
-                            $('.ajaxPostLists').text('加载更多');
-                        }
-                        
+                    }
+                    if(a == undefined){
+                        $('.ajaxPostLists').text('没有了');
+                    }else{
+                        $('.ajaxPostLists').text('加载更多');
                     }
                     
                 }, 400);
-                
-                var a = $(data).find('button.ajaxPostLists').attr('data-href');
+
                 if(a == undefined){
                     $('button.ajaxPostLists').attr('data-href','null');
                 }else{
