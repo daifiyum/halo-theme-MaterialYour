@@ -24,7 +24,7 @@
               </a>
               </#if>
               <a href="/journals" class="mdui-btn mdui-btn-icon nodesk">
-                <i class="mdui-icon material-icons">lightbulb_outline</i>
+                <i class="mdui-icon material-icons">self_improvement</i>
               </a>
           </div>
         </div>
