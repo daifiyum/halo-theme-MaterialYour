@@ -6,6 +6,16 @@ genernal:
       label: 首页公告
       type: textarea
       default: '不以物喜不以己悲'
+    dataapi:
+      name: dataapi              
+      label: API KEY'              
+      type: text                
+      placeholder: '若启用music，请开启API,并将密码填入此处'  
+    music:
+      name: music
+      label: 音乐（为空不显示图标）
+      type: textarea
+      placeholder: '歌曲链接1#*#歌曲名称,歌曲链接2#*#歌曲名称'
     github:
       name: github               
       label: github              
