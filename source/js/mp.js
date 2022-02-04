@@ -20,10 +20,19 @@
             }
         },
         error: function () {
-            mdui.snackbar({
-                message: '音乐初始化错误',
-                position: 'right-top',
-            });
+            if(my_acess.length != 0){
+                mdui.snackbar({
+                    message: '音乐初始化错误',
+                    position: 'right-top',
+                });
+            }else{
+                mdui.snackbar({
+                    message: 'api key null',
+                    position: 'right-top',
+                });
+            }
+            
+           
         }
     });
     var $mpMusic = $('#mp-music');

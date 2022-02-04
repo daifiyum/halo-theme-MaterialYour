@@ -8,7 +8,7 @@ genernal:
       default: '不以物喜不以己悲'
     dataapi:
       name: dataapi              
-      label: API KEY'              
+      label: 'API ACCESS'              
       type: text                
       placeholder: '若启用music，请开启API,并将密码填入此处'  
     music:
