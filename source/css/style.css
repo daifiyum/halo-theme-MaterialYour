@@ -654,7 +654,9 @@ footer a {
 }
 .linkCard:hover {
     border-radius: 5px;
-    background-color: rgb(128 128 128 / 12%);
+    /* background-color: rgb(128 128 128 / 12%); */
+    background: linear-gradient(145deg,#ddd,#fff);
+    box-shadow: 2px 4px 8px #ddd, -2px -4px 8px #fff;
 }
 .links .mdui-typo.mdui-card-content {
     padding: 0px;
