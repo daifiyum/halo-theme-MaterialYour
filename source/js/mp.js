@@ -1,40 +1,37 @@
 (function () {
-    $.ajax({
-        url: '/api/content/themes/activation/settings',
-        type: 'GET',
-        dataType: 'json',
-        async: false,
-        crossDomain: true,
-        headers: {
-            "API-Authorization": my_acess,
-        },
-        success: function (data) {
-            if(data.data.music != undefined){
-                av = data.data.music.split(',');
-                for(var i = 0;i < av.length;i++){
-                    var zs = av[i].lastIndexOf('#*#');
-                    // console.log(av[i].slice(0,zs)); // 歌曲链接
-                    // console.log(av[i].slice(zs+3)); // 歌曲名
-                    $('#mp-list ul').append('<li data-src="'+av[i].slice(0,zs).replace(/[\n]/g,'')+'" class="">'+av[i].slice(zs+3)+'</li>');
+    if(my_acess.length != 0) {
+        $.ajax({
+            url: '/api/content/themes/activation/settings',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            crossDomain: true,
+            headers: {
+                "API-Authorization": my_acess,
+            },
+            success: function (data) {
+                if(data.data.music != undefined){
+                    av = data.data.music.split(',');
+                    for(var i = 0;i < av.length;i++){
+                        var zs = av[i].lastIndexOf('#*#');
+                        // console.log(av[i].slice(0,zs)); // 歌曲链接
+                        // console.log(av[i].slice(zs+3)); // 歌曲名
+                        $('#mp-list ul').append('<li data-src="'+av[i].slice(0,zs).replace(/[\n]/g,'')+'" class="">'+av[i].slice(zs+3)+'</li>');
+                    }
                 }
-            }
-        },
-        error: function () {
-            if(my_acess.length != 0){
+            },
+            error: function () {
                 mdui.snackbar({
                     message: '音乐初始化错误',
                     position: 'right-top',
                 });
-            }else{
-                mdui.snackbar({
-                    message: 'api key null',
-                    position: 'right-top',
-                });
+              
+                
+               
             }
-            
-           
-        }
-    });
+        });
+    }
+    
     var $mpMusic = $('#mp-music');
     if ($mpMusic.length === 0) return;
 
