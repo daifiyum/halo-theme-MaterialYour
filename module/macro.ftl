@@ -26,7 +26,7 @@
     <script src="${theme_base!}/source/js/jquery-viewer.min.js"></script>
     <script src="${theme_base!}/source/js/fjGallery.min.js"></script>
     <script>
-        let my_acess = '${settings.dataapi!}';
+        let my_music = '${settings.music!}';
     </script>
     <#if is_index?? || is_journals??>
         <script src="${theme_base!}/source/js/myajax.js"></script>
