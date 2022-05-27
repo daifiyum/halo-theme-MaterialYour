@@ -326,12 +326,12 @@ article a {
     justify-content: space-between;
 }
 /*代码高亮样式*/
-.mdui-typo pre {
+/* .mdui-typo pre {
     background-color: #f6f8fa !important;
 }
 .line-numbers .line-numbers-rows {
     border-right: 1px solid rgb(153 153 153 / 28%) !important;
-}
+} */
 /*侧边栏*/
 .mdui-theme-layout-dark .containerRight .mdui-chip,
 .mdui-theme-layout-dark .containerLeft .mdui-chip {
