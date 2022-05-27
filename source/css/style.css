@@ -691,6 +691,10 @@ button.mdui-btn.ajaxPostLists {
 i.mdui-list-item-icon.mdui-icon.material-icons { /*抽屉栏图标颜色*/
     color: var(--fontColor);
 }
+
+code[class*=language-] { /*去掉重影*/
+    text-shadow: none !important;
+}
 /*MaterialYou化*/
 aside.mdui-drawer {
     margin: 10px;
