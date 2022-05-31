@@ -99,6 +99,10 @@ function getcolor(){
     $('body').css('--fontColor',bct);
 }
 
+function getcolor2(){
+    var bc = $('.mdui-typo pre code').css('background');
+    $('body').css('--codeBColor',bc);
+}
 
 function testindex(){
     if($('.pindex,.mobileIndex').children().length == 0){
@@ -175,6 +179,7 @@ function photoalt(){
 
 $(document).ready(function () {
     getcolor();
+    getcolor2();
     dnScroll();
     search();
     focus();

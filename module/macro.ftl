@@ -11,22 +11,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <@global.head />
     <title>${title}</title>
-    <link rel="stylesheet" href="${theme_base!}/source/css/mdui.min.css"/>
+    <link rel="stylesheet" href="${theme_base!}/source/libs/mdui/mdui.min.css"/>
     <link rel="stylesheet" href="${theme_base!}/source/css/selfIcons.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/tocbot.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/prism.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/viewer.min.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/prismTheme/prism-${settings.code_css!}.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/fjGallery.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/mp.css">
-    <script src="${theme_base!}/source/js/jquery.min.js"></script>
-    <script src="${theme_base!}/source/js/tocbot.min.js"></script>
-    <script src="${theme_base!}/source/js/viewer.min.js"></script>
-    <script src="${theme_base!}/source/js/jquery-viewer.min.js"></script>
-    <script src="${theme_base!}/source/js/fjGallery.min.js"></script>
+    <link rel="stylesheet" href="${theme_base!}/source/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="${theme_base!}/source/libs/viewer/viewer.min.css">
+    <link rel="stylesheet" href="${theme_base!}/source/libs/fjGallery/fjGallery.css">
+    <link rel="stylesheet" href="${theme_base!}/source/libs/mp/mp.css">
+    <link rel="stylesheet" href="${theme_base!}/source/libs/highlight/styles/${settings.code_css!}.min.css">
+    <script src="${theme_base!}/source/libs/jquery.min.js"></script>
+    <script src="${theme_base!}/source/libs/tocbot/tocbot.min.js"></script>
+    <script src="${theme_base!}/source/libs/viewer/viewer.min.js"></script>
+    <script src="${theme_base!}/source/libs/jquery-viewer.min.js"></script>
+    <script src="${theme_base!}/source/libs/fjGallery/fjGallery.min.js"></script>
+    <script src="${theme_base!}/source/libs/highlight/highlight.min.js"></script>
+    <script src="${theme_base!}/source/libs/highlight/hightlight_linenumber.js"></script>
+    <script src="${theme_base!}/source/libs/highlight/highlightjs_copy_button.min.js"></script>
     <script>
         let my_music = '${settings.music!}';
+        hljs.highlightAll();
+        hljsln.initLineNumbersOnLoad();
+        hljs.initCopyButtonOnLoad();
     </script>
     <#if is_index?? || is_journals??>
         <script src="${theme_base!}/source/js/myajax.js"></script>
@@ -48,10 +53,9 @@
     <@global.footer />
     <#include "footer.ftl">
     <@footer/>
-<script src="${theme_base!}/source/js/prism.js"></script>
-<script src="${theme_base!}/source/js/mdui.min.js"></script>
+<script src="${theme_base!}/source/libs/mdui/mdui.min.js"></script>
 <script src="${theme_base!}/source/js/script.js"></script>
-<script src="${theme_base!}/source/js/mp.js"></script>
+<script src="${theme_base!}/source/libs/mp/mp.js"></script>
 </body>
 </html>
 </#macro>
