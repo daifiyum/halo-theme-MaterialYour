@@ -29,12 +29,12 @@
         html = '<span class="ln-bg"></span>' + html;
         return html;
     }
-
+    
     function documentReady() {
         var elements = d.querySelectorAll('pre code');
         for (var i = 0; i < elements.length; i++) {
             if (elements[i].className.indexOf('hljsln') == -1) {
-                var html = elements[i].innerHTML;
+                var html = elements[i].innerHTML.replace(/(^\s*)|(\s*$)/g, "");
                 html = addLineNumbersForCode(html);
                 elements[i].innerHTML = html;
                 elements[i].className += ' hljsln';
