@@ -825,7 +825,7 @@ aside.mdui-drawer {
 }
 
 .hljsln::-webkit-scrollbar-thumb {
-  background: rgb(0 0 0 / 6%);
+  background: rgb(0 0 0 / 18%);
 }
 .hljsln::-webkit-scrollbar-thumb:hover {
   background: #797979;
