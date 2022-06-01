@@ -108,6 +108,17 @@ style:
           label: "paraiso-light"
         - value: "/base16/material"
           label: "material"
+    comment_style:
+      name: comment_style
+      label: 评论模块样式
+      type: select
+      default: '样式1'
+      data-type: string
+      options:
+        - value: "comment1"
+          label: "样式1"
+        - value: "comment2"
+          label: "样式2"
         
 others:
   label: 其他
