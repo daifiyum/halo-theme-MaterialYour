@@ -615,6 +615,7 @@ footer a {
   right: 25px;
   bottom: 25px;
   display: none;
+  z-index: 10000;
 }
 /*无内容样式*/
 .nothings {

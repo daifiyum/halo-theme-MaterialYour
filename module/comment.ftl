@@ -7,8 +7,9 @@
             <halo-comment id="${post.id?c}" type="${type}" :configs="configs"/>
             <script>
                 var configs = {
-                    utoLoad: true,
-                    showUserAgent: true
+                    utoLoad: false,
+                    showUserAgent: true,
+                    loadingStyle: "circle"
                 }
             </script>
         <#else>
