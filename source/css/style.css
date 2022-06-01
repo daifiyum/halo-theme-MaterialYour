@@ -328,6 +328,39 @@ article a {
   display: flex;
   justify-content: space-between;
 }
+.mdui-typo a {
+  color: var(--fontColor);
+}
+.mdui-typo a::before {
+  background-color: var(--fontColor);
+}
+.smallbu,.smallbu2 {
+  margin: 10px;
+}
+.smallbu a{
+  display: inline-block;
+  padding: 2px 5px;
+  background-color: #f2f3f5;
+  color: #515767;
+  border-radius: 2px;
+  margin: 0 5px 5px 0;
+  transition: all .15s linear;
+}
+.smallbu a:hover {
+  background-color: #e4e6eb;
+}
+.smallbu2 a{
+  display: inline-block;
+  padding: 2px 5px;
+  background-color: #eaf2ff;
+  color: #1e80ff;
+  border-radius: 2px;
+  margin: 0 5px 5px 0;
+  transition: all .15s linear;
+}
+.smallbu2 a:hover {
+  background-color: rgba(30,128,255,.16);
+}
 /*代码高亮样式*/
 /* .mdui-typo pre {
     background-color: #f6f8fa !important;

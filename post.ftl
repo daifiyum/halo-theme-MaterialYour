@@ -37,7 +37,7 @@
                     ${post.formatContent!}
                 </div>
                 <div class="pbottom mdui-card-primary-subtitle">
-                    <div>分类:
+                    <div class="smallbu">分类:
                         <#if (post.categories)?? && post.categories?size !=0>
                             <#list post.categories as categorie>
                                 <a href="${categorie.fullPath!}">${categorie.name!}</a>
@@ -46,7 +46,7 @@
                                 <span>无</span>
                         </#if>
                     </div>
-                    <div>标签:
+                    <div class="smallbu2">标签:
                         <#if (post.tags)?? && post.tags?size !=0>
                             <#list post.tags as tag>
                                 <a href="${tag.fullPath!}">${tag.name!}</a>
