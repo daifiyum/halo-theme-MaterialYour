@@ -249,6 +249,19 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.cated {
+  position: relative;
+  padding-right: 13px;
+}
+.cated::after {
+  position: absolute;
+  right: 0;
+  content: '·';
+  font-size: 30px;
+}
+.cated:last-child::after {
+  display: none;
+}
 .left .mdui-card-primary {
   padding: 16px !important;
 }

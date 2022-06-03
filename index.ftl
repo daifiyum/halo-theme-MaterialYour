@@ -29,7 +29,7 @@
                                     <div class="mdui-card-primary-subtitle">
                                         <#if (post.categories)?? && post.categories?size !=0>
                                             <#list post.categories as categorie>
-                                                <span>${categorie.name!}</span>
+                                                <span class="cated">${categorie.name!}</span>
                                             </#list>
                                         </#if>
                                     </div>
