@@ -434,11 +434,7 @@ article a {
 .ptc {
   margin-bottom: 20px;
 }
-.ptc img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-}
+
 .ptc i::before {
   font-size: 21px;
 }

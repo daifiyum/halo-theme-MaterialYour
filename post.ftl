@@ -91,10 +91,9 @@
     <div class="containerRight">
         <div class="sticky">
             <div class="mdui-card">
-<img class="pback" src="https://img.dnxrzl.com/2021/12/15/74b77ec18cd79.jpg" alt="">
                 <div class="profile">
                     <div class="protop">
-                        <img class="mdui-shadow-2" src="http://127.0.0.1:8090/upload/2022/01/au-65a514587a4b42708c44865880348565.jpg" alt="">
+                        <img class="mdui-shadow-2" src="${blog_logo!}" alt="">
                         <div class="pttext">
                             <p>${user.nickname!}</p>
                             <small>${settings.profile_desc!}</small>
