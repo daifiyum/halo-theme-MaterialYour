@@ -95,7 +95,7 @@
                             </a>
                             <a href="mailto:${settings.email!}" target="_blank">
                                 <div class="mdui-chip mdui-color-theme-100 mdui-text-color-theme">
-                                    <span class="mdui-chip-title"> <i class="mdui-icon icon-mail"></i>E-mali</span>
+                                    <span class="mdui-chip-title"> <i class="mdui-icon icon-mail"></i>E-mail</span>
                                 </div>
                             </a>
 
