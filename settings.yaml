@@ -6,6 +6,11 @@ genernal:
       label: 首页公告
       type: textarea
       default: '不以物喜不以己悲' 
+    profile_desc:
+      name: profile_desc               
+      label: 侧边栏个人信息卡片描述              
+      type: text                
+      placeholder: '一些描述...'     
     music:
       name: music
       label: 音乐（为空不显示图标）

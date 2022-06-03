@@ -211,7 +211,7 @@ body {
 .sticky {
   /*粘性布局，固定主体右边栏*/
   position: sticky;
-  top: -220px;
+  top: -145px;
 }
 @media (min-width: 800px) {
   .mdui-toolbar form {
@@ -334,32 +334,33 @@ article a {
 .mdui-typo a::before {
   background-color: var(--fontColor);
 }
-.smallbu,.smallbu2 {
+.smallbu,
+.smallbu2 {
   margin: 10px;
 }
-.smallbu a{
+.smallbu a {
   display: inline-block;
   padding: 2px 5px;
   background-color: #f2f3f5;
   color: #515767;
   border-radius: 2px;
   margin: 0 5px 5px 0;
-  transition: all .15s linear;
+  transition: all 0.15s linear;
 }
 .smallbu a:hover {
   background-color: #e4e6eb;
 }
-.smallbu2 a{
+.smallbu2 a {
   display: inline-block;
   padding: 2px 5px;
   background-color: #eaf2ff;
   color: #1e80ff;
   border-radius: 2px;
   margin: 0 5px 5px 0;
-  transition: all .15s linear;
+  transition: all 0.15s linear;
 }
 .smallbu2 a:hover {
-  background-color: rgba(30,128,255,.16);
+  background-color: rgba(30, 128, 255, 0.16);
 }
 /*代码高亮样式*/
 /* .mdui-typo pre {
@@ -386,41 +387,74 @@ article a {
 .postSticky {
   top: -220px;
 }
-.profile {
+.pback {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.protop {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.protop img {
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+}
+.pttext {
+  padding-left: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pttext p {
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+.pttext small {
+  opacity: .54;
+  font-size: 14px;
+}
+.ptc {
+  margin-bottom: 20px;
+}
+.ptc img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+.ptc i::before {
+  font-size: 21px;
+}
+.ptb {
+  display: flex;
+  justify-content: space-around;
+}
+.ptbz {
+  width: 100%;
+  height: 40px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.profile img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 20px;
+.ptbz p {
+  margin: 0;
 }
-.pcontact {
-  display: flex;
-  margin-bottom: 20px;
+.ptbz::after {
+  content: "";
+  border-right: 1px solid #e8e8e8;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-.pcontact a {
-  margin: 0 5px 0 5px;
-}
-.profileinner {
-  padding: 20px;
-  width: calc(100% - 40px);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
-}
-.profileinner div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.profileinner span:nth-child(1) {
-  margin-bottom: 10px;
+.ptbz:last-child::after {
+  display: none;
 }
 .pindex {
   max-height: calc(100vh - 155px);
@@ -842,7 +876,7 @@ aside.mdui-drawer {
   overflow: hidden;
   border: none;
   -webkit-box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
-    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 .hljs {

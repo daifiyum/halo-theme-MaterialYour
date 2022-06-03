@@ -15,7 +15,7 @@
                 <div class="linksBlock">
                   <#list team.links as link>
                     <div class="linkCard">
-                      <a href="${link.url!}">
+                      <a href="${link.url!}" target="_blank">
                         <img class="mdui-img-circle" src="${link.logo}"/>
                         <span>${link.name!}</span>
                       </a>
