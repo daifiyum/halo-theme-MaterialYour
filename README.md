@@ -8,7 +8,7 @@
 
 ![2022-01-06_153303.png](https://img.dnxrzl.com/2022/01/06/970a82b869c5f.png)
 
-[DEMO](http://demo.dnxrzl.com/)
+[DEMO](https://www.dnxrzl.com/)
 
 ### 功能&说明
 <mark>特殊页面</mark>：日志、友链页面、相册页面已支持
