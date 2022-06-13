@@ -177,6 +177,11 @@ function photoalt(){
     $('#images').viewer({title: [1,(image, imageData) => `${image.alt}`]});
 }
 
+function stickyForside(){
+    var mc1 = ~($('.sticky .mdui-card:nth-child(1)').outerHeight() - 55);
+    $('.sticky').css({"top": mc1});
+}
+
 $(document).ready(function () {
     getcolor();
     getcolor2();
@@ -190,4 +195,5 @@ $(document).ready(function () {
     welcome();
     totop();
     journlike();
+    stickyForside();
 }); 
