@@ -110,35 +110,45 @@
         <div class="sticky">
             <div class="mdui-card">
                 <div class="profile">
-                    <img class="mdui-img-circle mdui-shadow-2" src="${blog_logo!}" alt="">
-                    <div class="pcontact">
-                        <a href="${settings.github!}" target="_blank"
-                            class="mdui-btn mdui-btn-icon mdui-color-theme-100 mdui-text-color-theme">
-                            <i class="mdui-icon icon-github"></i>
-                        </a>
-                        <a href="mailto:${settings.email!}"
-                            class="mdui-btn mdui-btn-icon mdui-color-theme-100 mdui-text-color-theme">
-                            <i class="mdui-icon icon-mail"></i>
-                        </a>
+                    <div class="protop">
+                        <img class="mdui-shadow-2" src="${blog_logo!}" alt="">
+                        <div class="pttext">
+                            <p>${user.nickname!}</p>
+                            <small>${settings.profile_desc!}</small>
+                        </div>
                     </div>
-                    <div class="profileinner mdui-color-theme-100 mdui-text-color-theme">
-                        <div>
-                            <span>文章</span>
+                    <div class="ptc">
+                    
+                            <a href="${settings.github!}" target="_blank">
+                                <div class="mdui-chip mdui-color-theme-100 mdui-text-color-theme">
+                                    <span class="mdui-chip-title"> <i class="mdui-icon icon-github"></i>GitHub</span>
+                                </div>
+                            </a>
+                            <a href="mailto:${settings.email!}" target="_blank">
+                                <div class="mdui-chip mdui-color-theme-100 mdui-text-color-theme">
+                                    <span class="mdui-chip-title"> <i class="mdui-icon icon-mail"></i>E-mail</span>
+                                </div>
+                            </a>
+
+                    </div>
+                    <div class="ptb">
+                        <div class="ptbz">
                             <@postTag method="count">
                                 <span>${count!0}</span>
                             </@postTag>
+                            <p>文章</p>
                         </div>
-                        <div>
-                            <span>分类</span>
+                        <div class="ptbz">
                             <@categoryTag method="count">
                                 <span>${count!0}</span>
                             </@categoryTag>
+                            <p>分类</p>
                         </div>
-                        <div>
-                            <span>标签</span>
+                        <div class="ptbz">
                             <@tagTag method="count">
                                 <span>${count!0}</span>
                             </@tagTag>
+                            <p>标签</p>
                         </div>
                     </div>
                 </div>
@@ -172,6 +182,17 @@
                     </@tagTag>
                 </div>
             </div>
+
+            <#if settings.ad_enabled!false>
+            <div class="mdui-card">
+                <div class="mdui-typo-title">广告</div>
+                <div class="ad">
+                    <a href="${settings.adlink!}">
+                        <img src="${settings.adimg!}"/>
+                    </a>
+                </div>
+            </div>
+            </#if>
         </div>
     </div>
 </main>
