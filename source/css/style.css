@@ -818,6 +818,7 @@ aside.mdui-drawer {
 .journalList li div.mdui-card div.mdui-typo {
   padding: 0px;
   margin: 10px 0px 10px 0px;
+  overflow-x: auto;
 }
 .journLine {
   position: absolute;
