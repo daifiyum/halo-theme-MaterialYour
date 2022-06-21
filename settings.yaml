@@ -65,7 +65,25 @@ style:
       label: 镇站图              
       type: attachment               
       placeholder: '图片地址'           
-      default: ''               
+      default: ''  
+    bvideo_enabled:
+      name: bvideo_enabled
+      label: 镇站视频
+      type: radio
+      data-type: bool
+      default: false
+      description: '开启后，镇站图将会成为视频封面，默认为 false'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    bvideoLink:
+      name: bvideoLink               
+      label: 视频url              
+      type: attachment               
+      placeholder: '请填入视频url'           
+      default: ''                          
     drawimg:
       name: drawimg               
       label: 抽屉图              

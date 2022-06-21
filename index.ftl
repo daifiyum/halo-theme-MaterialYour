@@ -164,4 +164,23 @@
         </div>
     </div>
 </main>
+
+<#if settings.bvideo_enabled!false>
+<script>
+    var instance = new vidbg(
+  ".indexImg",
+  {
+    mp4: "${settings.bvideoLink!}", 
+    //webm: "path/to/video.webm", 
+    //poster: "",
+    overlay: false, 
+    overlayColor: "#000", 
+    overlayAlpha: 0.3,
+  },
+  {
+    
+  }
+);
+</script>
+</#if>
 </@layout>

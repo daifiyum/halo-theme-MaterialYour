@@ -203,6 +203,9 @@ body {
   background-position: center;
   background-size: cover;
 }
+.mdui-card-media-covered {
+  z-index: 1;
+}
 .containerRight {
   width: 30%;
   margin: 0 0 20px 0;

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="${theme_base!}/source/libs/fjGallery/fjGallery.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/mp/mp.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/highlight/styles/${settings.code_css!}.min.css">
+    <link rel="stylesheet" href="${theme_base!}/source/libs/vidbg/vidbg.css">
     <script src="${theme_base!}/source/libs/jquery.min.js"></script>
     <script src="${theme_base!}/source/libs/tocbot/tocbot.min.js"></script>
     <script src="${theme_base!}/source/libs/viewer/viewer.min.js"></script>
@@ -27,6 +28,7 @@
     <script src="${theme_base!}/source/libs/highlight/highlight.min.js"></script>
     <script src="${theme_base!}/source/libs/highlight/hightlight_linenumber.js"></script>
     <script src="${theme_base!}/source/libs/highlight/highlightjs_copy_button.min.js"></script>
+    <script src="${theme_base!}/source/libs/vidbg/vidbg.js"></script>
     <script>
         let my_music = '${settings.music!}';
         hljs.highlightAll();
