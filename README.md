@@ -39,7 +39,7 @@
 目前主题功能还很单调，若没有想要的功能，可以给我提issues，我会和你讨论一下合理性再支持
 
 ### 最新开发版本（下载最新版）？
-由于自己前端技术有限，短时间内不能发布完美版本，推荐大家体验最新开发版，点击[此处](https://github.com/daifiyum/halo-theme-MaterialYour/archive/refs/heads/master.zip)
+由于自己前端技术有限，短时间内不能发布完美版本，推荐大家体验最新开发版，点击[此处](https://github.com/daifiyum/halo-theme-MaterialYour/archive/refs/heads/dev2.0.zip)
 
 ### 使用文档？
 
