@@ -1,29 +1,36 @@
 ## halo-theme-MaterialYour (请大家体验分支[dev2.0](https://github.com/daifiyum/halo-theme-MaterialYour/tree/dev2.0)的主题，master分支已许久未更新)
-
 **小说一下：这款主题写的很乱、很没水平、有很多小问题，以我目前的水平，还无法完善这款主题，所以目前有什么bug，我会勉强修复，当然，有大佬帮助完善就更好了，最后，感谢大家选择这款主题~**
 
 > 一款Material风格的Halo主题，布局简洁，主题色多样，欢迎大家享用~
 
+### 使用文档
+
+[点击查看](https://www.dnxrzl.com/archives/134)
+
 ### 预览
+
+[预览](https://www.dnxrzl.com/)
+
+Master分支预览图：
 
 ![2022-01-06_153303.png](https://img.dnxrzl.com/2022/01/06/970a82b869c5f.png)
 
-[DEMO](https://www.dnxrzl.com/)
+Dev2.0预览图：
+
+![屏幕截图 2022-06-29 185254.png](https://img.dnxrzl.com/2022/06/29/d80a01f02fd9f.png)
 
 ### 功能&说明
 <mark>特殊页面</mark>：日志、友链页面、相册页面已支持
 
-<mark>内容一键加载</mark>：目前只有首页、说说页面支持，其他页面采用上一页和下一页的方式加载，其他页面适配一键加载不难，只是暂时没时间弄
+<mark>内容一键加载</mark>：全页面支持
 
 <mark>全设备适应</mark>：由于采用MDUI前端框架，和作者的细心打磨，几乎不会有界面显示混乱，溢出等问题
 
-<mark>文章内图片灯箱</mark>：目前支持灯箱，未来会换个更好看的灯箱
+<mark>文章内图片灯箱</mark>：目前支持灯箱，未来会换个更好看的灯箱（已换Fancybox最新版）
 
 <mark>文章页渲染</mark>：文章内容的渲染是由MDUI处理的，不会那么花里胡哨，适合阅读
 
 <mark>代码高亮</mark>：支持常用语言高亮
-
-<mark>搜索框样式</mark>：采用方便的折叠搜索框，美观又方便
 
 <mark>菜单栏</mark>：支持二级菜单
 
@@ -41,13 +48,9 @@
 ### 最新开发版本（下载最新版）？
 由于自己前端技术有限，短时间内不能发布完美版本，推荐大家体验最新开发版，点击[此处](https://github.com/daifiyum/halo-theme-MaterialYour/archive/refs/heads/dev2.0.zip)
 
-### 使用文档？
+### 使用文档？（[已有](https://www.dnxrzl.com/archives/134)）
 
 主题完美优化后将会写详细使用文档，使用最新开发版主题的朋友如遇到不解问题可以在我博客留言，还有目前使用本主题人数几乎没有，所以不考虑建群，若你们需要建群讨论，也可以留言
-
-### 注意
-
-主题内所有用户头像设置都在后台`系统`-`博客设置`-`常规设置`-`Logo`里，本来是根据gravatar自动设置的，但考虑到gravatar源很慢，有加载缓慢或失效的可能
 
 ### 一起完善？
 
