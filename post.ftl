@@ -191,7 +191,6 @@
                     hasInnerContainers: true,
                     headingsOffset: 80, 
                     scrollSmoothOffset: -80, 
-                    isCollapsedClass: ''
                     });
             }
 
