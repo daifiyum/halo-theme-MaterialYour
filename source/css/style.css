@@ -66,7 +66,7 @@ body {
 }
 
 .self-container {
-  max-width: 1000px; /*窗口最大时的容器固定宽度*/
+  max-width: 1200px; /*窗口最大时的容器固定宽度*/
 }
 
 /*自适应搜索框*/
@@ -193,7 +193,7 @@ body {
   margin-bottom: 20px;
 }
 .containerLeft {
-  width: 60%;
+  width: 80%;
   flex-grow: 1;
 }
 .indexImg {
