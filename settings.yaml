@@ -28,10 +28,20 @@ genernal:
       placeholder: '个人邮箱'      
     record:
       name: record
-      label: 备案号
+      label: ICP备案号
       type: text
-      placeholder: '填写备案号'
-
+      placeholder: '填写ICP备案号'
+    record2img:
+      name: record2img               
+      label: 备案图标              
+      type: attachment               
+      placeholder: '公安备案图标地址'           
+      default: 'https://b2.bmp.ovh/imgs/2019/09/a46fc5b15b3363ff.png'  
+    record2:
+      name: record2
+      label: 公安备案号
+      type: text
+      placeholder: '填写公安备案号'
 
 style:
   label: 样式设置

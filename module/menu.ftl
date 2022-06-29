@@ -82,14 +82,14 @@
               </div>
               <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
             <#list menu.children as child>
-                <a href="${child.url!}">
+                <a href="${child.url!}" target="${child.target!}">
                   <li class="mdui-list-item mdui-ripple">${child.name!}</li>
                 </a>
             </#list>
               </ul>
             </li>
         <#else>
-            <a href="${menu.url}">
+            <a href="${menu.url}" target="${menu.target!}">
               <li class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-icon mdui-icon material-icons">${menu.icon!}</i>
                 <div class="mdui-list-item-content">${menu.name}</div>
