@@ -12,7 +12,7 @@
     <@global.head />
     <title>${title}</title>
     <link rel="stylesheet" href="${theme_base!}/source/libs/mdui/mdui.min.css"/>
-    <link rel="stylesheet" href="${theme_base!}/source/css/selfIcons.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/selfFonts.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/tocbot/tocbot.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/fancybox/fancybox.css">

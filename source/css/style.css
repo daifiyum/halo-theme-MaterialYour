@@ -14,8 +14,8 @@
 /*网络字体*/
 @font-face {
   font-family: "icomoon";
-  src: url("../icons/icomoon/icomoon.eot?kg04oy");
-  src: url("../icons/icomoon/icomoon.eot?kg04oy#iefix") format("embedded-opentype"), url("../icons/icomoon/icomoon.ttf?kg04oy") format("truetype"), url("../icons/icomoon/icomoon.woff?kg04oy") format("woff"), url("../icons/icomoon/icomoon.svg?kg04oy#icomoon") format("svg");
+  src: url("../fonts/icomoon/icomoon.eot?kg04oy");
+  src: url("../fonts/icomoon/icomoon.eot?kg04oy#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?kg04oy") format("truetype"), url("../fonts/icomoon/icomoon.woff?kg04oy") format("woff"), url("../fonts/icomoon/icomoon.svg?kg04oy#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
