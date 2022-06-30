@@ -6,10 +6,10 @@
             <a href="https://beian.miit.gov.cn/" target="_blank">${settings.record!}</a>
          </div>
 		<#if settings.record2??>
-			<div class="">
-			    <a id="record" href="" target="_blank" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
-			        <img src="${settings.record2img}" style="float:left;"/>
-			        <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">${settings.record2!}</p>
+			<div class="record2">
+			    <a id="record" href="" target="_blank">
+			        <img src="${settings.record2img!'${theme_base!}/source/images/record2.png'}"/>
+			        <p>${settings.record2!}</p>
 			    </a>
                 <script>
 					let record2 = "${settings.record2!}"

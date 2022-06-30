@@ -15,39 +15,33 @@
     <link rel="stylesheet" href="${theme_base!}/source/css/selfIcons.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/tocbot/tocbot.css">
-    <link rel="stylesheet" href="${theme_base!}/source/libs/viewer/viewer.min.css">
-    <link rel="stylesheet" href="${theme_base!}/source/libs/fjGallery/fjGallery.css">
-    <link rel="stylesheet" href="${theme_base!}/source/libs/mp/mp.css">
+    <link rel="stylesheet" href="${theme_base!}/source/libs/fancybox/fancybox.css">
+    <#--  <link rel="stylesheet" href="${theme_base!}/source/libs/mp/mp.css">  -->
     <link rel="stylesheet" href="${theme_base!}/source/libs/highlight/styles/${settings.code_css!}.min.css">
-    <link rel="stylesheet" href="${theme_base!}/source/libs/vidbg/vidbg.css">
+    <link rel="stylesheet" href="${theme_base!}/source/libs/animate.min.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/darkMode.css">    
     <script src="${theme_base!}/source/libs/jquery.min.js"></script>
+    <script src="${theme_base!}/source/libs/wow.min.js"></script>    
     <script src="${theme_base!}/source/libs/tocbot/tocbot.min.js"></script>
-    <script src="${theme_base!}/source/libs/viewer/viewer.min.js"></script>
-    <script src="${theme_base!}/source/libs/jquery-viewer.min.js"></script>
-    <script src="${theme_base!}/source/libs/fjGallery/fjGallery.min.js"></script>
+    <script src="${theme_base!}/source/libs/fancybox/fancybox.umd.js"></script>    
     <script src="${theme_base!}/source/libs/highlight/highlight.min.js"></script>
     <script src="${theme_base!}/source/libs/highlight/hightlight_linenumber.js"></script>
     <script src="${theme_base!}/source/libs/highlight/highlightjs_copy_button.min.js"></script>
-    <script src="${theme_base!}/source/libs/vidbg/vidbg.js"></script>
-    <script>
-        let my_music = '${settings.music!}';
-        hljs.highlightAll();
-        hljsln.initLineNumbersOnLoad();
-        hljs.initCopyButtonOnLoad();
-    </script>
-    <#if is_index?? || is_journals??>
-        <script src="${theme_base!}/source/js/myajax.js"></script>
-    </#if>
-    <#if settings.mdui_icons == 'MIO'>
-        <style>
-            .material-icons {
-                font-family: 'Material Icons Outlined' !important;
-            }
-        </style>
-    </#if>
+    <script src="${theme_base!}/source/libs/isotope.pkgd.min.js"></script>
+    <script src="${theme_base!}/source/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="${theme_base!}/source/libs/vue.min.js"></script>
+    <script src="${settings.comment_js!'${theme_base!}/source/libs/halo-comment.min.js'}"></script>
+    <#include "config.ftl">
+    <@config/>
+    <script src="${theme_base!}/source/js/darkMode.js"></script>
 </head>
-<body class="mdui-drawer-body-left ${settings.mdui_theme!default}">
-    
+<body class="${settings.mdui_theme!default} ${(settings.drawer_enabled!default) ? string('mdui-drawer-body-left','')}">
+    <script>
+        if(darkMode.getFlag('night') != null){
+            darkMode.firstDark();
+        }
+    </script>
+
     <#include "menu.ftl">
 
     <#nested >
@@ -55,9 +49,10 @@
     <@global.footer />
     <#include "footer.ftl">
     <@footer/>
+
 <script src="${theme_base!}/source/libs/mdui/mdui.min.js"></script>
-<script src="${theme_base!}/source/js/script.js"></script>
-<script src="${theme_base!}/source/libs/mp/mp.js"></script>
+<script src="${theme_base!}/source/js/core.js"></script>
+<#--  <script src="${theme_base!}/source/libs/mp/mp.js"></script>  -->
 </body>
 </html>
 </#macro>

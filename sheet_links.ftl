@@ -14,12 +14,15 @@
                 <h4>${team.team}</h4>
                 <div class="linksBlock">
                   <#list team.links as link>
-                    <div class="linkCard">
-                      <a href="${link.url!}" target="_blank">
+                    
+                      <a class="linkCard" href="${link.url!}" target="_blank">
                         <img class="mdui-img-circle" src="${link.logo}"/>
+                        <div class="linkDesc">
                         <span>${link.name!}</span>
+                        <span>${link.description!}</span>
+                        </div>
                       </a>
-                    </div>
+                    
                   </#list>
                 </div>
               </#list>
@@ -27,11 +30,12 @@
         </div>
       </div>
     </article>
-    
+    <div class="comments mdui-card">
     <!--  评论区域  -->
         <#include "module/comment.ftl">
         <@comment post=sheet type="sheet" />
     <!--  评论区结束  -->
+    </div>
   </div>  
 </main>
 </@layout>

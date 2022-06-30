@@ -11,8 +11,8 @@
             <#if tags?? && tags?size gt 0>
                 <#list tags as tag>
                 <li>
-                    <a href="${tag.fullPath!}">
-                        <div class="mdui-chip mdui-color-theme-100 mdui-text-color-theme">
+                    <a href="${tag.fullPath!}" class="tagsa">
+                        <div class="mdui-chip">
                             <span class="mdui-chip-title">${tag.name!}（${tag.postCount!}）</span>
                         </div>
                     </a>

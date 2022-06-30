@@ -1,36 +1,39 @@
 <@menuTag method="list">
 <header>
     <div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0" id="selfAppbar">
-        <div class="mdui-toolbar mdui-color-theme-100 mdui-text-color-theme">
+        <div class="nse mdui-toolbar mdui-color-theme-100 mdui-text-color-theme">
             <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}">
                 <i class="mdui-icon material-icons">menu</i>
             </a>
             <a href="${blog_url!}" class="mdui-typo-title">${blog_title!}</a>
             <div class="mdui-toolbar-spacer"></div>
 
-            <form class="mdui-color-theme-50 mdui-text-color-theme" method="get" action="/search" role="search">
+            <a class="searchNew mdui-btn mdui-btn-icon">
                 <i class="mdui-icon material-icons">search</i>
-                <input class="mdui-textfield-input" type="text" placeholder="搜索一下..." name="keyword">
-
-            </form>
-
-            <a href="javascript:;" class="i1 mdui-btn mdui-btn-icon">
-                <i class="btSearch mdui-icon material-icons">search</i>
             </a>
-
-            <#if is_post??>
-                <a href="javascript:;" class="mdui-btn mdui-btn-icon nodesk" mdui-dialog="{target: '#indexDialog'}">
+            <form class="searchInput dark" method="get" action="/search" role="search">
+              
+                <button type="button" class="back mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">arrow_back</i></button>
+                <button type="button" class="searchIcon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+                <input type="text" placeholder="搜索一下..." name="keyword">
+                <#--  <div class="seh"></div>  -->
+                <button type="button" class="backClose mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+             
+            </form>
+            
+            <#--  <#if is_post??>  -->
+                <a href="javascript:;" class="mdui-btn mdui-btn-icon nodesk nodindex" mdui-dialog="{target: '#indexDialog'}">
                     <i class="mdui-icon material-icons">assignment</i>
                 </a>
-            </#if>
+            <#--  </#if>  -->
+
             <a href="/journals" class="mdui-btn mdui-btn-icon nodesk">
                 <i class="mdui-icon material-icons">self_improvement</i>
             </a>
 
-
             <!--Material Player-->
-            <div id="mp-music" data-autoplay="no" data-autoplaynext="yes" style="overflow: initial;line-height: 0px;">
-                <!--data-autoplay: yes no playnext:yes no-->
+            <#--  <div id="mp-music" data-autoplay="no" data-autoplaynext="yes" style="overflow: initial;line-height: 0px;">
+                
                 <div id="mp-music-wrapper" class="">
                     <div id="mp-list" style="display: none; width: 0px;">
                         <ul>
@@ -57,17 +60,26 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  -->
             <!--music over-->
-        </div>
+              
+            <#if settings.dark_enabled!false>
+              <a class="mdui-btn mdui-btn-icon darkButton">
+                <i class="mdui-icon material-icons">brightness_6</i>
+              </a>   
+            </#if>
+
+            <#--  <img class="author mdui-img-circle mdui-btn-icon" src="/upload/2022/01/au-65a514587a4b42708c44865880348565.jpg" mdui-tooltip="{content: 'dnxrzl'}"/>  -->
+
+        </div> 
     </div>
 </header>
       
         
       
-<aside class="mdui-drawer mdui-card" id="left-drawer">
-  <div class="headerLogo" style="background-image: url('${settings.drawimg!}')">
-    <img class="mdui-img-circle mdui-shadow-2" src="${blog_logo!}" alt="">
+<aside class="mdui-drawer ${(settings.drawer_enabled!default) ? string('','mdui-drawer-close')}" id="left-drawer">
+  <div class="headerLogo" style="background-image: url('${settings.drawimg!'${theme_base!}/source/images/indexBack.jpg'}')">
+    <img class="mdui-img-circle mdui-shadow-2" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="">
     <span class="drawTitle">${user.nickname!}</span>
   </div>
   <ul class="mdui-list" mdui-collapse="{accordion: true}">

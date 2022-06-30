@@ -3,19 +3,18 @@ genernal:
   items:
     index_notice:
       name: index_notice
-      label: 首页公告
+      label: 首页描述
       type: textarea
-      default: '不以物喜不以己悲' 
-    profile_desc:
-      name: profile_desc               
-      label: 侧边栏个人信息卡片描述              
-      type: text                
-      placeholder: '一些描述...'     
-    music:
-      name: music
-      label: 音乐（为空不显示图标）
-      type: textarea
-      placeholder: '歌曲链接1#*#歌曲名称,歌曲链接2#*#歌曲名称'
+      default: '我看到那些岁月如何奔驰，挨过了冬季，便迎来了春天。——梭罗《瓦尔登湖》' 
+    avatarLogo:
+      name: avatarLogo
+      label: 头像
+      type: attachment   
+    # music:
+    #   name: music
+    #   label: 音乐（为空不显示图标）
+    #   type: textarea
+    #   placeholder: '歌曲链接1#*#歌曲名称,歌曲链接2#*#歌曲名称'
     github:
       name: github               
       label: github              
@@ -33,15 +32,15 @@ genernal:
       placeholder: '填写ICP备案号'
     record2img:
       name: record2img               
-      label: 备案图标              
+      label: 备案图标          
       type: attachment               
-      placeholder: '公安备案图标地址'           
-      default: 'https://b2.bmp.ovh/imgs/2019/09/a46fc5b15b3363ff.png'  
+      placeholder: '公安备案图标地址（修改默认）'            
     record2:
       name: record2
       label: 公安备案号
       type: text
       placeholder: '填写公安备案号'
+
 
 style:
   label: 样式设置
@@ -55,7 +54,7 @@ style:
         - value: 'mdui-theme-primary-blue'
           label: '宝石蓝'
         - value: 'mdui-theme-primary-green'
-          label: '原谅绿'
+          label: '清新绿'
         - value: 'mdui-theme-primary-red'
           label: '姨妈红'
         - value: 'mdui-theme-primary-pink'
@@ -70,45 +69,50 @@ style:
           label: '低调棕'
         - value: 'mdui-theme-primary-cyan'
           label: '靛蓝青'
-    indeximg:
-      name: indeximg               
-      label: 镇站图              
-      type: attachment               
-      placeholder: '图片地址'           
-      default: ''  
-    bvideo_enabled:
-      name: bvideo_enabled
-      label: 镇站视频
+    dark_enabled:
+      name: dark_enabled
+      label: 黑暗模式
       type: radio
       data-type: bool
       default: false
-      description: '开启后，镇站图将会成为视频封面，默认为 false'
+      description: '是否开启黑暗模式，默认为 false'
       options:
         - value: true
           label: 开启
         - value: false
           label: 关闭
-    bvideoLink:
-      name: bvideoLink               
-      label: 视频url              
+    drawer_enabled:
+      name: drawer_enabled
+      label: 抽屉状态
+      type: radio
+      data-type: bool
+      default: false
+      description: '是否开启展开状态？默认隐藏'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    indeximg:
+      name: indeximg               
+      label: 镇站图              
       type: attachment               
-      placeholder: '请填入视频url'           
-      default: ''                          
+      placeholder: '图片地址'                       
     drawimg:
       name: drawimg               
       label: 抽屉图              
       type: attachment               
-      placeholder: '图片地址'           
-      default: ''     
+      placeholder: '图片地址'                
     mdui_icons:
       name: mdui_icons
       label: 字体图标样式
       type: select
-      default: 'MI'
+      default: 'Material Icons Outlined'
+      description: '推荐使用Material Icons Outlined'
       options:
-        - value: 'MI'
-          label: 'Material-Icons'
-        - value: 'MIO'
+        - value: 'Material Icons'
+          label: 'Material Icons'
+        - value: 'Material Icons Outlined'
           label: 'Material Icons Outlined' 
     code_css:
       name: code_css
@@ -141,41 +145,9 @@ style:
           label: "paraiso-light"
         - value: "/base16/material"
           label: "material"
-    comment_style:
-      name: comment_style
-      label: 评论模块样式
-      type: select
-      default: '样式1'
-      data-type: string
-      options:
-        - value: "comment1"
-          label: "样式1"
-        - value: "comment2"
-          label: "样式2"
-        
-others:
-  label: 其他
-  items:
-    ad_enabled:
-      name: ad_enabled
-      label: 侧边栏广告
-      type: radio
-      data-type: bool
-      default: false
-      description: '是否开启侧边栏广告，默认为 false'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    adimg:
-      name: adimg               
-      label: 广告图片              
-      type: attachment               
-      placeholder: '图片地址'           
-      default: ''               
-    adlink:
-      name: adlink
-      label: 广告链接
-      type: text
-      placeholder: '填写广告链接'
+    comment_js:
+      name: comment_js               
+      label: 评论组件JS              
+      type: text                
+      placeholder: '填入外部评论组件URL'              
+      description: '导入外部评论组件JS,推荐默认评论组件以完美支持黑暗模式' 

@@ -21,7 +21,7 @@
 
                 <div class="postFront">
                     <div class="pleft">
-                        <img class="mdui-img-circle" src="${blog_logo!}" alt="${user.nickname!}">
+                        <img class="mdui-img-circle" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="${user.nickname!}">
                         <div>
                             <span>${user.nickname!}</span>
                             <span>${post.createTime?string["yyyy年MM月dd日"]!}</span>
@@ -38,10 +38,12 @@
                 </div>
             </div>
         </article>
+        <div class="comments mdui-card">
         <!--  评论区域  -->
         <#include "module/comment.ftl">
         <@comment post=sheet type="sheet" />
         <!--  评论区结束  -->
+        </div>
     </div>
 </main>
 </@layout>
