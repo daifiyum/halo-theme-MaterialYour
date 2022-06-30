@@ -24,5 +24,6 @@
     <div class="totop mdui-shadow-3 mdui-color-theme-100 mdui-text-color-theme">
         <i class="mdui-icon material-icons">expand_less</i>
     </div>
+	<@global.footer />
 </footer>
 </#macro>

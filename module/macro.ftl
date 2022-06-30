@@ -46,7 +46,6 @@
 
     <#nested >
 
-    <@global.footer />
     <#include "footer.ftl">
     <@footer/>
 
