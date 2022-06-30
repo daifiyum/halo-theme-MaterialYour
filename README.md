@@ -1,4 +1,4 @@
-## halo-theme-MaterialYour (请大家体验分支[dev2.0](https://github.com/daifiyum/halo-theme-MaterialYour/tree/dev2.0)的主题，master分支已许久未更新)
+## halo-theme-MaterialYour
 **小说一下：这款主题写的很乱、很没水平、有很多小问题，以我目前的水平，还无法完善这款主题，所以目前有什么bug，我会勉强修复，当然，有大佬帮助完善就更好了，最后，感谢大家选择这款主题~**
 
 > 一款Material风格的Halo主题，布局简洁，主题色多样，欢迎大家享用~
@@ -11,11 +11,6 @@
 
 [预览](https://www.dnxrzl.com/)
 
-Master分支预览图：
-
-![2022-01-06_153303.png](https://img.dnxrzl.com/2022/01/06/970a82b869c5f.png)
-
-Dev2.0预览图：
 
 ![屏幕截图 2022-06-29 185254.png](https://img.dnxrzl.com/2022/06/29/d80a01f02fd9f.png)
 
