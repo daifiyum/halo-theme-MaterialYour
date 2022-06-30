@@ -1,8 +1,8 @@
 <#include "module/macro.ftl">
 <@layout title="${post.title!} - ${blog_title!}">
 <main class="self-container mdui-container line-numbers">
-    <div class="postContainerLeft">
-        <article class="post animate__animated animate__fadeInUp animate__slow">
+    <div class="postContainerLeft animate__animated post_animate">
+        <article class="post">
             <div class="mdui-card">
                 <#if post.thumbnail?? && post.thumbnail!=''>
                     <div class="mdui-card-media">
@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    <div class="containerRight">
+    <div class="containerRight animate__animated post_animate">
         <div class="sticky">
             <div class="mdui-card">
                 <div class="mdui-typo-title">目录</div>

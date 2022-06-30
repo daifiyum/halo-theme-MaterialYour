@@ -2,7 +2,7 @@
         <#if posts.content?size gt 0>
         <div class="postLayout">
         <#list posts.content as post>
-            <article class="wow animate__fadeInUp animate__animated animate__slow">
+            <article class="wow animate__fadeIn animate__animated animate__slow">
                 <a href="${post.fullPath!}">
                     <div class="mdui-card plistLayout">
                         <div class="selfLayout">

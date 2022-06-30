@@ -2,7 +2,7 @@
 <@layout title="相册 - ${blog_title!}">
 <#--  偷懒，水个相册页  -->
 <main class="self-container mdui-container">
-  <div class="containerLeft">
+  <div class="containerLeft animate__animated post_animate">
     <article class="post">
       <div class="mdui-card">
       <div class="photos">

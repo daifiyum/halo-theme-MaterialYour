@@ -1193,8 +1193,71 @@ aside.mdui-drawer {
   cursor: pointer;
 }
 
-/*test css*/
-.author {
-  padding: 5px;
-  margin: 0 16px 0 6px;
+/*载入动画自定义*/
+
+/*首页招牌图动画*/
+@-webkit-keyframes fadeInDown_self {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -10%, 0);
+    transform: translate3d(0, -10%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInDown_self {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -10%, 0);
+    transform: translate3d(0, -10%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.index-cover {
+  animation: fadeInDown_self; 
+  animation-duration: 1s; 
+}
+
+/*页面动画*/
+@-webkit-keyframes slideInDown_self {
+  from {
+    -webkit-transform: translate3d(0, -2%, 0);
+    transform: translate3d(0, -2%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInDown_self {
+  from {
+    -webkit-transform: translate3d(0, -2%, 0);
+    transform: translate3d(0, -2%, 0);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.post_animate {
+  animation: slideInDown_self; 
+  animation-duration: 1.5s !important; 
+  -webkit-animation-delay: .2s;
+  animation-delay: .25s;
 }

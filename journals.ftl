@@ -1,7 +1,7 @@
 <#include "module/macro.ftl">
 <@layout title="说说 - ${blog_title!}">
 <main class="self-container mdui-container">
-  <div class="containerLeft">
+  <div class="containerLeft animate__animated post_animate">
     <article class="post">
       <div class="mdui-card">
       <div class="journals">
@@ -12,7 +12,7 @@
             <div class="journLine">
               <i class="mdui-icon material-icons">create</i>
             </div>
-            <div class="mdui-card jpadding wow animate__animated animate__fadeInUp animate__slow">
+            <div class="mdui-card jpadding wow animate__animated post_animate">
               <time>
                 ${journal.createTime?string('yyyy-MM-dd HH:mm:ss')}
               </time>

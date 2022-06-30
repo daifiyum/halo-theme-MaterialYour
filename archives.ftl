@@ -1,14 +1,14 @@
 <#include "module/macro.ftl">
 <@layout title="归档 - ${blog_title!}">
 <main class="self-container mdui-container">
-  <div class="containerLeft">
+  <div class="containerLeft animate__animated post_animate">
     <article class="post">
       <div class="mdui-card">
       <div class="archives">
       <h3 class="pagetitle">归档</h3>
       <div class="archMain">
         <#list archives as archive>
-            <div class="archCell wow animate__animated animate__fadeInUp animate__slow">
+            <div class="archCell wow animate__animated post_animate">
               <div class="archiveyear">
                   ${archive.year?c}
               </div>

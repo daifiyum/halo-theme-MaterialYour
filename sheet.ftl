@@ -1,7 +1,7 @@
 <#include "module/macro.ftl">
 <@layout title="${sheet.title!} - ${blog_title!}">
 <main class="self-container mdui-container">
-    <div class="containerLeft">
+    <div class="containerLeft animate__animated post_animate">
         <article class="post">
             <div class="mdui-card">
                 <#if post.thumbnail?? && post.thumbnail!=''>

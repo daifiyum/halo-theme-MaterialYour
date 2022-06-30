@@ -2,7 +2,7 @@
 <@layout title="${blog_title!}">
 <main class="self-container mdui-container">
     <div class="containerLeft">
-        <div class="index-cover animate__animated animate__fadeInDown">
+        <div class="index-cover animate__animated">
             <div class="welcome_media">
                 <img src="${settings.indeximg!'${theme_base!}/source/images/indexBack.jpg'}" alt="">
             </div>
