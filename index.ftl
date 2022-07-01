@@ -9,7 +9,9 @@
             <div class="welcome">
                 <div class="welcome_hello"></div>
                 <div class="welcome_descr">
+                <#if settings.aWord_enabled != true>
                     ${settings.index_notice!default}
+                </#if>
                 </div>
                 <div class="welcome_contact">
                     <#if settings.github??>

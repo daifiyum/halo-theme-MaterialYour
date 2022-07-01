@@ -1,6 +1,6 @@
 <#macro footer>
 <footer class="footer-container">
-    <div class="innerfooter mdui-container">
+    <div class="innerfooter mdui-container" style="${settings.footerCenter_enabled ? string('align-items: center;','')}">
         <div class="mdui-typo-title">${blog_title!}</div>
         <div class="">© <span id="timeyear"></span> ${user.nickname!} 
             <a href="https://beian.miit.gov.cn/" target="_blank">${settings.record!}</a>
