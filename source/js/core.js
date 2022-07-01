@@ -321,6 +321,21 @@ const dnxrzl = {
 
    
   },
+  oneWord: function () {
+    if(oneWord != 'false'){
+    $.ajax({
+      url: 'https://v1.hitokoto.cn/' + mconfig,
+      type: "GET",
+      dataType: "json",
+      data: aWordConfig,
+      async: false,
+      crossDomain: true,
+      success: function (data) {
+        $('.welcome_descr').text(data.hitokoto + '——' + (data.from_who != null ? data.from_who:'') + '「' + (data.from != null ? data.from:'') + '」');
+      }
+    })
+  }
+  }
 }
 
 !(function () {

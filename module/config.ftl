@@ -6,11 +6,29 @@
     hljs.highlightAll();
     hljsln.initLineNumbersOnLoad();
     hljs.initCopyButtonOnLoad();
-    <#if is_post??>
-        let postyes = 'true';
+    
+    let postyes = '${is_post?? ? string('true','false')}';
+
+    let oneWord = '${(settings.aWord_enabled!default) ? string('true','false')}';
+    let wordType = '${settings.aWordType!default}';
+    let multipleWType = '${settings.aWordTypes!}';
+    let wordNum = '${settings.aWordNum!"10"}'
+    let mconfig = '';
+    let aWordConfig = {};
+    <#if settings.aWordTypes??>
+    let mulWT = multipleWType.split(',');
+    for(var i = 0;i < mulWT.length;i++){
+        mulWT[i] = 'c='  + mulWT[i] + '&';
+        mconfig = mconfig + mulWT[i];
+    }
+    mconfig = '?' + mconfig + 'min_length=' + wordNum;
     <#else>
-        let postyes = 'false';
+    aWordConfig = {
+      c: wordType,
+      min_length: wordNum,
+    };
     </#if>
+
 </script>
 
 <#--  字体图标设置  -->
