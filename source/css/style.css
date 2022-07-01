@@ -368,6 +368,15 @@ body {
 }
 
 /*文章卡片*/
+.topped {
+  display: inline-block;
+  line-height: 1;
+  padding: 4px 5px 4px 5px;
+  background: var(--themeColor);
+  text-align: center;
+  border-radius: 2px;
+  margin-right: 5px;
+}
 .selfLayout {
   display: flex;
   justify-content: space-between;

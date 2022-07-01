@@ -9,6 +9,11 @@
                             <div class="left">
                                 <div class="mdui-card-primary">
                                     <div class="mdui-card-primary-subtitle">
+                                        <#if post.topped>
+                                        <span class="topped">
+                                            置顶
+                                        </span>
+                                        </#if>
                                         <#if (post.categories)?? && post.categories?size !=0>
                                             <#list post.categories as categorie>
                                                 <span class="cated">${categorie.name!}</span>
