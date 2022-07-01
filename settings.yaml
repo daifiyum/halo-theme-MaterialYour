@@ -6,6 +6,59 @@ genernal:
       label: 首页描述
       type: textarea
       default: '我看到那些岁月如何奔驰，挨过了冬季，便迎来了春天。——梭罗《瓦尔登湖》' 
+    aWord_enabled:
+      name:  aWord_enabled
+      label: 一言
+      type: radio
+      data-type: bool
+      default: false
+      description: '是否开启一言，开启后，首页描述为一言，默认为关闭'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    aWordType:
+      name: aWordType
+      label: 一言类型
+      type: select
+      default: 'd'
+      options:
+        - value: 'a'
+          label: 'a 动画'
+        - value: 'b'
+          label: 'b 漫画'
+        - value: 'c'
+          label: 'c 游戏'
+        - value: 'd'
+          label: 'd 文学'
+        - value: 'e'
+          label: 'e 原创'
+        - value: 'f'
+          label: 'f 来自网络'
+        - value: 'g'
+          label: 'g 其他'
+        - value: 'h'
+          label: 'h 影视'
+        - value: 'i'
+          label: 'i 诗词'
+        - value: 'j'
+          label: 'j 网易云'
+        - value: 'k'
+          label: 'k 哲学'
+        - value: 'l'
+          label: 'l 抖机灵'
+    aWordTypes:
+      name: aWordTypes
+      label: 一言类型多种组合（开启后，上面单类型将失效）
+      type: text
+      placeholder: '如：a,b'
+      description: '上面代号a,b分别表示，动画：a，漫画：b，其他代号请参考此网站：https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0'
+    aWordNum:
+      name: aWordNum
+      label: 一言最少字数
+      type: text
+      placeholder: '默认10个'
     avatarLogo:
       name: avatarLogo
       label: 头像
