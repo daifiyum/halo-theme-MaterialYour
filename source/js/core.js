@@ -328,7 +328,7 @@ const dnxrzl = {
       type: "GET",
       dataType: "json",
       data: aWordConfig,
-      async: false,
+      async: true,
       crossDomain: true,
       success: function (data) {
         $('.welcome_descr').text(data.hitokoto + '——' + (data.from_who != null ? data.from_who:'') + '「' + (data.from != null ? data.from:'') + '」');
