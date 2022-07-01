@@ -40,6 +40,17 @@ genernal:
       label: 公安备案号
       type: text
       placeholder: '填写公安备案号'
+    hitokoto:
+      name: hitokoto
+      label: 博客描述开启一言
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
 
 
 style:

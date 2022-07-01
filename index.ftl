@@ -9,15 +9,27 @@
             <div class="welcome">
                 <div class="welcome_hello"></div>
                 <div class="welcome_descr">
-                    ${settings.index_notice!default}
-                </div>
+                <#--  一言  -->
+                    <#if settings.hitokoto!>
+                    <p id="hitokoto"></p>
+                    </#if>
+
+                    <#if !(settings.hitokoto!) &&settings.index_notice??>
+                            ${settings.index_notice!}
+                    </#if>
+                    <#--  一言end  -->
+            </div>
                 <div class="welcome_contact">
+                <#if settings.github??>
                     <a href="${settings.github!}" target="_blank">
                         <i class="mdui-icon icon-github"></i>
                     </a>
+                </#if>
+                <#if settings.email??>
                     <a href="mailto:${settings.email!}" target="_blank">
                         <i class="mdui-icon icon-mail"></i>
                     </a>
+                </#if>
 
                     
                     
@@ -66,3 +78,8 @@
 </main>
 
 </@layout>
+
+ <#if settings.hitokoto!>
+    <!-- 新 API 方法， 十分简洁 -->
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+</#if>
