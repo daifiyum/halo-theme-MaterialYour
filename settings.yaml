@@ -68,16 +68,6 @@ genernal:
     #   label: 音乐（为空不显示图标）
     #   type: textarea
     #   placeholder: '歌曲链接1#*#歌曲名称,歌曲链接2#*#歌曲名称'
-    github:
-      name: github               
-      label: github              
-      type: text                
-      placeholder: 'github个人主页链接'       
-    email:
-      name: email               
-      label: 邮箱              
-      type: text                
-      placeholder: '个人邮箱'      
     record:
       name: record
       label: ICP备案号
@@ -94,6 +84,29 @@ genernal:
       type: text
       placeholder: '填写公安备案号'
 
+profile:
+  label: 个人资料
+  items:
+    github:
+      name: github               
+      label: github              
+      type: text                
+      placeholder: 'github个人主页链接'       
+    email:
+      name: email               
+      label: 邮箱              
+      type: text                
+      placeholder: '个人邮箱'
+    telegram:
+      name: telegram
+      label: 小飞机
+      type: text
+      placeholder: 'TG个人链接'
+    wechat:
+      name: wechat
+      label: 微信
+      type: attachment
+      placeholder: '输入二维码地址'      
 
 style:
   label: 样式设置
