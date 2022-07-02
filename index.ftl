@@ -13,20 +13,36 @@
                     ${settings.index_notice!default}
                 </#if>
                 </div>
+                <#--  https://icon-sets.iconify.design/  -->
                 <div class="welcome_contact">
                     <#if settings.github??>
                     <a href="${settings.github!}" target="_blank">
-                        <i class="mdui-icon icon-github"></i>
+                        <i class="mdui-icon">
+                            <img src="${theme_base!}/source/images/profile/github.svg" alt="">
+                        </i>
                     </a>
                     </#if>
                     <#if settings.email??>
                     <a href="mailto:${settings.email!}" target="_blank">
-                        <i class="mdui-icon icon-mail"></i>
+                        <i class="mdui-icon">
+                            <img src="${theme_base!}/source/images/profile/mail.svg" alt="">
+                        </i>
                     </a>
                     </#if>
-
-                    
-                    
+                    <#if settings.telegram??>
+                    <a href="${settings.telegram!}" target="_blank">
+                        <i class="mdui-icon">
+                            <img src="${theme_base!}/source/images/profile/telegram.svg" alt="">
+                        </i>   
+                    </a>
+                    </#if>     
+                    <#if settings.wechat??>
+                    <a data-fancybox="gallery" data-src="${settings.wechat}">
+                        <i class="mdui-icon">
+                            <img src="${theme_base!}/source/images/profile/wechat.svg" alt="">
+                        </i>
+                    </a>
+                    </#if>
                 </div>
             </div>
             <div class="welcome__figures">
