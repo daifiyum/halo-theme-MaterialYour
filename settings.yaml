@@ -68,16 +68,6 @@ genernal:
     #   label: 音乐（为空不显示图标）
     #   type: textarea
     #   placeholder: '歌曲链接1#*#歌曲名称,歌曲链接2#*#歌曲名称'
-    github:
-      name: github               
-      label: github              
-      type: text                
-      placeholder: 'github个人主页链接'       
-    email:
-      name: email               
-      label: 邮箱              
-      type: text                
-      placeholder: '个人邮箱'      
     record:
       name: record
       label: ICP备案号
@@ -93,8 +83,54 @@ genernal:
       label: 公安备案号
       type: text
       placeholder: '填写公安备案号'
-
-
+sns:
+  label: 社交资料
+  items:
+    github:
+      name: github
+      label: GitHub
+      type: text
+      placeholder: '填入 GitHub 用户名'
+    email:
+      name: email
+      label: Email
+      type: text
+      placeholder: '填入邮箱地址'
+    bilibili:
+      name: bilibili
+      label: Bilibili
+      type: text
+      placeholder: '填入bilibili Uid'
+    telegram:
+      name: telegram
+      label: Telegram
+      type: text
+      placeholder: '填入 Telegram Id'
+    weibo:
+      name: weibo
+      label: 微博
+      type: text
+      placeholder: '填入微博 Id'
+    qq:
+      name: qq
+      label: QQ
+      type: text
+      placeholder: '填入 QQ 号'
+    twitter:
+      name: twitter
+      label: Twitter
+      type: text
+      placeholder: '填入 Twitter 用户名'
+    facebook:
+      name: facebook
+      label: Facebook
+      type: text
+      placeholder: '填入 Facebook 用户名'
+    instagram:
+      name: instagram
+      label: Instagram
+      type: text
+      placeholder: '填入 Instagram 用户名'
 style:
   label: 样式设置
   items:
@@ -156,17 +192,6 @@ style:
       label: 抽屉图              
       type: attachment               
       placeholder: '图片地址'                
-    mdui_icons:
-      name: mdui_icons
-      label: 字体图标样式
-      type: select
-      default: 'Material Icons Outlined'
-      description: '推荐使用Material Icons Outlined'
-      options:
-        - value: 'Material Icons'
-          label: 'Material Icons'
-        - value: 'Material Icons Outlined'
-          label: 'Material Icons Outlined' 
     code_css:
       name: code_css
       label: 代码样式

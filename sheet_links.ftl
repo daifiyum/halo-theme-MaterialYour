@@ -37,5 +37,8 @@
     <!--  评论区结束  -->
     </div>
   </div>  
+    <script>
+        $('img').lazyload();
+    </script>
 </main>
 </@layout>

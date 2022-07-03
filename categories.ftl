@@ -11,7 +11,7 @@
             <#if categories?? && categories?size gt 0>
                 <#list categories as category>
                   <div class="catelist">
-                    <i class="mdui-icon icon-folder-open-o"></i>
+                    <i class="mdui-icon material-icons">folder_open</i>
                     <li><a href="${category.fullPath!}">${category.name} （${category.postCount!0}）</a></li>
                   </div>
                 </#list>

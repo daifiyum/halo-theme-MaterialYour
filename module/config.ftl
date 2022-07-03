@@ -31,12 +31,6 @@
 
 </script>
 
-<#--  字体图标设置  -->
-<style>
-    .material-icons {
-            font-family: '${settings.mdui_icons!default}';
-        }
-</style>
 
 <#--  halo-comment-fly评论组件黑暗模式css,目前已弃用，未来可能启用  -->
 <style id="comment-style" type="text/css" media="noexist">

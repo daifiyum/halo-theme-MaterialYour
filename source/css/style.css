@@ -10,39 +10,6 @@
 }
 /*主题色结束*/
 
-
-/*网络字体*/
-@font-face {
-  font-family: "icomoon";
-  src: url("../fonts/icomoon/icomoon.eot?kg04oy");
-  src: url("../fonts/icomoon/icomoon.eot?kg04oy#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?kg04oy") format("truetype"), url("../fonts/icomoon/icomoon.woff?kg04oy") format("woff"), url("../fonts/icomoon/icomoon.svg?kg04oy#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-i {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon";
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.icon-folder-open-o:before {
-  content: "\f115";
-}
-.icon-github:before {
-  content: "\e900";
-}
-.icon-mail:before {
-  content: "\e901";
-}
-/*网络字体结束*/
 /*重写滚动条*/
 body::-webkit-scrollbar {
   width: 8px;
@@ -275,15 +242,13 @@ body {
 .welcome_contact {
   margin: 10px 0 10px 0;
 }
-.welcome_contact a {
-  display: inline-block;
-  text-decoration: none;
+.welcome_contact a,
+.welcome_contact button {
   color: #fff;
-  padding: 10px;
-  border-radius: 50px;
-  transition: all .3s;
 }
-.welcome_contact a:hover {
+.welcome_contact a:hover,
+.welcome_contact button:hover
+ {
   backdrop-filter: blur(10px);
   background-color: hsla(0,0%,100%,.2);
 }
@@ -1270,3 +1235,5 @@ aside.mdui-drawer {
   -webkit-animation-delay: .2s;
   animation-delay: .25s;
 }
+
+

@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <@global.head />
     <title>${title}</title>
-    <link rel="stylesheet" href="${theme_base!}/source/libs/mdui/mdui.min.css"/>
+    <link rel="stylesheet" href="${theme_base!}/source/libs/mdui/mdui.css"/>
     <link rel="stylesheet" href="${theme_base!}/source/css/selfFonts.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/tocbot/tocbot.css">
@@ -48,7 +48,7 @@
 
     <#include "footer.ftl">
     <@footer/>
-
+    
 <script src="${theme_base!}/source/libs/mdui/mdui.min.js"></script>
 <script src="${theme_base!}/source/js/core.js"></script>
 <#--  <script src="${theme_base!}/source/libs/mp/mp.js"></script>  -->

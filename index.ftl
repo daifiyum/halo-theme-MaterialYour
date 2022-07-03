@@ -14,19 +14,8 @@
                 </#if>
                 </div>
                 <div class="welcome_contact">
-                    <#if settings.github??>
-                    <a href="${settings.github!}" target="_blank">
-                        <i class="mdui-icon icon-github"></i>
-                    </a>
-                    </#if>
-                    <#if settings.email??>
-                    <a href="mailto:${settings.email!}" target="_blank">
-                        <i class="mdui-icon icon-mail"></i>
-                    </a>
-                    </#if>
-
-                    
-                    
+                    <#include "module/socialLink.ftl">
+                    <@socialLink/>
                 </div>
             </div>
             <div class="welcome__figures">
