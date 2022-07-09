@@ -2,11 +2,11 @@
 <footer class="footer-container">
     <div class="innerfooter mdui-container" style="${settings.footerCenter_enabled ? string('align-items: center;','')}">
         <div class="mdui-typo-title">${blog_title!}</div>
-        <div class="">© <span id="timeyear"></span> ${user.nickname!} 
+        <div class="fitem">© <span id="timeyear"></span> ${user.nickname!} 
             <a href="https://beian.miit.gov.cn/" target="_blank">${settings.record!}</a>
          </div>
 		<#if settings.record2??>
-			<div class="record2">
+			<div class="record2 fitem">
 			    <a id="record" href="" target="_blank">
 			        <img src="${settings.record2img!'${theme_base!}/source/images/record2.png'}"/>
 			        <p>${settings.record2!}</p>
@@ -19,8 +19,10 @@
 				</script>
 			</div>
 		</#if>
-        <div class="">Powered by <a href="https://halo.run/" target="_blank">Halo</a>. Theme <a href="https://github.com/daifiyum/halo-MaterialYour" target="_blank">MaterialYour</a> by <a href="https://www.dnxrzl.com/" target="_blank">dnxrzl</a>.</div>
-		<div class=""><@global.footer /></div>
+        <div class="fitem">Powered by <a href="https://halo.run/" target="_blank">Halo</a>. Theme <a href="https://github.com/daifiyum/halo-MaterialYour" target="_blank">MaterialYour</a> by <a href="https://www.dnxrzl.com/" target="_blank">dnxrzl</a>.</div>
+		
+			<div class="fitem"><@global.footer /></div>
+		
 	</div>
     <div class="totop mdui-shadow-3 mdui-color-theme-100 mdui-text-color-theme">
         <i class="mdui-icon material-icons">expand_less</i>

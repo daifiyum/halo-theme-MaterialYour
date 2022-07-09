@@ -617,8 +617,10 @@ li.toc-list-item {
 /*页脚*/
 footer {
   padding: 16px 0 16px 0;
+  margin-top: 16px;
   /* background-color: #f9f9f9; */
 }
+
 .mdui-theme-layout-dark footer {
   color: #fff;
   background-color: rgb(0 0 0 / 12%);
@@ -627,8 +629,14 @@ footer {
   display: flex;
   flex-direction: column;
 }
-.innerfooter > div {
-  margin-bottom: 10px;
+.innerfooter .mdui-typo-title {
+  margin-bottom: 16px;
+}
+.fitem {
+  padding-bottom: 10px;
+}
+.fitem:last-child {
+  padding: 0;
 }
 footer a {
   text-decoration: none;
@@ -807,7 +815,7 @@ footer a {
   border-radius: 50px;
   cursor: pointer;
   right: 25px;
-  bottom: 25px;
+  bottom: 28px;
   display: none;
   z-index: 1000;
 }
