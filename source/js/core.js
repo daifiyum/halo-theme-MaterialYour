@@ -1,10 +1,11 @@
 console.log("\n %c Dnxrzl " + " %c MaterialYour %c \n", "color:#fff;background:#6cf;padding:5px 0;border: 1px solid #6cf;", "color:#6cf;background:none;padding:5px 0;border: 1px solid #6cf;", "");
 console.log("菩萨保佑，没有报错🙏🙏🙏");
 const dnxrzl = {
+  //顶部应用栏向下滚动加阴影
   dnScroll: function () {
     var i = 1;
     $(document).scroll(function () {
-      if (i == 1) {
+      if (i == 1) {//阻止递归死循环
         i++;
         dnxrzl.dnScroll();
       }
@@ -16,6 +17,7 @@ const dnxrzl = {
       head.addClass("mdui-shadow-0");
     }
   },
+  //文章页内封面图片大小随窗口宽度变化而变化
   autoImg: function () {
     var i = 1;
     $(window).resize(function () {
@@ -32,6 +34,7 @@ const dnxrzl = {
       $(".postBackground").css("height", "220px");
     }
   },
+  //文章页内分享链接复制
   copyLink: function () {
     $(".copylink").click(function () {
       var input = $('<input id="copy" value = ' + window.location.href + ">");
@@ -51,22 +54,26 @@ const dnxrzl = {
       $("#copy").remove();
     });
   },
+  //页脚时间：年 的显示
   gettime: function () {
     var date = new Date();
     $("#timeyear").text(date.getFullYear());
   },
+  //获取主题色
   getcolor: function () {
     var bc = $(".mdui-toolbar").css("background-color");
     var bct = $(".mdui-toolbar").css("color");
     $("body").css("--themeColor", bc);
     $("body").css("--fontColor", bct);
   },
+  //获取代码高亮背景色为行号背景着色
   getcolor2: function () {
     setTimeout(() => {
       var bc = $(".mdui-typo pre code").css("background-color");
       $("body").css("--codeBColor", bc);
     }, 100);
   },
+  //每日时间问候
   welcome: function () {
     var welcome = $(".welcome_hello");
     var hour = new Date().getHours();
@@ -82,6 +89,7 @@ const dnxrzl = {
       welcome.text("晚安!");
     }
   },
+  //回到顶部
   totop: function () {
     $(".totop").click(function () {
       $("html,body").animate({ scrollTop: 0 }, 300);
@@ -95,6 +103,7 @@ const dnxrzl = {
       }
     });
   },
+  //说说点赞
   journlike: function () {
     $(document).on("click", ".likeb", function () {
       var likeNum = $(this).attr("id");
@@ -128,11 +137,13 @@ const dnxrzl = {
       }
     });
   },
+  //说说评论
   journComment: function () {
     $(document).on("click", ".chatb", function () {
       $(this).parents(".journBottom").next().toggle();
     });
   },
+  //图片预览初始化
   picInit: function () {
     if (window.location.pathname.search("/photos") != -1) {
       var psrc = $(".grid img");
@@ -148,6 +159,7 @@ const dnxrzl = {
         });
     });
   },
+  //移动端的文章目录按钮显示
   nodindex: function () {
     if (postyes != "true") {
       $(".nodindex").css("display", "none");
@@ -155,6 +167,7 @@ const dnxrzl = {
       $(".nodindex").removeAttr("style");
     }
   },
+  //文章目录随窗口变化而变化（移动端样式和PC端样式的切换）
   switchIndex: function () {
     var t = 0;
     var i = 0;
@@ -193,6 +206,7 @@ const dnxrzl = {
       }
     });
   },
+  //faccybox的实例（负责图片预览）
   mfancybox: function () {
     Fancybox.bind("[data-fancybox]", {
       Thumbs: false,
@@ -205,7 +219,9 @@ const dnxrzl = {
       
     });
   },
+  //相册图片的瀑布流显示和分类显示
   mistope: function () {
+    //图片瀑布流
     var $grid = $(".grid").isotope({
       itemSelector: ".grid-item",
       percentPosition: true,
@@ -218,6 +234,7 @@ const dnxrzl = {
       $grid.isotope();
     });
 
+    //图片分类
     var md = mdui.$;
     var inst = new mdui.Tab("#tab");
     md("#tab").on("change.mdui.tab", function (event) {
@@ -231,27 +248,27 @@ const dnxrzl = {
   },
   //一键加载内容列表
   ajaxPostLists: function () {
-    $("button.ajaxPostLists").click(function () {
-      var pageUrl = $("button.ajaxPostLists").attr("data-href");
+    $("button.ajaxPostLists").on('click',function () {
+      //currentPageUrl获取本页面内的下一页Url
+      let currentPageUrl = $("button.ajaxPostLists").attr("data-href");
       if ($("button.ajaxPostLists").attr("data-href") != "null") {
         $(".ajaxPostLists").text("正在加载...");
         $.ajax({
-          url: pageUrl,
+          url: currentPageUrl,
           type: "GET",
           dataType: "html",
           async: false,
           crossDomain: true,
-          headers: {},
           success: function (data) {
-            var a = $(data).find("button.ajaxPostLists").attr("data-href");
-            setTimeout(function () {
-              //日志页
-              if (pageUrl.search("journals") != -1) {
+            //netPageUrl获取本页面下一页内的下一页Url
+            let nextPageUrl = $(data).find("button.ajaxPostLists").attr("data-href");
+            let loadTime = setTimeout(() => { //加个延时好显示'正在加载...'提示
+              clearTimeout(loadTime);//加载前清除上一次点击定时器，阻止猛击时定时器时间累计
+              if (currentPageUrl.search("journals") != -1) {//日志页
                 $(".journalList li:last-child").after($(data).find(".journalList li"));
                 dnxrzl.picInit(); //初始化图箱
                 darkMode.firstDark(); //评论黑暗模式重载
-              } else if (pageUrl.search("archives") != -1) {
-                // 归档页
+              } else if (currentPageUrl.search("archives") != -1) {// 归档页
                 let aper = parseInt($(".archMain .archCell:last-child .archiveyear").text()); //前时间
                 let aafter = parseInt($(data).find(".archMain .archCell:first-child .archiveyear").text()); //后时间
                 let archCont = $(data).find(".archMain");
@@ -264,22 +281,22 @@ const dnxrzl = {
               } else {
                 $(".postLayout article:last-child").after($(data).find(".postLayout > article")); //其他页面（首页、分类、标签、搜索）
               }
-              if (a == undefined) {
+              if (nextPageUrl == undefined) {
                 $(".ajaxPostLists").text("没有了");
               } else {
                 $(".ajaxPostLists").text("加载更多");
               }
-            }, 400);
+            }, 300);
 
-            if (a == undefined) {
+            if (nextPageUrl == undefined) {//判断本页面内是否还有下一页，没有就添加标记'null',当加载时判断是否为'null',是则不加载
               $("button.ajaxPostLists").attr("data-href", "null");
             } else {
-              $("button.ajaxPostLists").attr("data-href", a);
+              $("button.ajaxPostLists").attr("data-href", nextPageUrl);
             }
           },
           timeout: 3000,
-          error: function () {
-            mdui.snackbar({
+          error: function () {//加载错误时的提示信息
+            mdui.snackbar({//调用mdui前端框架里的snackbar()方法显示提示信息
               message: "未响应！",
               position: "right-top",
             });
@@ -288,6 +305,7 @@ const dnxrzl = {
       }
     });
   },
+  //搜索按钮逻辑实现
   searchNew: function () {
     let dform = $('.searchInput'); 
     let dfinput = $('.searchInput input');
@@ -321,6 +339,7 @@ const dnxrzl = {
 
    
   },
+  //一言
   oneWord: function () {
     if(oneWord != 'false'){
     $.ajax({
