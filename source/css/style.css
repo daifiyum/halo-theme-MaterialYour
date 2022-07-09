@@ -958,6 +958,7 @@ aside.mdui-drawer {
 }
 .jpadding {
   padding: 10px;
+  border-radius: 8px !important;
 }
 
 .journalList li div.mdui-card div.mdui-typo {
