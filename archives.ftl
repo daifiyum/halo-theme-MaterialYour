@@ -3,7 +3,7 @@
 <main class="self-container mdui-container">
   <div class="containerLeft animate__animated post_animate">
     <article class="post">
-      <div class="mdui-card">
+      <div class="mdui-card archivesPadding">
       <div class="archives">
       <h3 class="pagetitle">归档</h3>
       <div class="archMain">
@@ -25,17 +25,19 @@
               </#list>
             </div>
         </#list>
-        </div>
+        </div>        
       </div>
-      </div>
-    </article>
 
-    <#if posts.totalPages gt 1>
+        <#if posts.totalPages gt 1>
         <@paginationTag method="archives" page="${posts.number}" total="${posts.totalPages}" display="3">
                 <#include "module/turnPages.ftl">
                 <@turnPages/>
         </@paginationTag>
-    </#if>
+        </#if>
+      </div>
+    </article>
+
+
   </div>  
 </main>
 

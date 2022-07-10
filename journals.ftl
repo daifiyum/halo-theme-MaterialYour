@@ -14,7 +14,7 @@
             </div>
             <div class="mdui-card jpadding wow animate__animated post_animate">
               <time>
-                ${journal.createTime?string('yyyy-MM-dd HH:mm')}
+                ${journal.createTime?string('yyyy年MM月dd日 HH:mm')}
               </time>
               <div class="mdui-typo">
                 ${journal.content!}
@@ -39,10 +39,15 @@
         </ul>
         
         
-          <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
+          <#--  <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
           <#if pagination.hasNext>
               <button data-href="${pagination.nextPageFullPath!}" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-ripple mdui-center ajaxPostLists">加载更多</button>
           </#if>
+        </@paginationTag>  -->
+
+        <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
+                <#include "module/turnPages.ftl">
+                <@turnPages/>
         </@paginationTag>
         
 

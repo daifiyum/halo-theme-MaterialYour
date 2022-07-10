@@ -158,6 +158,7 @@ const dnxrzl = {
           "data-src": $(this).attr("src"),
         });
     });
+    
   },
   //移动端的文章目录按钮显示
   nodindex: function () {
@@ -248,11 +249,15 @@ const dnxrzl = {
   },
   //一键加载内容列表
   ajaxPostLists: function () {
+    let loadingText = $('.loadingText');
+    let loadingSvg = $('.loadingSvg');
+    let ajaxPostLists = $("button.ajaxPostLists");
     $("button.ajaxPostLists").on('click',function () {
       //currentPageUrl获取本页面内的下一页Url
       let currentPageUrl = $("button.ajaxPostLists").attr("data-href");
-      if ($("button.ajaxPostLists").attr("data-href") != "null") {
-        $(".ajaxPostLists").text("正在加载...");
+      if (ajaxPostLists.attr("data-href") != "null") {
+        loadingText.addClass('reloadingText')
+        loadingSvg.addClass('startLoadingSvg');
         $.ajax({
           url: currentPageUrl,
           type: "GET",
@@ -280,18 +285,22 @@ const dnxrzl = {
                 }
               } else {
                 $(".postLayout article:last-child").after($(data).find(".postLayout > article")); //其他页面（首页、分类、标签、搜索）
+                dnxrzl.mylazyload();
               }
               if (nextPageUrl == undefined) {
-                $(".ajaxPostLists").text("没有了");
+                loadingText.text("没有啦");
+                loadingText.removeClass('reloadingText');
+                loadingSvg.removeClass('startLoadingSvg');
               } else {
-                $(".ajaxPostLists").text("加载更多");
+                loadingText.removeClass('reloadingText');
+                loadingSvg.removeClass('startLoadingSvg');
               }
             }, 300);
 
             if (nextPageUrl == undefined) {//判断本页面内是否还有下一页，没有就添加标记'null',当加载时判断是否为'null',是则不加载
-              $("button.ajaxPostLists").attr("data-href", "null");
+              ajaxPostLists.attr("data-href", "null");
             } else {
-              $("button.ajaxPostLists").attr("data-href", nextPageUrl);
+              ajaxPostLists.attr("data-href", nextPageUrl);
             }
           },
           timeout: 3000,
@@ -354,6 +363,11 @@ const dnxrzl = {
       }
     })
   }
+  },
+  //图片懒加载
+  mylazyload: function () {
+    let img = $('.lazyloadImg');
+    img.lazyload();
   }
 }
 

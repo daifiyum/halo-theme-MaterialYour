@@ -31,6 +31,7 @@ body {
 
 .self-container {
   max-width: 1000px; /*窗口最大时的容器固定宽度*/
+  margin-bottom: 20px;
 }
 
 /*自适应搜索框*/
@@ -617,7 +618,6 @@ li.toc-list-item {
 /*页脚*/
 footer {
   padding: 16px 0 16px 0;
-  margin-top: 16px;
   /* background-color: #f9f9f9; */
 }
 
@@ -659,8 +659,10 @@ footer a {
 }
 /*归档*/
 .archives {
-  padding: 16px;
   transition: all .3s;
+}
+.archivesPadding {
+  padding: 16px;
 }
 .archiveyear {
   margin: 20px 0 20px 0;
@@ -899,13 +901,36 @@ footer a {
   /*snackbar优化*/
   min-height: 56px !important;
 }
+/*一键加载*/
 button.mdui-btn.ajaxPostLists {
   width: 160px;
   border-radius: 50px;
   background: #fff;
   height: 40px;
-  margin-top: 40px;
+  margin: 30px 0 10px 0;
+  border: 1px solid #eee;
+  position: relative;
 }
+.reloadingText {
+  display: none;
+}
+.loadingSvg {
+  display: none;
+  position: absolute;
+  left: 0; 
+  top: 0; 
+  right: 0; 
+  bottom: 0;
+  margin: auto;
+}
+.startLoadingSvg {
+  display: block;
+}
+.loadingSvg svg path,
+.loadingSvg svg rect {
+  fill: var(--fontColor);
+}
+/*一键加载结束*/
 .mdui-typo blockquote {
   margin: 1em 3em 1em 0px;
 }
@@ -936,7 +961,7 @@ aside.mdui-drawer {
 
 /*journals*/
 .journals {
-  padding: 16px 16px 30px 16px;
+  padding: 16px;
   height: 100%;
 }
 .journalList > li {
@@ -960,7 +985,9 @@ aside.mdui-drawer {
   padding: 10px;
   border-radius: 8px !important;
 }
-
+.jpadding time {
+  color: rgb(128 128 128 / 58%);
+}
 .journalList li div.mdui-card div.mdui-typo {
   padding: 0px;
   margin: 10px 0px 10px 0px;

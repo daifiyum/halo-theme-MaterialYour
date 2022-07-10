@@ -33,6 +33,7 @@
     <script src="${settings.comment_js!'${theme_base!}/source/libs/halo-comment.min.js'}"></script>
     <#include "config.ftl">
     <@config/>
+    <script type="text/javascript" src="${theme_base!}/source/libs/lazyload.min.js"></script>
     <script src="${theme_base!}/source/js/darkMode.js"></script>
 </head>
 <body class="${settings.mdui_theme!default} ${(settings.drawer_enabled!default) ? string('mdui-drawer-body-left','')}">

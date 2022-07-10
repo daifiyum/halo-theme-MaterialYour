@@ -14,9 +14,8 @@
                 <h4>${team.team}</h4>
                 <div class="linksBlock">
                   <#list team.links as link>
-                    
                       <a class="linkCard" href="${link.url!}" target="_blank">
-                        <img class="mdui-img-circle" src="${link.logo}"/>
+                        <img class="lazyloadImg mdui-img-circle" data-src="${link.logo}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
                         <div class="linkDesc">
                         <span>${link.name!}</span>
                         <span>${link.description!}</span>
@@ -37,8 +36,5 @@
     <!--  评论区结束  -->
     </div>
   </div>  
-    <script>
-        $('img').lazyload();
-    </script>
 </main>
 </@layout>
