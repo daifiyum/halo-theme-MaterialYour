@@ -90,3 +90,6 @@
 .mdui-theme-layout-dark .jpadding time {
     color: #fff;
 }
+.mdui-theme-layout-dark .nothings img {
+    filter: none;
+}

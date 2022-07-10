@@ -1,12 +1,12 @@
 <#include "module/macro.ftl">
 <@layout title="相册 - ${blog_title!}">
-<#--  偷懒，水个相册页  -->
 <main class="self-container mdui-container">
   <div class="containerLeft animate__animated post_animate">
     <article class="post">
       <div class="mdui-card">
       <div class="photos">
         <h3 class="pagetitle">相册</h3>
+        <#if photos.content?size gt 0>
             <@photoTag method="listTeams">
             <div class="mdui-tab" id="tab">
               <a href="#all" class="mdui-ripple">所有</a>
@@ -41,6 +41,12 @@
             </#list>
             </div>
             </@photoTag>
+          <#else>
+          <div class="nothings">
+              <img src="${theme_base!}/source/images/nothing.svg" alt="">
+              <p>空空如也</p>
+          </div>
+          </#if>
       </div>
       </div>
     </article>       

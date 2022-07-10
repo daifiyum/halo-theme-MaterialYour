@@ -823,7 +823,7 @@ footer a {
 }
 /*无内容样式*/
 .nothings {
-  height: calc(100vh - 450px);
+  height: 300px;
   padding: 16px;
   display: flex;
   flex-direction: column;

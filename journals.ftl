@@ -6,6 +6,7 @@
       <div class="mdui-card">
       <div class="journals">
         <h3 class="pagetitle">说说</h3>
+        <#if journals.content?size gt 0>
         <ul class="journalList">
         <#list journals.content as journal>
           <li>
@@ -37,19 +38,19 @@
           </li>
         </#list>
         </ul>
-        
-        
-          <#--  <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
-          <#if pagination.hasNext>
-              <button data-href="${pagination.nextPageFullPath!}" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-ripple mdui-center ajaxPostLists">加载更多</button>
-          </#if>
-        </@paginationTag>  -->
+        <#else>
+          <div class="nothings">
+              <img src="${theme_base!}/source/images/nothing.svg" alt="">
+              <p>空空如也</p>
+          </div>
+        </#if>
 
+        <#if journals.totalPages gt 1>
         <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
                 <#include "module/turnPages.ftl">
                 <@turnPages/>
         </@paginationTag>
-        
+        </#if>
 
       </div>
       </div>

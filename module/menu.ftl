@@ -84,7 +84,7 @@
   </div>
   <ul class="mdui-list" mdui-collapse="{accordion: true}">
     <@menuTag method="tree">
-      <#list menus as menu>
+      <#list menus?sort_by('priority') as menu>
         <#if menu.children?? && menu.children?size gt 0>
             <li class="mdui-collapse-item">
               <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
