@@ -93,3 +93,15 @@
 .mdui-theme-layout-dark .nothings img {
     filter: none;
 }
+.mdui-theme-layout-dark .mdui-typo code .ln-bg {
+    background-color: #424242;
+}
+.mdui-theme-layout-dark .mdui-typo pre code::before {
+    background-color: #505050;
+}
+.mdui-theme-layout-dark .mdui-typo pre code {
+    background-image: none;
+}
+.mdui-theme-layout-dark .mdui-typo pre code::-webkit-scrollbar {
+    background: inherit;
+}

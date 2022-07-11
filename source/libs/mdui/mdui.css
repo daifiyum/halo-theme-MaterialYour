@@ -5625,9 +5625,8 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
   .mdui-typo pre {
-    padding: 12px 16px;
     overflow-x: auto;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    /* border: 1px solid rgba(0, 0, 0, 0.12); */
     border-radius: 2px;
     -webkit-overflow-scrolling: touch;
   }

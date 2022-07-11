@@ -4,8 +4,6 @@
     <#--  let my_music = '${settings.music!}';  -->
     new WOW().init();
     hljs.highlightAll();
-    hljsln.initLineNumbersOnLoad();
-    hljs.initCopyButtonOnLoad();
     
     let postyes = '${is_post?? ? string('true','false')}';
 

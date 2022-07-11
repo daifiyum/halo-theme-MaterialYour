@@ -5,7 +5,8 @@ const dnxrzl = {
   dnScroll: function () {
     var i = 1;
     $(document).scroll(function () {
-      if (i == 1) {//阻止递归死循环
+      if (i == 1) {
+        //阻止递归死循环
         i++;
         dnxrzl.dnScroll();
       }
@@ -36,22 +37,13 @@ const dnxrzl = {
   },
   //文章页内分享链接复制
   copyLink: function () {
-    $(".copylink").click(function () {
-      var input = $('<input id="copy" value = ' + window.location.href + ">");
-      $("body").prepend(input);
-      $("body").find("input").eq(0).select();
-
-      try {
-        var successful = document.execCommand("copy");
-        var msg = successful ? "链接已复制" : "unsuccessful";
-        mdui.snackbar({
-          message: msg,
-          position: "right-top",
-        });
-      } catch (err) {
-        alert("Oops, unable to copy");
-      }
-      $("#copy").remove();
+    let postclipboard = new ClipboardJS(".postCopyLink");
+    postclipboard.on("success", function (e) {
+      mdui.snackbar({
+        //调用mdui前端框架里的snackbar()方法显示提示信息
+        message: "已复制",
+        position: "right-top",
+      });
     });
   },
   //页脚时间：年 的显示
@@ -65,13 +57,6 @@ const dnxrzl = {
     var bct = $(".mdui-toolbar").css("color");
     $("body").css("--themeColor", bc);
     $("body").css("--fontColor", bct);
-  },
-  //获取代码高亮背景色为行号背景着色
-  getcolor2: function () {
-    setTimeout(() => {
-      var bc = $(".mdui-typo pre code").css("background-color");
-      $("body").css("--codeBColor", bc);
-    }, 100);
   },
   //每日时间问候
   welcome: function () {
@@ -158,7 +143,6 @@ const dnxrzl = {
           "data-src": $(this).attr("src"),
         });
     });
-    
   },
   //移动端的文章目录按钮显示
   nodindex: function () {
@@ -180,7 +164,7 @@ const dnxrzl = {
         hasInnerContainers: true,
         headingsOffset: 80,
         scrollSmoothOffset: -80,
-        fixedSidebarOffset: 'auto',
+        fixedSidebarOffset: "auto",
       });
       if ($(".pindex,.mobileIndex").children().length == 0) {
         t++;
@@ -217,7 +201,6 @@ const dnxrzl = {
       Toolbar: {
         display: ["zoom", "download", "close"], //灯箱顶部小工具
       },
-      
     });
   },
   //相册图片的瀑布流显示和分类显示
@@ -249,15 +232,15 @@ const dnxrzl = {
   },
   //一键加载内容列表
   ajaxPostLists: function () {
-    let loadingText = $('.loadingText');
-    let loadingSvg = $('.loadingSvg');
+    let loadingText = $(".loadingText");
+    let loadingSvg = $(".loadingSvg");
     let ajaxPostLists = $("button.ajaxPostLists");
-    $("button.ajaxPostLists").on('click',function () {
+    $("button.ajaxPostLists").on("click", function () {
       //currentPageUrl获取本页面内的下一页Url
       let currentPageUrl = $("button.ajaxPostLists").attr("data-href");
       if (ajaxPostLists.attr("data-href") != "null") {
-        loadingText.addClass('reloadingText')
-        loadingSvg.addClass('startLoadingSvg');
+        loadingText.addClass("reloadingText");
+        loadingSvg.addClass("startLoadingSvg");
         $.ajax({
           url: currentPageUrl,
           type: "GET",
@@ -267,13 +250,16 @@ const dnxrzl = {
           success: function (data) {
             //netPageUrl获取本页面下一页内的下一页Url
             let nextPageUrl = $(data).find("button.ajaxPostLists").attr("data-href");
-            let loadTime = setTimeout(() => { //加个延时好显示'正在加载...'提示
-              clearTimeout(loadTime);//加载前清除上一次点击定时器，阻止猛击时定时器时间累计
-              if (currentPageUrl.search("journals") != -1) {//日志页
+            let loadTime = setTimeout(() => {
+              //加个延时好显示'正在加载...'提示
+              clearTimeout(loadTime); //加载前清除上一次点击定时器，阻止猛击时定时器时间累计
+              if (currentPageUrl.search("journals") != -1) {
+                //日志页
                 $(".journalList li:last-child").after($(data).find(".journalList li"));
                 dnxrzl.picInit(); //初始化图箱
                 darkMode.firstDark(); //评论黑暗模式重载
-              } else if (currentPageUrl.search("archives") != -1) {// 归档页
+              } else if (currentPageUrl.search("archives") != -1) {
+                // 归档页
                 let aper = parseInt($(".archMain .archCell:last-child .archiveyear").text()); //前时间
                 let aafter = parseInt($(data).find(".archMain .archCell:first-child .archiveyear").text()); //后时间
                 let archCont = $(data).find(".archMain");
@@ -289,23 +275,26 @@ const dnxrzl = {
               }
               if (nextPageUrl == undefined) {
                 loadingText.text("没有啦");
-                loadingText.removeClass('reloadingText');
-                loadingSvg.removeClass('startLoadingSvg');
+                loadingText.removeClass("reloadingText");
+                loadingSvg.removeClass("startLoadingSvg");
               } else {
-                loadingText.removeClass('reloadingText');
-                loadingSvg.removeClass('startLoadingSvg');
+                loadingText.removeClass("reloadingText");
+                loadingSvg.removeClass("startLoadingSvg");
               }
             }, 300);
 
-            if (nextPageUrl == undefined) {//判断本页面内是否还有下一页，没有就添加标记'null',当加载时判断是否为'null',是则不加载
+            if (nextPageUrl == undefined) {
+              //判断本页面内是否还有下一页，没有就添加标记'null',当加载时判断是否为'null',是则不加载
               ajaxPostLists.attr("data-href", "null");
             } else {
               ajaxPostLists.attr("data-href", nextPageUrl);
             }
           },
           timeout: 3000,
-          error: function () {//加载错误时的提示信息
-            mdui.snackbar({//调用mdui前端框架里的snackbar()方法显示提示信息
+          error: function () {
+            //加载错误时的提示信息
+            mdui.snackbar({
+              //调用mdui前端框架里的snackbar()方法显示提示信息
               message: "未响应！",
               position: "right-top",
             });
@@ -316,60 +305,108 @@ const dnxrzl = {
   },
   //搜索按钮逻辑实现
   searchNew: function () {
-    let dform = $('.searchInput'); 
-    let dfinput = $('.searchInput input');
-    $(document).on('click','.searchNew,.searchInput .back',function(){
-      if(dform.css('display') == 'none'){
-        dform.css('display','flex');
+    let dform = $(".searchInput");
+    let dfinput = $(".searchInput input");
+    $(document).on("click", ".searchNew,.searchInput .back", function () {
+      if (dform.css("display") == "none") {
+        dform.css("display", "flex");
         dfinput.focus();
-        
-      }else{
-        dform.css('display','none');
+      } else {
+        dform.css("display", "none");
       }
-      
-    })
-    
-    dfinput.blur(function(){
-      dform.css('display','none');
     });
 
-    $(document).on('mousedown','.backClose',function(){
+    dfinput.blur(function () {
+      dform.css("display", "none");
+    });
+
+    $(document).on("mousedown", ".backClose", function () {
       event.preventDefault();
-      dfinput.val('');
-      dform.removeClass('notEmoty');
-    })
-    $('.searchInput input').bind("input propertychange",function(event){
-      if(dfinput.val().length != 0){
-        dform.addClass('notEmoty');
-      }else{
-        dform.removeClass('notEmoty');
+      dfinput.val("");
+      dform.removeClass("notEmoty");
+    });
+    $(".searchInput input").bind("input propertychange", function (event) {
+      if (dfinput.val().length != 0) {
+        dform.addClass("notEmoty");
+      } else {
+        dform.removeClass("notEmoty");
       }
     });
-
-   
   },
   //一言
   oneWord: function () {
-    if(oneWord != 'false'){
-    $.ajax({
-      url: 'https://v1.hitokoto.cn/' + mconfig,
-      type: "GET",
-      dataType: "json",
-      data: aWordConfig,
-      async: true,
-      crossDomain: true,
-      success: function (data) {
-        $('.welcome_descr').text(data.hitokoto + '——' + (data.from_who != null ? data.from_who:'') + '「' + (data.from != null ? data.from:'') + '」');
-      }
-    })
-  }
+    if (oneWord != "false") {
+      $.ajax({
+        url: "https://v1.hitokoto.cn/" + mconfig,
+        type: "GET",
+        dataType: "json",
+        data: aWordConfig,
+        async: true,
+        crossDomain: true,
+        success: function (data) {
+          $(".welcome_descr").text(data.hitokoto + "——" + (data.from_who != null ? data.from_who : "") + "「" + (data.from != null ? data.from : "") + "」");
+        },
+      });
+    }
   },
   //图片懒加载
   mylazyload: function () {
-    let img = $('.lazyloadImg');
+    let img = $(".lazyloadImg");
     img.lazyload();
-  }
-}
+  },
+  //代码复制
+  codeCopy: function () {
+    let clipboard = new ClipboardJS(".mybtn");
+    clipboard.on("success", function (e) {
+      // console.log('jjj');
+      e.clearSelection(); //清除选中样式（蓝色）
+      mdui.snackbar({
+        //调用mdui前端框架里的snackbar()方法显示提示信息
+        message: "已复制",
+        position: "right-top",
+      });
+    });
+  },
+  //代码高亮部分处理，引用https://github.com/LIlGG/halo-theme-sakura/blob/2ea256e0bf8b55bc62c7cf942675facfb4d9c04b/script/app.js#L387
+  dealCodeHighlight: function () {
+    var hljsNum = 1;
+    $(".mdui-typo pre").each(function () {
+      $(this).children("code").attr('id','hljs'+hljsNum)
+      var copyButton = '<button class="mybtn" data-clipboard-target=\"'+ '#hljs'+hljsNum +'\" mdui-tooltip="{content: \'复制\'}"><i class="mdui-icon material-icons">content_copy</i></button>' 
+      hljsNum++;
+      $(this).append(copyButton);
+      var $code = $(this).children("code");
+      var classNameStr = $code[0].className;
+      var classNameArr = classNameStr.split(" ");
+
+      var lang = "";
+      classNameArr.some(function (className) {
+        if (className.indexOf("language-") > -1) {
+          lang = className.substring(className.indexOf("-") + 1, className.length);
+          return true;
+        }
+      });
+
+      //检测语言是否存在，不存在则自动检测
+      var language = hljs.getLanguage(lang.toLowerCase());
+      if (language == undefined) {
+        // 启用自动检测
+        var autolanguage = hljs.highlightAuto($code.text());
+        $code.removeClass("language-" + lang);
+        lang = autolanguage.language;
+
+        if (lang == undefined) {
+          lang = "text";
+        }
+        $code.addClass("language-" + lang);
+      } else {
+        lang = language.name;
+      }
+
+      $code.attr("data-rel", lang.toUpperCase());
+    });
+  },
+};
 
 !(function () {
   document.addEventListener("DOMContentLoaded", function () {

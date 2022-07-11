@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="pright">
-                        <button class="copylink mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme">
+                        <button class="postCopyLink mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme" data-clipboard-text="${blog_url!}${post.fullPath!}">
                             <i class="mdui-icon material-icons">share</i>
                         </button>
                     </div>

@@ -1,4 +1,15 @@
-pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}
+.hljs .ln-bg {
+   background-color: #333;
+}
+.hljsln,
+.hljsln .ln-bg {
+   background-color: #333;
+   color: #FFCDD2;
+   overflow-x: auto;
+   padding: 1em;
+}
+/*!
    Theme: Agate
    Author: (c) Taufik Nurrohman <hi@taufik-nurrohman.com>
    Maintainer: @taufik-nurrohman

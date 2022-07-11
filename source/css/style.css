@@ -423,9 +423,7 @@ article a {
   flex-direction: column;
   justify-content: space-between;
 }
-#id {
-  display: none !important;
-}
+
 .comments {
   border-radius: 0;
 }
@@ -1108,83 +1106,53 @@ aside.mdui-drawer {
 }
 /*代码高亮*/
 .mdui-typo pre {
-  padding: 0;
+  border-radius: 5px;
   position: relative;
-  overflow: hidden;
-  border: none;
   -webkit-box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
   box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
-.hljs {
-  font-size: 15px;
-  overflow-y: hidden;
-}
-.hljsln {
-  display: block;
-  margin-left: 2.4em;
-  padding-left: 0.7em !important;
-}
-.hljsln::-webkit-scrollbar {
-  height: 15px;
+.mdui-typo pre code {
+  padding: 40px 10px 10px 10px !important;
 }
 
-.hljsln::-webkit-scrollbar-thumb {
-  background: rgb(0 0 0 / 18%);
-}
-.hljsln::-webkit-scrollbar-thumb:hover {
-  background: #797979;
-}
-.hljsln::-webkit-scrollbar-thumb:active {
-  background: #949494;
-}
-.hljsln .ln-bg {
+.mdui-typo pre code::before {
   position: absolute;
-  z-index: 1;
   top: 0;
   left: 0;
-  width: 2.4em;
-  height: 100%;
-  background: var(--codeBColor);
+  right: 0;
+  content: attr(data-rel);
+  height: 30px;
+  background-color: var(--themeColor);
+  color: var(--fontColor);
+  line-height: 30px;
+  padding-left: 10px;
+  /* border-bottom: 1px solid #e0e0e0; */
 }
-.hljsln .ln-num {
+
+.mybtn {
   position: absolute;
-  z-index: 2;
-  left: 0;
-  width: 2.4em;
-  height: 1em;
-  text-align: center;
-  display: inline-block;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.hljsln .ln-num::before {
-  color: #fff;
-  text-shadow: 0px 0px 2px #000000;
-  font-style: normal;
-  font-weight: normal;
-  content: attr(data-num);
-}
-.hljsln .ln-eof {
-  display: inline-block;
+  top: 0;
+  right: 0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: initial;
+  padding: 0 10px 0 0;
 }
 
-/*复制按钮样式*/
-.hljs-button {
-  background-color: #fff;
-  opacity: 0.7;
-  padding: 0 5px !important;
-  margin: 10px;
-  border-radius: 2px !important;
-  color: #333;
-  border: none !important;
-  box-shadow: 0 1px 1px rgb(0 0 0 / 12%), 0 1px 1px rgb(0 0 0 / 24%);
+.mybtn i {
+  font-size: 17px;
+  color: var(--fontColor);
+  cursor: pointer;
 }
-
+.mdui-typo pre code::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  background: #fff;
+}
 
 /*重写样式*/
 .partTitle {
