@@ -102,6 +102,9 @@
 .mdui-theme-layout-dark .mdui-typo pre code {
     background-image: none;
 }
-.mdui-theme-layout-dark .mdui-typo pre code::-webkit-scrollbar {
+/* .mdui-theme-layout-dark .mdui-typo pre code::-webkit-scrollbar {
     background: inherit;
+} */
+.mdui-theme-layout-dark .mdui-typo pre code::-webkit-scrollbar-thumb {
+    background-color: #505050;
 }

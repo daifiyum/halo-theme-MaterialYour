@@ -1108,8 +1108,8 @@ aside.mdui-drawer {
 .mdui-typo pre {
   border-radius: 0;
   position: relative;
-  -webkit-box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
-  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
 }
 
 .mdui-typo pre code {
@@ -1151,9 +1151,21 @@ aside.mdui-drawer {
 .mdui-typo pre code::-webkit-scrollbar {
   width: 5px;
   height: 10px;
-  background: #fff;
+  background: inherit;
 }
-
+.mdui-typo pre code::-webkit-scrollbar-thumb {
+  background-color: var(--themeColor);
+}
+/*行号样式*/
+.hljs-ln-numbers {
+  text-align: center;
+  color: #ccc;
+  vertical-align: top;
+  padding-right: 5px;
+}
+.hljs-ln-code {
+  padding-left: 10px !important;
+}
 /*重写样式*/
 .partTitle {
   padding: 20px;

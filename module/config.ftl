@@ -4,7 +4,7 @@
     <#--  let my_music = '${settings.music!}';  -->
     new WOW().init();
     hljs.highlightAll();
-    
+    <#--  hljs.initLineNumbersOnLoad();  -->
     let postyes = '${is_post?? ? string('true','false')}';
 
     let oneWord = '${(settings.aWord_enabled!default) ? string('true','false')}';

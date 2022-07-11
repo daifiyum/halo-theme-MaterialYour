@@ -371,8 +371,10 @@ const dnxrzl = {
   dealCodeHighlight: function () {
     var hljsNum = 1;
     $(".mdui-typo pre").each(function () {
-      $(this).children("code").attr('id','hljs'+hljsNum)
-      var copyButton = '<button class="mybtn" data-clipboard-target=\"'+ '#hljs'+hljsNum +'\" mdui-tooltip="{content: \'复制\'}"><i class="mdui-icon material-icons">content_copy</i></button>' 
+      $(this)
+        .children("code")
+        .attr("id", "hljs" + hljsNum);
+      var copyButton = '<button class="mybtn" data-clipboard-target="' + "#hljs" + hljsNum + '" mdui-tooltip="{content: \'复制\'}"><i class="mdui-icon material-icons">content_copy</i></button>';
       hljsNum++;
       $(this).append(copyButton);
       var $code = $(this).children("code");
@@ -404,6 +406,11 @@ const dnxrzl = {
       }
 
       $code.attr("data-rel", lang.toUpperCase());
+    });
+
+    //行号
+    $(".mdui-typo pre code").each(function (i, block) {
+      hljs.lineNumbersBlock(block);
     });
   },
 };

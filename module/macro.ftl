@@ -25,6 +25,7 @@
     <script src="${theme_base!}/source/libs/tocbot/tocbot.min.js"></script>
     <script src="${theme_base!}/source/libs/fancybox/fancybox.umd.js"></script>    
     <script src="${theme_base!}/source/libs/highlight/highlight.min.js"></script>
+    <script src="${theme_base!}/source/libs/highlightjs-line-numbers.min.js"></script>
     <script src="${theme_base!}/source/libs/clipboard.min.js"></script>
     <script src="${theme_base!}/source/libs/isotope.pkgd.min.js"></script>
     <script src="${theme_base!}/source/libs/imagesloaded.pkgd.min.js"></script>
