@@ -101,7 +101,6 @@ const darkMode = {
   autoDark: function () {
     if (autoDarkOpt) {
       let hour = new Date().getHours();
-      console.log(hour);
       if (hour >= 18 || hour < 6) {
         this.setFlag();
         localStorage.setItem("autoDark", "true");
