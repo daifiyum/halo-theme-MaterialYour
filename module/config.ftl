@@ -6,6 +6,7 @@
 
     let postyes = '${is_post?? ? string('true','false')}';
 
+    //一言相关
     let oneWord = '${(settings.aWord_enabled!default) ? string('true','false')}';
     let wordType = '${settings.aWordType!default}';
     let multipleWType = '${settings.aWordTypes!}';
@@ -26,6 +27,8 @@
     };
     </#if>
 
+    //自动黑暗模式
+    let autoDarkOpt = ${settings.autoDarkOpt ? string('true','false')};
 </script>
 
 

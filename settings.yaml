@@ -164,7 +164,19 @@ style:
       type: radio
       data-type: bool
       default: false
-      description: '是否开启黑暗模式，默认为 false'
+      description: '是否开启黑暗模式，默认为关闭'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    autoDarkOpt:
+      name: autoDarkOpt
+      label: 自动黑暗模式
+      type: radio
+      data-type: bool
+      default: false
+      description: '开启后18点-6点区间内自动黑暗模式，默认关闭'
       options:
         - value: true
           label: 开启

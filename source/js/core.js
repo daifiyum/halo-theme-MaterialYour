@@ -417,6 +417,17 @@ const dnxrzl = {
       }
     });
   },
+  //自动黑暗模式开启一次性提示
+  autoDarkTips:function () {
+    if(localStorage.getItem("autoDark") == 'true' && localStorage.getItem("darkTipsOk") == null){
+      localStorage.setItem('darkTipsOk',0);
+      mdui.snackbar({
+        //调用mdui前端框架里的snackbar()方法显示提示信息
+        message: "已自动切换黑暗模式🌙",
+        position: "right-top",
+      });
+    }
+  }
 };
 
 !(function () {

@@ -62,20 +62,20 @@ const darkMode = {
   },
 
   firstDark: function () {
-      if (this.getFlag("night") == "true") {
-        this.setDark();
-        let commentyes = this.commentInit();
-        if (commentyes) {
-          this.commentDark("true");
-        }
-      } else {
-        this.removeFlag();
-        this.removeDark();
-        let commentyes = this.commentInit();
-        if (commentyes) {
-          this.commentDark("false");
-        }
+    if (this.getFlag("night") == "true") {
+      this.setDark();
+      let commentyes = this.commentInit();
+      if (commentyes) {
+        this.commentDark("true");
       }
+    } else {
+      this.removeFlag();
+      this.removeDark();
+      let commentyes = this.commentInit();
+      if (commentyes) {
+        this.commentDark("false");
+      }
+    }
   },
   clickDark: function () {
     $(".darkButton").on("click", () => {
@@ -98,11 +98,28 @@ const darkMode = {
       }
     });
   },
+  autoDark: function () {
+    if (autoDarkOpt) {
+      let hour = new Date().getHours();
+      console.log(hour);
+      if (hour >= 18 || hour < 6) {
+        this.setFlag();
+        localStorage.setItem("autoDark", "true");
+      } else {
+        if (localStorage.getItem("autoDark") != "false") {
+          localStorage.setItem("autoDark", "false");
+          this.removeFlag();
+          localStorage.removeItem('darkTipsOk');
+        }
+      }
+    }
+  },
 };
 
 !(function () {
   document.addEventListener("DOMContentLoaded", () => {
     darkMode.clickDark();
+    darkMode.autoDark();
     darkMode.firstDark();
   });
 })();
