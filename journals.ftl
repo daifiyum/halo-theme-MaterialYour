@@ -9,7 +9,7 @@
         <#if journals.content?size gt 0>
         <ul class="journalList">
         <#list journals.content as journal>
-          <li>
+          <li class="journItem">
             <div class="journLine">
               <i class="mdui-icon material-icons">create</i>
             </div>

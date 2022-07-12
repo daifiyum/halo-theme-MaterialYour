@@ -255,11 +255,10 @@ const dnxrzl = {
               clearTimeout(loadTime); //加载前清除上一次点击定时器，阻止猛击时定时器时间累计
               if (currentPageUrl.search("journals") != -1) {
                 //日志页
-                $(".journalList li:last-child").after($(data).find(".journalList li"));
+                $(".journalList .journItem:last-child").after($(data).find(".journalList .journItem"));
                 dnxrzl.picInit(); //初始化图箱
                 darkMode.firstDark(); //评论黑暗模式重载
-                // hljs.highlightAll();
-                dnxrzl.dealCodeHighlight(); //代码高亮样式初始化
+                dnxrzl.dealCodeHighlight(); //代码高亮重载
               } else if (currentPageUrl.search("archives") != -1) {
                 // 归档页
                 let aper = parseInt($(".archMain .archCell:last-child .archiveyear").text()); //前时间
