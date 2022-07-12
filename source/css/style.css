@@ -953,7 +953,7 @@ aside.mdui-drawer {
   padding: 16px;
   height: 100%;
 }
-.journalList > li {
+.journItem {
   margin: 10px 0px;
   padding-bottom: 35px;
 }
@@ -966,7 +966,7 @@ aside.mdui-drawer {
   margin-bottom: 30px;
 }
 
-.journalList li {
+.journItem {
   padding-left: 40px;
   position: relative;
 }
