@@ -258,6 +258,8 @@ const dnxrzl = {
                 $(".journalList li:last-child").after($(data).find(".journalList li"));
                 dnxrzl.picInit(); //初始化图箱
                 darkMode.firstDark(); //评论黑暗模式重载
+                // hljs.highlightAll();
+                dnxrzl.dealCodeHighlight(); //代码高亮样式初始化
               } else if (currentPageUrl.search("archives") != -1) {
                 // 归档页
                 let aper = parseInt($(".archMain .archCell:last-child .archiveyear").text()); //前时间
@@ -401,16 +403,19 @@ const dnxrzl = {
           lang = "text";
         }
         $code.addClass("language-" + lang);
-      } else {
-        lang = language.name;
       }
-
-      $code.attr("data-rel", lang.toUpperCase());
     });
 
     //行号
     $(".mdui-typo pre code").each(function (i, block) {
       hljs.lineNumbersBlock(block);
+    });
+    //高亮初始化
+    $(".mdui-typo pre code").each(function () {
+      if (!$(this).hasClass("inited")) {
+        hljs.highlightElement(this);
+        $(this).addClass("inited");
+      }
     });
   },
 };
