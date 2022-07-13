@@ -13,7 +13,7 @@
     <title>${title}</title>
     <link rel="stylesheet" href="${theme_base!}/source/libs/mdui/mdui.css"/>
     <link rel="stylesheet" href="${theme_base!}/source/css/selfFonts.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/style.min.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/tocbot/tocbot.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/fancybox/fancybox.css">
     <#--  <link rel="stylesheet" href="${theme_base!}/source/libs/mp/mp.css">  -->
@@ -51,7 +51,7 @@
     <@footer/>
     
 <script src="${theme_base!}/source/libs/mdui/mdui.min.js"></script>
-<script src="${theme_base!}/source/js/core.js"></script>
+<script src="${theme_base!}/source/js/core.min.js"></script>
 <#--  <script src="${theme_base!}/source/libs/mp/mp.js"></script>  -->
 </body>
 </html>

@@ -53,10 +53,11 @@ const dnxrzl = {
   },
   //获取主题色
   getcolor: function () {
-    var bc = $(".mdui-toolbar").css("background-color");
-    var bct = $(".mdui-toolbar").css("color");
-    $("body").css("--themeColor", bc);
-    $("body").css("--fontColor", bct);
+    let body = $('body');
+    let bc = $(".mdui-toolbar").css("background-color");
+    let bct = $(".mdui-toolbar").css("color");
+    body.css("--themeColor", bc);
+    body.css("--fontColor", bct);
   },
   //每日时间问候
   welcome: function () {

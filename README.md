@@ -55,6 +55,19 @@
 
 有大佬支持再好不过了，当然，任何想一起完善这款主题的人都可以做出你的宝贵贡献
 
+### 开发
+```
+git clone git@github.com:daifiyum/halo-theme-MaterialYour.git
+```
+```
+注意：下面安装的所有包都是开发依赖，这些包也仅仅是为了优化css和js
+npm install
+```
+**注意**：
+不要去修改自动生成的style.min.css和core.min.js,可以去修改style.css和core.js，之后npm run build一下就好了
+
+
+
 ### 吐槽
 
 主题代码写的很乱、很水，我想干作者咋办？推荐顺着网线来干我😜
