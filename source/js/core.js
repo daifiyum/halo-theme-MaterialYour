@@ -260,6 +260,7 @@ const dnxrzl = {
                 dnxrzl.picInit(); //初始化图箱
                 darkMode.firstDark(); //评论黑暗模式重载
                 dnxrzl.dealCodeHighlight(); //代码高亮重载
+                dnxrzl.table();//表格重载
               } else if (currentPageUrl.search("archives") != -1) {
                 // 归档页
                 let aper = parseInt($(".archMain .archCell:last-child .archiveyear").text()); //前时间
@@ -428,6 +429,10 @@ const dnxrzl = {
         position: "right-top",
       });
     }
+  },
+  //文章表格支持
+  table:function() {
+    $('.mdui-typo>table').addClass('mdui-table');
   }
 };
 
