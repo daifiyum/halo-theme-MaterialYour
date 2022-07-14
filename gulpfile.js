@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const { src, dest } = require("gulp");
-const {series} = require('gulp');
+const {series, parallel} = require('gulp');
 const header = require('gulp-header');
 const autoprefix = require("gulp-autoprefixer");
 const minifyCSS = require("gulp-csso");
@@ -78,4 +78,4 @@ exports.mduiCss = mduiCss;
 exports.css = css;
 exports.js = js;
 //series顺序执行，从左往右，parallel同步执行，所有一起执行
-exports.default =series(css,js);
+exports.default = series(css,js);
