@@ -7,10 +7,6 @@ const rename = require("gulp-rename");
 const babel = require("gulp-babel");
 const uglify = require("gulp-uglify");
 
-// gulp.task('log', done => {
-//     console.log('Hello World!');
-//     done();
-//  });
 
 gulp.task("css", function () {
   return src(["./source/css/style.css", "./source/css/darkMode.css"])
@@ -21,7 +17,7 @@ gulp.task("css", function () {
     )
     .pipe(
       autoprefix({
-        overrideBrowserslist: ["> 0%"],
+        overrideBrowserslist: ["> 2%", "last 2 versions", "not ie 6-9"],
         cascade: false,
       })
     )
