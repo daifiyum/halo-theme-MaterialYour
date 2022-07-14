@@ -55,18 +55,15 @@
 
 有大佬支持再好不过了，当然，任何想一起完善这款主题的人都可以做出你的宝贵贡献
 
-### 开发
+### 开发注意
 ```
 git clone git@github.com:daifiyum/halo-theme-MaterialYour.git
 ```
+下面安装的所有包都是开发依赖，这些包也仅仅是为了优化css和js
 ```
-注意：下面安装的所有包都是开发依赖，这些包也仅仅是为了优化css和js
 npm install
 ```
-**注意**：
-不要去修改自动生成的style.min.css和core.min.js,可以去修改style.css和core.js，之后npm run build一下就好了
-
-
+不要去修改自动生成的*.min.css和*.min.js文件,应对*.css和*.js文件进行修改，之后输入命令`gulp`构建一下就好了
 
 ### 吐槽
 
