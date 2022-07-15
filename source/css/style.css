@@ -424,6 +424,9 @@ footer a {
 /*返回顶部结束*/
 
 /*文章页*/
+article a {
+  text-decoration: none;
+}
 .post-page {
   display: flex;
 } 
@@ -494,6 +497,9 @@ footer a {
 }
 .mdui-typo a::before {
   background-color: var(--fontColor);
+}
+.mdui-typo blockquote {
+  margin: 1em 3em 1em 0;
 }
 .smallbu,
 .smallbu2 {
