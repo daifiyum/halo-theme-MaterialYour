@@ -56,8 +56,7 @@ const dnxrzl = {
     let body = $('body');
     let bc = $(".mdui-toolbar").css("background-color");
     let bct = $(".mdui-toolbar").css("color");
-    body.css("--themeColor", bc);
-    body.css("--fontColor", bct);
+    body.css({"--themeColor": bc, "--fontColor": bct});
   },
   //每日时间问候
   welcome: function () {
@@ -273,7 +272,7 @@ const dnxrzl = {
                   $(".archMain:last-child").after(archCont);
                 }
               } else {
-                $(".postLayout article:last-child").after($(data).find(".postLayout > article")); //其他页面（首页、分类、标签、搜索）
+                $(".post-list article:last-child").after($(data).find(".post-list > article")); //其他页面（首页、分类、标签、搜索）
                 dnxrzl.mylazyload();
               }
               if (nextPageUrl == undefined) {
@@ -432,8 +431,9 @@ const dnxrzl = {
   },
   //文章表格支持
   table:function() {
-    $('.mdui-typo>table').addClass('mdui-table');
-  }
+    $('.mdui-typo>table').addClass('mdui-table mdui-table-hoverable').wrap('<div class="mdui-table-fluid">')
+  },
+
 };
 
 !(function () {

@@ -1,7 +1,7 @@
 <#include "module/macro.ftl">
 <@layout title="分类：${category.name} - ${blog_title!}">
-<main class="self-container mdui-container">
-    <div class="containerLeft">
+<main class="my-container mdui-container">
+    <div class="">
     <div class="partTitle">
             <div class="ITitle">
                 分类：${category.name}

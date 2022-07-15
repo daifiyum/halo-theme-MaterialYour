@@ -1,49 +1,44 @@
 <#macro postList>
         <#if posts.content?size gt 0>
-        <div class="postLayout">
+        <div class="post-list">
         <#list posts.content as post>
-            <article class="wow animate__fadeIn animate__animated animate__slow">
-                <a href="${post.fullPath!}">
-                    <div class="mdui-card plistLayout">
-                        <div class="selfLayout">
-                            <div class="left">
-                                <div class="mdui-card-primary">
-                                    <div class="mdui-card-primary-subtitle">
-                                        <#if post.topped>
-                                        <span class="topped">
-                                            置顶
-                                        </span>
-                                        </#if>
-                                        <#if (post.categories)?? && post.categories?size !=0>
-                                            <#list post.categories as categorie>
-                                                <span class="cated">${categorie.name!}</span>
-                                            </#list>
-                                        </#if>
-                                    </div>
-                                    <div class="mdui-card-primary-title">${post.title}</div>
-                                </div>
-                                <div class="mdui-card-content">${post.summary!}</div>
-                            </div>
-                            <#if post.thumbnail?? && post.thumbnail!=''>
-                                <div class="right">
-                                    <div class="mdui-card-media">
-                                        <img class="lazyloadImg" data-src="${post.thumbnail!}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
-                                    </div>
-                                </div>
-                            </#if>
-                        </div>
-                        <div class="postBottom">
-                            <div class="mdui-card-primary-subtitle">
-                                ${post.createTime?string["yyyy年MM月dd日"]!}</div>
-                            <div class="mdui-card-primary-subtitle">${post.commentCount!}条评论</div>
-                        </div>
+            <article class="mdui-card post-item wow animate__fadeIn animate__animated animate__slow">
+                <div class="post-list-main">
+                    <#if (post.topped) || ((post.categories)?? && post.categories?size !=0) >
+                    <div class="post-list-top mdui-card-primary-subtitle">
+                        <#if post.topped>
+                            <span class="topped">置顶</span>
+                        </#if>
+                        <#if (post.categories)?? && post.categories?size !=0>
+                        <#list post.categories as categorie>
+                            <a href="${categorie.fullPath!}">${categorie.name!}</a>
+                        </#list>
+                        </#if>
                     </div>
-                </a>
+                    </#if>
+                    
+                    <a href="${post.fullPath!}" class="post-list-content">
+                        <div class="post-l-left">
+                            <div class="post-list-title">${post.title}</div>
+                            <div class="post-list-summary">${post.summary!}</div>
+                        </div>
+                        <#if post.thumbnail?? && post.thumbnail!=''>
+                        <div class="post-l-right">
+                            <img class="post-list-thumbnail lazyloadImg" data-src="${post.thumbnail!}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+                        </div>
+                        </#if>
+                    </a>
+                </div>
+                
+                <div class="post-list-bottom">
+                    <div class="mdui-card-primary-subtitle">${post.createTime?string["yyyy年MM月dd日"]!}</div>
+                    <div class="mdui-card-primary-subtitle">${post.commentCount!}条评论</div>
+                </div>
             </article>
         </#list>
          </div>
         <#else>
-        <div class="mdui-card">
+        <div class="my-card nothing-layout">
             <div class="nothings">
                 <img src="${theme_base!}/source/images/nothing.svg" alt="">
                 <p>空空如也</p>

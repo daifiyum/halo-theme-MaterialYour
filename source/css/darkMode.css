@@ -108,3 +108,6 @@
 .mdui-theme-layout-dark .mdui-typo pre code::-webkit-scrollbar-thumb {
     background-color: #505050;
 }
+.mdui-theme-layout-dark .my-card {
+    background-color: #373737 !important;
+}

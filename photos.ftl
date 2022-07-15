@@ -1,9 +1,9 @@
 <#include "module/macro.ftl">
 <@layout title="相册 - ${blog_title!}">
-<main class="self-container mdui-container">
-  <div class="containerLeft animate__animated post_animate">
-    <article class="post">
-      <div class="mdui-card">
+<main class="my-container mdui-container">
+  <div class="animate__animated post_animate">
+    <article class="post my-card">
+      
       <div class="photos">
         <h3 class="pagetitle">相册</h3>
         <#if photos.content?size gt 0>
@@ -48,7 +48,7 @@
           </div>
           </#if>
       </div>
-      </div>
+      
     </article>       
   </div>  
 </main>

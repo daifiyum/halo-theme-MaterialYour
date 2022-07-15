@@ -1,9 +1,9 @@
 <#include "module/macro.ftl">
 <@layout title="${post.title!} - ${blog_title!}">
-<main class="self-container mdui-container line-numbers">
-    <div class="postContainerLeft animate__animated post_animate">
-        <article class="post">
-            <div class="mdui-card">
+<main class="my-container post-page mdui-container line-numbers">
+    <div class="post-page-left animate__animated post_animate">
+        <article class="my-article my-card">
+            
                 <#if post.thumbnail?? && post.thumbnail!=''>
                     <div class="mdui-card-media">
                         <div class="postBackground" style="background-image: url('${post.thumbnail!}')"></div>
@@ -33,7 +33,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="mdui-card-content mdui-typo js-toc-content">
+                <div class="typo-layout mdui-typo js-toc-content">
                     ${post.formatContent!}
                 </div>
                 <div class="pbottom mdui-card-primary-subtitle">
@@ -56,7 +56,7 @@
                         </#if>
                     </div>
                 </div>
-            </div>
+           
         </article>
         <div class="nextPost">
             <#if prevPost??>
@@ -82,7 +82,7 @@
                     </button>
             </#if>
         </div>
-        <div class="comments mdui-card">
+        <div class="comments my-card">
         <!--  评论区域  -->
         <#include "module/comment.ftl">
         <@comment post=post type="post" />
@@ -90,9 +90,9 @@
         </div>
     </div>
 
-    <div class="containerRight animate__animated post_animate">
+    <div class="post-page-right animate__animated post_animate">
         <div class="sticky">
-            <div class="mdui-card">
+            <div class="my-card">
                 <div class="mdui-typo-title">目录</div>
                 <div class="pindex index">
                 

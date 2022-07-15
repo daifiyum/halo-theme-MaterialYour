@@ -1,9 +1,9 @@
 <#include "module/macro.ftl">
 <@layout title="归档 - ${blog_title!}">
-<main class="self-container mdui-container">
-  <div class="containerLeft animate__animated post_animate">
-    <article class="post">
-      <div class="mdui-card archivesPadding">
+<main class="my-container mdui-container">
+  <div class="animate__animated post_animate">
+    <article class="my-article my-card archivesPadding">
+      
       <div class="archives">
       <h3 class="pagetitle">归档</h3>
       <div class="archMain">
@@ -34,7 +34,7 @@
                 <@turnPages/>
         </@paginationTag>
         </#if>
-      </div>
+     
     </article>
 
 

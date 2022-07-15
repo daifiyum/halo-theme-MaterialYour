@@ -1,9 +1,9 @@
 <#include "module/macro.ftl">
 <@layout title="分类列表 - ${blog_title!}">
-<main class="self-container mdui-container">
-  <div class="containerLeft animate__animated post_animate">
-    <article class="post">
-      <div class="mdui-card">
+<main class="my-container mdui-container">
+  <div class="animate__animated post_animate">
+    <article class="my-article my-card">
+    
       <div class="categories">
         <h3 class="pagetitle">分类</h3>
         <ul>
@@ -21,7 +21,7 @@
 
       </div>
         
-      </div>
+     
     </article>
   </div>  
 </main>

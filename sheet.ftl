@@ -1,9 +1,9 @@
 <#include "module/macro.ftl">
 <@layout title="${sheet.title!} - ${blog_title!}">
-<main class="self-container mdui-container">
-    <div class="containerLeft animate__animated post_animate">
-        <article class="post">
-            <div class="mdui-card">
+<main class="my-container mdui-container">
+    <div class="animate__animated post_animate">
+        <article class="my-article my-card">
+            
                 <#if post.thumbnail?? && post.thumbnail!=''>
                     <div class="mdui-card-media">
                         <div class="postBackground" style="background-image: url('${post.thumbnail!}')"></div>
@@ -33,12 +33,12 @@
                         </button>
                     </div>
                 </div>
-                <div class="mdui-typo mdui-card-content">
+                <div class="mdui-typo typo-layout">
                     ${sheet.formatContent!}
                 </div>
-            </div>
+            
         </article>
-        <div class="comments mdui-card">
+        <div class="comments my-card">
         <!--  评论区域  -->
         <#include "module/comment.ftl">
         <@comment post=sheet type="sheet" />

@@ -1,7 +1,7 @@
 <#include "module/macro.ftl">
 <@layout title="搜索 - ${blog_title!}">
-<main class="self-container mdui-container">
-    <div class="containerLeft">
+<main class="my-container mdui-container">
+    
         <div class="partTitle">
             <div class="ITitle">
                 搜索：${keyword!}
@@ -16,7 +16,7 @@
                 <@turnPages/>
             </@paginationTag>
         </#if>
-    </div>
+    
 
     
 </main>

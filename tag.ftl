@@ -1,7 +1,7 @@
 <#include "module/macro.ftl">
 <@layout title="标签：${tag.name} - ${blog_title!}">
-    <main class="self-container mdui-container">
-    <div class="containerLeft">
+    <main class="my-container mdui-container">
+    <div class="">
         <div class="partTitle">
             <div class="ITitle">
                 标签：${tag.name}
