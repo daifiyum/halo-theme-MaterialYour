@@ -32,6 +32,7 @@ body {
   background-color: #fff;
   -webkit-box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
   box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1) !important;
 }
 .my-container {
   max-width: 1000px; /*窗口最大时的容器固定宽度*/
