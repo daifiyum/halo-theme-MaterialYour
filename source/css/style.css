@@ -650,6 +650,9 @@ footer a {
 .mobileIndex ol li {
   list-style: none;
 }
+.mobileIndex a {
+  text-decoration: none;
+}
 li.toc-list-item {
   line-height: 2;
   white-space: nowrap;
@@ -662,6 +665,11 @@ li.toc-list-item {
 }
 .is-active-link::before {
   background-color: var(--fontColor) !important;
+}
+@media (min-width: 800px) {
+  .nodesk {
+    display: none;
+  }
 }
 /*文章页侧边栏结束*/
 
