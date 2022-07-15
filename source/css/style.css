@@ -825,6 +825,7 @@ li.toc-list-item {
 }
 .journal-content {
   margin: 10px 0 10px 0;
+  word-break: break-all;
 }
 journal-content img {
   width: 60%;
