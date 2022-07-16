@@ -1,0 +1,49 @@
+/*分类*/
+.categories {
+  padding: 16px;
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+}
+.pagetitle {
+  font-size: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(68 68 68 / 10%);
+  margin-bottom: 20px;
+}
+.catelist {
+  display: flex;
+  align-items: center;
+  line-height: 40px;
+  i {
+    color: rgb(0 0 0 / 73%);
+    opacity: 0.6;
+    margin: 0 20px 0 20px;
+  }
+  li {
+    display: flex;
+    flex-grow: 1;
+  }
+  li a {
+    width: 100%;
+    color: rgb(0 0 0 / 73%);
+    text-decoration: none;
+  }
+  li a:hover {
+    color: var(--fontColor);
+  }
+  &:hover i {
+    color: var(--fontColor);
+  }
+}
+
+.mdui-theme-layout-dark .catelist i {
+  color: #fff;
+}
+
+.mdui-theme-layout-dark .catelist li a {
+  color: #fff;
+}
+
+/*分类结束*/

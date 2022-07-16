@@ -1,6 +1,6 @@
-<#include "socialLink.ftl">
+<#include "social_link.ftl">
 
-<#macro homeBanner>
+<#macro home_banner>
             <div class="home-banner animate__animated">
             <div class="welcome_media">
                 <img src="${settings.indeximg!'${theme_base!}/source/images/indexBack.jpg'}" alt="">
@@ -13,7 +13,7 @@
                 </#if>
                 </div>
                 <div class="welcome_contact">
-                    <@socialLink/>
+                    <@social_link/>
                 </div>
             </div>
             <div class="welcome__figures">

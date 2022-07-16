@@ -1,4 +1,4 @@
-<#macro postList>
+<#macro post_list>
         <#if posts.content?size gt 0>
         <div class="post-list">
         <#list posts.content as post>

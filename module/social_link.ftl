@@ -1,4 +1,4 @@
-<#macro socialLink>
+<#macro social_link>
 
     <#if settings.github??>
         

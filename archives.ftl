@@ -30,8 +30,8 @@
 
         <#if posts.totalPages gt 1>
         <@paginationTag method="archives" page="${posts.number}" total="${posts.totalPages}" display="3">
-                <#include "module/turnPages.ftl">
-                <@turnPages/>
+                <#include "module/turn_pages.ftl">
+                <@turn_pages/>
         </@paginationTag>
         </#if>
      

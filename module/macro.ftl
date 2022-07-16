@@ -12,14 +12,13 @@
     <@global.head />
     <title>${title}</title>
     <link rel="stylesheet" href="${theme_base!}/source/libs/mdui/mdui.min.css"/>
-    <link rel="stylesheet" href="${theme_base!}/source/css/myFonts.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/fonts_css/my_fonts.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/min/style.min.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/tocbot/tocbot.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/fancybox/fancybox.css">
     <#--  <link rel="stylesheet" href="${theme_base!}/source/libs/mp/mp.css">  -->
     <link rel="stylesheet" href="${theme_base!}/source/libs/highlight/styles/${settings.code_css!}.min.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/animate.min.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/min/darkMode.min.css">    
     <script src="${theme_base!}/source/libs/jquery.min.js"></script>
     <script src="${theme_base!}/source/libs/wow.min.js"></script>    
     <script src="${theme_base!}/source/libs/tocbot/tocbot.min.js"></script>
@@ -34,7 +33,7 @@
     <#include "config.ftl">
     <@config/>
     <script type="text/javascript" src="${theme_base!}/source/libs/lazyload.min.js"></script>
-    <script src="${theme_base!}/source/js/min/darkMode.min.js"></script>
+    <script src="${theme_base!}/source/js/min/dark_mode.min.js"></script>
 </head>
 <body class="${settings.mdui_theme!default} ${(settings.drawer_enabled!default) ? string('mdui-drawer-body-left','')}">
     <script>

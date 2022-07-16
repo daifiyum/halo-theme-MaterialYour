@@ -5,6 +5,7 @@ const header = require('gulp-header');
 const autoprefix = require("gulp-autoprefixer");
 const minifyCSS = require("gulp-csso");
 const purgecss = require("gulp-purgecss");
+const less = require('gulp-less');
 const rename = require("gulp-rename");
 const babel = require("gulp-babel");
 const uglify = require("gulp-uglify");
@@ -21,28 +22,33 @@ const template = ['/**',
     ''
 ].join('\n');
 
-//部分css压缩，不要对字体图标css进行压缩，因为下面有对无用css进行删除，那么没有被用到的图标css将会被删掉
 function css() {
-  return src(["./source/css/style.css", "./source/css/darkMode.css"])
-      .pipe(
-        purgecss({
-          content: ["./**/*.ftl", "./source/libs/**/*.css", "./source/**/*.js"],
-        })
-      )
-      .pipe(
-        autoprefix({
-          overrideBrowserslist: ["> 2%", "last 2 versions", "not ie 6-9"],
-          cascade: false,
-        })
-      )
-      .pipe(minifyCSS())
-      .pipe(header(template, { pkg : pkg } ))
-      .pipe(
-        rename({
-          suffix: ".min",
-        })
-      )
-      .pipe(dest("./source/css/min"));
+  return src(['./source/css/less/main.less'])
+  .pipe(less())
+  .pipe(
+    purgecss({
+      content: ["./**/*.ftl", "./source/libs/**/*.css", "./source/**/*.js"],
+    })
+  )
+  .pipe(
+    autoprefix({
+      overrideBrowserslist: ["> 2%", "last 2 versions", "not ie 6-9"],
+      cascade: false,
+    })
+  )
+  .pipe(minifyCSS())
+  .pipe(header(template, { pkg : pkg } ))
+  .pipe(
+    rename({
+      suffix: ".min",
+    })
+  )
+  .pipe(
+    rename({
+      basename: "style.min",
+    })
+  )
+  .pipe(dest("./source/css/min"));
 }
 
 //由于可能对mdui框架内的mdui.css进行更改，所以加入mdui.css的压缩
@@ -74,6 +80,8 @@ function js() {
     )
     .pipe(dest("./source/js/min"));
 }
+
+
 exports.mduiCss = mduiCss;
 exports.css = css;
 exports.js = js;

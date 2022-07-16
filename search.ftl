@@ -8,12 +8,12 @@
             </div>
         </div>
  
-        <#include "module/postList.ftl">
-        <@postList/>
+        <#include "module/post_list.ftl">
+        <@post_list/>
         <#if posts.totalPages gt 1>
             <@paginationTag method="search" page="${posts.number}" total="${posts.totalPages}" display="3" keyword="${keyword!}">
-                <#include "module/turnPages.ftl">
-                <@turnPages/>
+                <#include "module/turn_pages.ftl">
+                <@turn_pages/>
             </@paginationTag>
         </#if>
     

@@ -1,4 +1,4 @@
-<#macro turnPages>
+<#macro turn_pages>
     <#if pagination.hasNext>
         <button data-href="${pagination.nextPageFullPath!}" class="mdui-btn mdui-ripple mdui-center ajaxPostLists">
             <span class="loadingText">加载更多</span>

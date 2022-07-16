@@ -12,8 +12,8 @@
         <@postList/>
         <#if posts.totalPages gt 1>
             <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">
-                <#include "module/turnPages.ftl">
-                <@turnPages/>
+                <#include "module/turn_pages.ftl">
+                <@turn_pages/>
             </@paginationTag>
         </#if>
     </div>

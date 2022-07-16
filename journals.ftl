@@ -48,8 +48,8 @@
       </div>
      <#if journals.totalPages gt 1>
         <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
-                <#include "module/turnPages.ftl">
-                <@turnPages/>
+                <#include "module/turn_pages.ftl">
+                <@turn_pages/>
         </@paginationTag>
         </#if>
     </article>
