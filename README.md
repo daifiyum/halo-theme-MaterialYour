@@ -55,15 +55,19 @@
 
 有大佬支持再好不过了，当然，任何想一起完善这款主题的人都可以做出你的宝贵贡献
 
-### 开发注意
+### 开发小提示
+克隆项目
 ```
 git clone git@github.com:daifiyum/halo-theme-MaterialYour.git
 ```
-下面安装的所有包都是开发依赖，这些包也仅仅是为了优化css和js
+下面安装的所有包都是开发依赖，这些包也仅仅是为了构建css和js
 ```
 npm install
 ```
-不要去修改自动生成的*.min.css和*.min.js文件,应对*.css和*.js文件进行修改，之后输入命令`gulp`构建一下就好了
+需要对css和js进行修改的，可以去./source/css/less文件夹下和./source/js文件夹下修改，不要修改min文件夹内的代码，因为他是自动生成的，完成修改后，输入下面命令构建一下
+```
+npm run build
+```
 
 ### 吐槽
 
