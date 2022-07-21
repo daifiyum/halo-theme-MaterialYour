@@ -90,28 +90,6 @@
         </div>
     </div>
 
-    <div class="post-page-right animate__animated post_animate">
-        <div class="sticky">
-            <div class="my-card">
-                <div class="mdui-typo-title">目录</div>
-                <div class="pindex index">
-                
-                </div>
-            </div>
-
-        </div>
-    </div>
 </main>
-<div class="mdui-dialog" id="indexDialog">
-    <div class="mdui-dialog-title">目录</div>
-    <div class="mdui-dialog-content">
-      <div class="mobileIndex indexs">
-        
-      </div>
-    </div>
-    <div class="mdui-dialog-actions">
-      <button class="mdui-btn mdui-ripple" mdui-dialog-close>OK</button>
-    </div>
-</div>
 
 </@layout>

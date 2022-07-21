@@ -21,11 +21,7 @@
              
             </form>
             
-            <#--  <#if is_post??>  -->
-                <a href="javascript:;" class="mdui-btn mdui-btn-icon nodesk nodindex" mdui-dialog="{target: '#indexDialog'}">
-                    <i class="mdui-icon material-icons">assignment</i>
-                </a>
-            <#--  </#if>  -->
+
 
             <a href="/journals" class="mdui-btn mdui-btn-icon nodesk">
                 <i class="mdui-icon material-icons">self_improvement</i>
@@ -68,9 +64,11 @@
                 <i class="mdui-icon material-icons">brightness_6</i>
               </a>   
             </#if>
-
-            <#--  <img class="author mdui-img-circle mdui-btn-icon" src="/upload/2022/01/au-65a514587a4b42708c44865880348565.jpg" mdui-tooltip="{content: 'dnxrzl'}"/>  -->
-
+            
+            <a class="mdui-btn mdui-btn-icon button-toc" mdui-drawer="{target: '#right-drawer'}">
+                <i class="mdui-icon material-icons">assignment</i>
+            </a>   
+            
         </div> 
     </div>
 </header>
@@ -82,6 +80,7 @@
     <img class="mdui-img-circle mdui-shadow-2" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="">
     <span class="drawTitle">${user.nickname!}</span>
   </div>
+
   <ul class="mdui-list" mdui-collapse="{accordion: true}">
     <@menuTag method="tree">
       <#list menus?sort_by('priority') as menu>
@@ -114,5 +113,23 @@
     </@menuTag>
   </ul>
 </aside>
+
+<#--  <div class="mdui-drawer mdui-drawer-right my-card" mdui-drawer="{target: '#rd'}">
+    ... drawer content ...
+    hhhhh
+</div>  -->
+
+<div class="mdui-drawer mdui-drawer-right ${(settings.toc_drawer_enabled!default) ? string('','mdui-drawer-close')} my-toc" id="right-drawer">
+   <div class="toc-header">
+    <i class="mdui-icon material-icons">book</i>
+    <div class="toc-title">
+      <span>目录</span>
+      <button class="mdui-btn mdui-btn-icon" mdui-drawer-close> <i class="mdui-icon material-icons">close</i></button>
+    </div>
+   </div>
+
+  <div class="toc-content"></div>
+    
+</div>
       
 </@menuTag>

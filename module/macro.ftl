@@ -35,7 +35,7 @@
     <script type="text/javascript" src="${theme_base!}/source/libs/lazyload.min.js"></script>
     <script src="${theme_base!}/source/js/min/dark_mode.min.js"></script>
 </head>
-<body class="${settings.mdui_theme!default} ${(settings.drawer_enabled!default) ? string('mdui-drawer-body-left','')}">
+<body class="${(is_post?? && settings.toc_drawer_enabled!default) ? string('mdui-drawer-body-right','')} ${settings.mdui_theme!default} ${(settings.drawer_enabled!default) ? string('mdui-drawer-body-left','')}">
     <script>
         if(darkMode.getFlag('night') != null){
             darkMode.firstDark();

@@ -144,52 +144,24 @@ const dnxrzl = {
         });
     });
   },
-  //移动端的文章目录按钮显示
-  nodindex: function () {
-    if (postyes != "true") {
-      $(".nodindex").css("display", "none");
-    } else {
-      $(".nodindex").removeAttr("style");
-    }
-  },
   //文章目录随窗口变化而变化（移动端样式和PC端样式的切换）
   switchIndex: function () {
-    var t = 0;
-    var i = 0;
-    function tocbotInit(optCss) {
       tocbot.init({
-        tocSelector: optCss,
+        tocSelector: ".toc-content",
         contentSelector: ".js-toc-content",
         headingSelector: "h1, h2, h3, h4, h5, h6",
         hasInnerContainers: true,
         headingsOffset: 80,
         scrollSmoothOffset: -80,
-        fixedSidebarOffset: "auto",
       });
-      if ($(".pindex,.mobileIndex").children().length == 0) {
-        t++;
-        $(".pindex,.mobileIndex").html("<p>文章无目录</p>");
+      if(postyes == 'true' && $('.toc-content').children().length != 0){
+        $('.button-toc').css('display','block');
+        $('.my-toc').css('display','block');
+      }else{
+        $('.button-toc').css('display','none');
+        $('body').removeClass('mdui-drawer-body-right');
       }
-    }
-
-    if (window.innerWidth > 800) {
-      tocbotInit(".index");
-    } else {
-      tocbotInit(".indexs");
-    }
-
-    var resizeTimer = null;
-    $(window).resize(function () {
-      if (i == 0 && t == 0) {
-        if (resizeTimer) {
-          clearTimeout(resizeTimer);
-        }
-        resizeTimer = setTimeout(function () {
-          dnxrzl.switchIndex();
-          i++;
-        }, 500);
-      }
-    });
+      
   },
   //faccybox的实例（负责图片预览）
   mfancybox: function () {
