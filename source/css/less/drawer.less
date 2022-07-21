@@ -1,14 +1,19 @@
+@color: #eee;
 /*抽屉相关*/
 .headerLogo {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   padding: 16px;
   border-bottom: 1px solid rgb(128 128 128 / 30%);
   background-size: cover;
   background-position: center;
+  // margin: 10px;
+  height: 130px;
+  // border-radius: 10px;
   img {
-    margin-top: 40px;
+    
   }
   span {
     margin: 20px 0 0 0;
@@ -16,9 +21,30 @@
   img {
     width: 50px;
     height: 50px;
-    margin-right: 10px;
+    
   }
 }
+.swtoc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  .swtocl {
+    padding: 5px 20px 5px 20px;
+    border: 1px solid @color;
+    border-radius: 50px 0 0 50px;
+    cursor: pointer;
+  }
+  .swtocr {
+    padding: 5px 20px 5px 20px;
+    border-top: 1px solid @color;
+    border-bottom: 1px solid @color;
+    border-right: 1px solid @color;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+  }
+}
+
 .drawTitle {
   color: #fff;
   text-shadow: #f5f8fa 0px 0px 14px;
@@ -36,14 +62,25 @@ aside.mdui-drawer {
     background-color: rgb(0 0 0 / 4%);
   }
 }
+.toc-content {
+  display: none;
+  margin: 10px;
+  a {
+    text-decoration: none;
+  }
+  .toc-list { 
+  overflow: hidden;
+  position: relative;
+  }
+}
 @media (min-width: 1024px) {
-  .mdui-drawer {
-    /*桌面端时抽屉高度*/
-    top: 64px;
-  }
-  .headerLogo {
-    /*镇站图*/
-    display: none !important;
-  }
+  // .mdui-drawer {
+  //   /*桌面端时抽屉高度*/
+  //   top: 64px;
+  // }
+  // .headerLogo {
+  //   /*镇站图*/
+  //   display: none !important;
+  // }
 }
 /*抽屉相关结束*/

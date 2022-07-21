@@ -182,18 +182,6 @@ style:
           label: 开启
         - value: false
           label: 关闭
-    toc_drawer_enabled:
-      name: toc_drawer_enabled
-      label: 目录状态
-      type: radio
-      data-type: bool
-      default: false
-      description: '是否开启展开状态？默认隐藏'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     drawer_enabled:
       name: drawer_enabled
       label: 抽屉状态
