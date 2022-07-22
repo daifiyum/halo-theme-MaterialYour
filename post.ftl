@@ -1,7 +1,7 @@
 <#include "module/macro.ftl">
 <@layout title="${post.title!} - ${blog_title!}">
-<main class="my-container post-page mdui-container line-numbers">
-    <div class="post-page-left animate__animated post_animate">
+<main class="my-container mdui-container line-numbers">
+    <div class="animate__animated post_animate">
         <article class="my-article my-card">
             
                 <#if post.thumbnail?? && post.thumbnail!=''>
