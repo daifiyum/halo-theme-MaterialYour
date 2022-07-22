@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px 10px 10px 10px;
   .swtocl {
     padding: 5px 20px 5px 20px;
     border: 1px solid @color;
@@ -68,8 +68,30 @@ aside.mdui-drawer {
   .toc-list { 
   overflow: hidden;
   position: relative;
+  a::before {
+    display: none;
+  }
+  }
+  // .toc-list .toc-list-item .toc-list a::before {
+  //   display: none;
+  // }
+  >.toc-list {
+    padding: 0;
+  } 
+  >.toc-list a::before {
+    display: none;
+  }
+  .is-active-link {
+    padding: 5px;
+    background: var(--themeColor);
+    display: block;
+    border-radius: 4px;
+    color: var(--fontColor);
   }
 }
+
+
+
 @media (min-width: 1024px) {
   // .mdui-drawer {
   //   /*桌面端时抽屉高度*/

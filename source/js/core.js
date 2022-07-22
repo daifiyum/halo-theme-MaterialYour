@@ -154,6 +154,7 @@ const dnxrzl = {
         headingsOffset: 80,
         scrollSmoothOffset: -80,
       });
+      
       if(postyes == 'true' && $('.toc-content').children().length != 0) {
         $('.swmenu').css('display','none');
         $('.toc-content').css('display','block');
