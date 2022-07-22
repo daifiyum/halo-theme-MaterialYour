@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="${theme_base!}/source/libs/fancybox/fancybox.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/highlight/styles/${settings.code_css!}.min.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/animate.min.css">
+    <link rel="stylesheet" href="${theme_base!}/source/libs/katex.min.css" />
     <script src="${theme_base!}/source/libs/jquery.min.js"></script>
     <script src="${theme_base!}/source/libs/wow.min.js"></script>    
     <script src="${theme_base!}/source/libs/tocbot/tocbot.min.js"></script>
