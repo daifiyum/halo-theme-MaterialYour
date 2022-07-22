@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="${theme_base!}/source/css/min/style.min.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/tocbot/tocbot.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/fancybox/fancybox.css">
-    <#--  <link rel="stylesheet" href="${theme_base!}/source/libs/mp/mp.css">  -->
     <link rel="stylesheet" href="${theme_base!}/source/libs/highlight/styles/${settings.code_css!}.min.css">
     <link rel="stylesheet" href="${theme_base!}/source/libs/animate.min.css">
     <script src="${theme_base!}/source/libs/jquery.min.js"></script>
@@ -35,7 +34,7 @@
     <script type="text/javascript" src="${theme_base!}/source/libs/lazyload.min.js"></script>
     <script src="${theme_base!}/source/js/min/dark_mode.min.js"></script>
 </head>
-<body class="${settings.mdui_theme!default} ${(settings.drawer_enabled!default) ? string('mdui-drawer-body-left','')}">
+<body class="${settings.mdui_theme!default}">
     <script>
         if(darkMode.getFlag('night') != null){
             darkMode.firstDark();
@@ -51,7 +50,6 @@
     
 <script src="${theme_base!}/source/libs/mdui/mdui.min.js"></script>
 <script src="${theme_base!}/source/js/min/core.min.js"></script>
-<#--  <script src="${theme_base!}/source/libs/mp/mp.js"></script>  -->
 </body>
 </html>
 </#macro>

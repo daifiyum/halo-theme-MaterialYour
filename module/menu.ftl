@@ -2,7 +2,7 @@
 <header>
     <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-shadow-0 mdui-appbar-inset mdui-drawer-full-height" id="selfAppbar">
         <div class="nse mdui-toolbar mdui-color-theme-100 mdui-text-color-theme">
-            <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}">
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{overlay: true, target: '#left-drawer'}">
                 <i class="mdui-icon material-icons">menu</i>
             </a>
             <a href="${blog_url!}" class="mdui-typo-title">${blog_title!}</a>
@@ -16,63 +16,27 @@
                 <button type="button" class="back mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">arrow_back</i></button>
                 <button type="button" class="searchIcon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
                 <input type="text" placeholder="搜索一下..." name="keyword">
-                <#--  <div class="seh"></div>  -->
                 <button type="button" class="backClose mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
              
             </form>
             
-
-
             <a href="/journals" class="mdui-btn mdui-btn-icon nodesk">
                 <i class="mdui-icon material-icons">self_improvement</i>
             </a>
 
-            <!--Material Player-->
-            <#--  <div id="mp-music" data-autoplay="no" data-autoplaynext="yes" style="overflow: initial;line-height: 0px;">
-                
-                <div id="mp-music-wrapper" class="">
-                    <div id="mp-list" style="display: none; width: 0px;">
-                        <ul>
-
-                        </ul>
-                    </div>
-                    <div id="mp-ctrl-group">
-                        <button id="mp-music-album" class=" mp-mdl-button  mp-mdl-button--icon"><i
-                                class="material-icons">music_note</i>
-                        </button>
-                        <div id="mp-hide-panel">
-                            <div id="mp-ctrl-panel">
-                                <button id="mp-music-volume" class=" mp-mdl-button mp-mdl-button--icon"><i
-                                        class="material-icons">volume_up</i></button>
-                                <button id="mp-music-list" class=" mp-mdl-button mp-mdl-button--icon"><i
-                                        class="material-icons">playlist_play</i></button>
-                                <button id="mp-music-prev" class=" mp-mdl-button mp-mdl-button--icon"><i
-                                        class="material-icons">skip_previous</i></button>
-                                <button id="mp-music-play" class=" mp-mdl-button mp-mdl-button--icon"><i
-                                        class="material-icons">play_circle_filled</i></button>
-                                <button id="mp-music-next" class=" mp-mdl-button mp-mdl-button--icon"><i
-                                        class="material-icons">skip_next</i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  -->
-            <!--music over-->
-              
             <#if settings.dark_enabled!false>
               <a class="mdui-btn mdui-btn-icon darkButton">
                 <i class="mdui-icon material-icons">brightness_6</i>
               </a>   
             </#if>
                
-            
         </div> 
     </div>
 </header>
       
         
       
-<aside class="mdui-drawer ${(settings.drawer_enabled!default) ? string('','mdui-drawer-close')}" id="left-drawer">
+<aside class="mdui-drawer mdui-drawer-close" id="left-drawer">
   <div class="headerLogo" style="background-image: url('${settings.drawimg!'${theme_base!}/source/images/indexBack.jpg'}')">
     <img class="mdui-img-circle mdui-shadow-2" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="">
     <span class="drawTitle">${user.nickname!}</span>
