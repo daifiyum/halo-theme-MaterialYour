@@ -65,41 +65,22 @@ aside.mdui-drawer {
   a {
     text-decoration: none;
   }
-  .toc-list { 
+  >.toc-list { 
   overflow: hidden;
   position: relative;
-  a::before {
-    display: none;
-  }
-  }
-  // .toc-list .toc-list-item .toc-list a::before {
-  //   display: none;
-  // }
-  >.toc-list {
-    padding: 0;
-  } 
-  >.toc-list a::before {
-    display: none;
   }
   .is-active-link {
-    padding: 5px;
-    background: var(--themeColor);
-    display: block;
-    border-radius: 4px;
     color: var(--fontColor);
+  }
+  .toc-list-item {
+    line-height: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .is-active-link::before {
+    background-color: var(--fontColor) !important;
   }
 }
 
-
-
-@media (min-width: 1024px) {
-  // .mdui-drawer {
-  //   /*桌面端时抽屉高度*/
-  //   top: 64px;
-  // }
-  // .headerLogo {
-  //   /*镇站图*/
-  //   display: none !important;
-  // }
-}
 /*抽屉相关结束*/
