@@ -192,6 +192,34 @@ article a {
   margin-bottom: 20px;
 }
 /*页面样式结束*/
+
+//文章版权
+.copyright {
+  padding: 16px;
+  min-height: 95px;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .copyricon {
+    position: absolute;
+    right: -26px;
+    top: -26px;
+    width: 100px;
+    height: 100px;
+    fill: #eee;
+  }
+  a {
+    text-decoration: none;
+    word-break: break-all;
+    color: var(--fontColor);
+  }
+  >div {
+    margin: 6px;
+  }
+}
 @media (max-width: 800px) {
   .post-page-right {
     display: none;
