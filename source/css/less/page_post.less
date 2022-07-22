@@ -200,9 +200,15 @@ article a {
   background-color: #f9f9f9;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  .crbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    >div {
+      margin: 6px;
+    }
+  }
   .copyricon {
     position: absolute;
     right: -26px;
@@ -215,9 +221,6 @@ article a {
     text-decoration: none;
     word-break: break-all;
     color: var(--fontColor);
-  }
-  >div {
-    margin: 6px;
   }
 }
 @media (max-width: 800px) {

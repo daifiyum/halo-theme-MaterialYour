@@ -60,16 +60,18 @@
                 <div class="copyright">
                     <#--  <img src="${theme_base!}/source/images/copyright-line.svg"/>  -->
                     <svg class="copyricon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 2c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 3c1.82 0 3.413.973 4.288 2.428l-1.714 1.029A3 3 0 1 0 12 15a2.998 2.998 0 0 0 2.573-1.456l1.715 1.028A4.999 4.999 0 0 1 7 12c0-2.76 2.24-5 5-5z"/></svg>
-                    <div class="cr1">
-                        <span>本文作者：${user.nickname!}</span>
-                    </div>
-                    <div class="cr2">
-                        <span>本文链接：</span>
-                        <a href="${post.fullPath!}">${blog_url!}${post.fullPath!}</a>
-                    </div>
-                    <div class="cr3">
-                        <span>版权声明：</span>
-                        <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"> 本文采用 CC BY-NC-SA 3.0 协议进行许可</a>
+                    <div class="crbox">
+                        <div class="cr1">
+                            <span>本文作者：${user.nickname!}</span>
+                        </div>
+                        <div class="cr2">
+                            <span>本文链接：</span>
+                            <a href="${post.fullPath!}">${blog_url!}${post.fullPath!}</a>
+                        </div>
+                        <div class="cr3">
+                            <span>版权声明：</span>
+                            <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"> 本文采用 CC BY-NC-SA 3.0 协议进行许可</a>
+                        </div>
                     </div>
                     
                 </div>
