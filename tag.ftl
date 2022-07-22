@@ -8,8 +8,8 @@
             </div>
         </div>
 
-        <#include "module/postList.ftl">
-        <@postList/>
+        <#include "module/post_list.ftl">
+        <@post_list/>
         <#if posts.totalPages gt 1>
             <@paginationTag method="tagPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${tag.slug!}">
                 <#include "module/turn_pages.ftl">
