@@ -32,7 +32,7 @@
 </script>
 
 
-<#--  halo-comment-fly评论组件黑暗模式css,目前已弃用，未来可能启用  -->
+<#--  评论组件自定义css  -->
 <style id="comment-style" type="text/css" media="noexist">
     ${settings.custom_commentcss!}
 </style>
