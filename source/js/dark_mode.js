@@ -34,13 +34,13 @@ const darkMode = {
       for (var i = 0; i < comments.length; i++) {
         var shadowDom = comments[i].shadowRoot.getElementById("halo-comment");
         $(shadowDom).removeClass("light"); //halo-comment-normal去掉默认light
-        $(shadowDom).addClass("dark");
+        $(shadowDom).addClass(comment_darkClass);
       }
     } else {
       var comments = $("halo-comment");
       for (var i = 0; i < comments.length; i++) {
         var shadowDom = comments[i].shadowRoot.getElementById("halo-comment");
-        $(shadowDom).removeClass("dark");
+        $(shadowDom).removeClass(comment_darkClass);
       }
     }
   },

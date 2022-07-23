@@ -229,6 +229,12 @@ style:
       type: text                
       placeholder: '填入外部评论组件URL'              
       description: '导入外部评论组件JS,推荐默认评论组件以完美支持黑暗模式' 
+    comment_darkClass:
+      name: comment_darkClass              
+      label: 评论组件黑暗模式类选择器             
+      type: text               
+      placeholder: '默认dark'              
+      description: '由于各个评论组件黑暗模式的类选择器不同，所以在这加个自定义，我球球你们这些开发者了，评论组件的黑暗模式类选择器就不能统一下吗？有的.dark，有的.dark-mode' 
     custom_commentcss:
       name: custom_commentcss
       label: 自定义评论css

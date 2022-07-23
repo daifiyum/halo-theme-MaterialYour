@@ -5,6 +5,7 @@
     new WOW().init();
 
     let postyes = '${is_post?? ? string('true','false')}';
+    let comment_darkClass = '${settings.comment_darkClass!'dark'}';
 
     //一言相关
     let oneWord = '${(settings.aWord_enabled!default) ? string('true','false')}';
