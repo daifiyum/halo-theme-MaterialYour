@@ -7,20 +7,20 @@ const darkMode = {
    */
   commentInit: function () {
     //初始化评论组件黑暗模式css
-    let offCssDark = true;
-    if ($("halo-comment").length > 0 && offCssDark) {
-      // var comments = $("halo-comment");
-      // comments.each(function(){
-      //     // console.log($(this));
-      //     var commentStyle = $("#comment-style").clone();
-      //     commentStyle.attr("media", "all");
-      //     for (var i = 0; i < $(this).length; i++) {
-      //         let sf = $($(this)[i].shadowRoot).has('#comment-style').length;
-      //         if(sf != 1){ //避免重复注入css
-      //             $(this)[i].shadowRoot.appendChild(commentStyle[0]); //注入css
-      //         }
-      //     }
-      // })
+    if ($("halo-comment").length > 0) {
+      var comments = $("halo-comment");
+      comments.each(function(){
+          // console.log($(this));
+          var commentStyle = $("#comment-style").clone();
+          commentStyle.attr("media", "all");
+          for (var i = 0; i < $(this).length; i++) {
+              let sf = $($(this)[i].shadowRoot).has('#comment-style').length;
+              console.log(sf);
+              if(sf != 1){ //避免重复注入css
+                  $(this)[i].shadowRoot.appendChild(commentStyle[0]); //注入css
+              }
+          }
+      })
 
       return true;
     } else {

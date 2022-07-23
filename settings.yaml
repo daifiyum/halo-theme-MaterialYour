@@ -158,6 +158,16 @@ style:
           label: '低调棕'
         - value: 'mdui-theme-primary-cyan'
           label: '靛蓝青'
+    indeximg:
+      name: indeximg               
+      label: 镇站图              
+      type: attachment               
+      placeholder: '图片地址'                       
+    drawimg:
+      name: drawimg               
+      label: 抽屉图              
+      type: attachment               
+      placeholder: '图片地址'           
     dark_enabled:
       name: dark_enabled
       label: 黑暗模式
@@ -181,17 +191,7 @@ style:
         - value: true
           label: 开启
         - value: false
-          label: 关闭
-    indeximg:
-      name: indeximg               
-      label: 镇站图              
-      type: attachment               
-      placeholder: '图片地址'                       
-    drawimg:
-      name: drawimg               
-      label: 抽屉图              
-      type: attachment               
-      placeholder: '图片地址'                
+          label: 关闭     
     code_css:
       name: code_css
       label: 代码样式
@@ -229,6 +229,11 @@ style:
       type: text                
       placeholder: '填入外部评论组件URL'              
       description: '导入外部评论组件JS,推荐默认评论组件以完美支持黑暗模式' 
+    custom_commentcss:
+      name: custom_commentcss
+      label: 自定义评论css
+      type: textarea
+      description: '在这你可自定义评论css，css选择器第一个为 .dark 用来适配夜间样式，例如：.dark .comment-form {...}'
     footerCenter_enabled:
       name: footerCenter_enabled
       label: 页脚内容居中
