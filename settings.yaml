@@ -240,7 +240,7 @@ style:
           label: "material"
     comment_js:
       name: comment_js               
-      label: 评论组件JS              
+      label: 评论组件CDN              
       type: text                
       placeholder: '填入外部评论组件URL'              
       description: '导入外部评论组件JS,推荐默认评论组件以完美支持黑暗模式' 
