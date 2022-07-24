@@ -161,13 +161,8 @@ const dnxrzl = {
         $('.swtoc,.ptoc').css('display','none');
       }
       $(document).on('click','.swtocl',function(){
-        $('.swmenu').show();
-        $('.toc-content').hide();
-      })
-
-      $(document).on('click','.swtocr',function(){
-        $('.swmenu').hide();
-        $('.toc-content').show();
+        $('.swmenu').toggle(300,"swing");
+        $('.toc-content').toggle(300,"swing");
       })
 
 

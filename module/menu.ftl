@@ -51,8 +51,7 @@
       </div>
     </div>  -->
     <div class="swtoc">
-      <button class="swtocl mdui-btn mdui-color-theme-accent mdui-btn-dense mdui-ripple mdui-btn-raised">菜单</button>
-      <button class="swtocr mdui-btn mdui-color-theme-accent mdui-btn-dense mdui-ripple mdui-btn-raised">目录</button>
+      <button class="swtocl mdui-btn mdui-color-theme-accent mdui-btn-dense mdui-ripple mdui-btn-raised">菜单/目录</button>
     </div>
   </div>
 
