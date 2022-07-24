@@ -41,9 +41,14 @@
   //   cursor: pointer;
   // }
   button {
-    color: #fff;
-    border-radius: 100px;
-    backdrop-filter: blur(5px);
+    color: var(--fontColor);
+    // border-radius: 100px;
+    background-color: #fff;
+    // backdrop-filter: blur(5px);
+    transition: all .3 ease-in-out;
+  }
+  .mdui-btn:hover {
+    background-color: var(--themeColor);
   }
 }
 
