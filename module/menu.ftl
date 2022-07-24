@@ -1,6 +1,6 @@
 <@menuTag method="list">
 <header>
-    <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-shadow-0 mdui-appbar-inset mdui-drawer-full-height" id="selfAppbar">
+    <div class="mdui-appbar mdui-appbar-fixed ${(settings.auto_headroom!default) ? string('mdui-appbar-scroll-hide','')} mdui-shadow-0 mdui-appbar-inset mdui-drawer-full-height" id="selfAppbar">
         <div class="nse mdui-toolbar mdui-color-theme-100 mdui-text-color-theme">
             <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{overlay: true, target: '#left-drawer'}">
                 <i class="mdui-icon material-icons">menu</i>
@@ -17,8 +17,10 @@
                 <button type="button" class="searchIcon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
                 <input type="text" placeholder="搜索一下..." name="keyword">
                 <button type="button" class="backClose mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
-             
+                
             </form>
+
+            
             
             <a href="/journals" class="mdui-btn mdui-btn-icon nodesk">
                 <i class="mdui-icon material-icons">self_improvement</i>
@@ -32,8 +34,8 @@
                
         </div> 
     </div>
+    <div class="searchMask"></div>
 </header>
-      
         
       
 <aside class="mdui-drawer mdui-drawer-close" id="left-drawer">

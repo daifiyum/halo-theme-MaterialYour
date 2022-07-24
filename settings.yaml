@@ -173,6 +173,17 @@ style:
       type: color   
       default: '#ffa1bb'                  
       description: '自定义强调色'    
+    auto_headroom:
+      name: auto_headroom
+      label: 自动隐藏应用栏
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭     
     indeximg:
       name: indeximg               
       label: 镇站图              

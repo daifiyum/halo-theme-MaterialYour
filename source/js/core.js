@@ -291,10 +291,17 @@ const dnxrzl = {
   searchNew: function () {
     let dform = $(".searchInput");
     let dfinput = $(".searchInput input");
+    let searchMask = $(".searchMask");
+    let body = $("body");
+    let appbar = $('header .mdui-appbar');
     $(document).on("click", ".searchNew,.searchInput .back", function () {
       if (dform.css("display") == "none") {
         dform.css("display", "flex");
         dfinput.focus();
+        searchMask.css('display','block').animate({opacity: .5},300,function(){
+          body.css('overflow','hidden');
+          appbar.removeClass('mdui-headroom');
+        });
       } else {
         dform.css("display", "none");
       }
@@ -302,6 +309,11 @@ const dnxrzl = {
 
     dfinput.blur(function () {
       dform.css("display", "none");
+      searchMask.animate({opacity: 0},300,function(){
+        searchMask.css('display','none');
+        body.css('overflow','initial');
+        appbar.addClass('mdui-headroom');
+      });
     });
 
     $(document).on("mousedown", ".backClose", function () {
