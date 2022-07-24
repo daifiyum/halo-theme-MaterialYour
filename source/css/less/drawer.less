@@ -10,7 +10,7 @@
   background-size: cover;
   background-position: center;
   // margin: 10px;
-  height: 160px;
+  height: auto;
   // border-radius: 10px;
   span {
     margin: 20px 0 0 0;
@@ -23,22 +23,28 @@
 }
 .swtoc {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin-top: 10px;
   // align-items: center;
-  padding: 20px 10px 10px 10px;
-  .swtocl {
-    padding: 5px 20px 5px 20px;
-    border: 1px solid @color;
-    border-radius: 50px 0 0 50px;
-    cursor: pointer;
-  }
-  .swtocr {
-    padding: 5px 20px 5px 20px;
-    border-top: 1px solid @color;
-    border-bottom: 1px solid @color;
-    border-right: 1px solid @color;
-    border-radius: 0 50px 50px 0;
-    cursor: pointer;
+  // padding: 20px 10px 10px 10px;
+  // .swtocl {
+  //   padding: 5px 20px 5px 20px;
+  //   border: 1px solid @color;
+  //   border-radius: 50px 0 0 50px;
+  //   cursor: pointer;
+  // }
+  // .swtocr {
+  //   padding: 5px 20px 5px 20px;
+  //   border-top: 1px solid @color;
+  //   border-bottom: 1px solid @color;
+  //   border-right: 1px solid @color;
+  //   border-radius: 0 50px 50px 0;
+  //   cursor: pointer;
+  // }
+  button {
+    color: #fff;
+    border-radius: 100px;
+    backdrop-filter: blur(5px);
   }
 }
 
@@ -71,6 +77,10 @@ aside.mdui-drawer {
   }
   .is-active-link {
     color: var(--fontColor);
+    background: var(--themeColor);
+  }
+  a.toc-link {
+    padding: 3px 6px 3px 6px;
   }
   .toc-list-item {
     line-height: 2;
