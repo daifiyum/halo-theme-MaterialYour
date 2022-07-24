@@ -158,6 +158,21 @@ style:
           label: '低调棕'
         - value: 'mdui-theme-primary-cyan'
           label: '靛蓝青'
+        - value: 'mdui-theme-primary-custom'
+          label: '自定义'
+      description: '没有喜欢的主题色？你可以往下滑选择‘自定义’，然后在下面的颜色选择面板里配置适合自己的主题色'    
+    theme_color:
+      name: theme_color         
+      label: 主题色              
+      type: color   
+      default: '#ffe7ed'                  
+      description: '自定义主题色'           
+    font_color:
+      name: font_color         
+      label: 强调色              
+      type: color   
+      default: '#ffa1bb'                  
+      description: '自定义强调色'    
     indeximg:
       name: indeximg               
       label: 镇站图              

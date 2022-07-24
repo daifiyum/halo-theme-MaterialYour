@@ -32,6 +32,14 @@
     let autoDarkOpt = ${settings.autoDarkOpt ? string('true','false')};
 </script>
 
+<style>
+    .mdui-theme-primary-custom .mdui-text-color-theme {
+        color: ${settings.font_color!default}!important;
+    }
+    .mdui-theme-primary-custom .mdui-color-theme-100 {
+        background-color: ${settings.theme_color!default}!important;
+    }
+</style>
 
 <#--  评论组件自定义css  -->
 <style id="comment-style" type="text/css" media="noexist">
