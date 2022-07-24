@@ -32,6 +32,7 @@
     let autoDarkOpt = ${settings.autoDarkOpt ? string('true','false')};
 </script>
 
+<#--  自定义主题色  -->
 <style>
     .mdui-theme-primary-custom .mdui-text-color-theme {
         color: ${settings.font_color!default};

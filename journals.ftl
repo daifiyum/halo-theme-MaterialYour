@@ -5,7 +5,7 @@
     <article class="post my-card archivesPadding">
       
       <div class="journals">
-        <h3 class="pagetitle">说说</h3>
+        <h3 class="pagetitle">日志</h3>
         <#if journals.content?size gt 0>
         <ul class="journalList">
         <#list journals.content as journal>
