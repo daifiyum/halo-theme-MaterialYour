@@ -161,9 +161,25 @@ const dnxrzl = {
         $('.swtoc,.ptoc').css('display','none');
       }
       $(document).on('click','.swtocl',function(){
-        $('.swmenu').toggle(300,"swing");
-        $('.toc-content').toggle(300,"swing");
+        console.log($(this).attr('data-toggle'));
+        if($(this).attr('data-toggle') == 'toc'){
+          $('.toc-content').fadeToggle(function(){
+            $('.swmenu').fadeToggle();
+          });
+          
+          $(this).attr('data-toggle','menu');
+          $(this).text('菜单')
+        }else{
+          $('.swmenu').fadeToggle(function(){
+            $('.toc-content').fadeToggle();
+          });
+          $(this).attr('data-toggle','toc');
+          $(this).text('目录')
+        }
+        
+        
       })
+
 
 
       
