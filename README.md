@@ -47,9 +47,8 @@
 
 由于自己前端技术有限，短时间内不能发布完美版本，推荐大家体验最新开发版，点击[此处](https://github.com/daifiyum/halo-theme-MaterialYour/archive/refs/heads/master.zip)
 
-### 使用文档？（[已有](https://www.dnxrzl.com/archives/134)）
-
-主题完美优化后将会写详细使用文档，使用最新开发版主题的朋友如遇到不解问题可以在我博客留言，还有目前使用本主题人数几乎没有，所以不考虑建群，若你们需要建群讨论，也可以留言
+### 使用文档？
+[点这儿](https://www.dnxrzl.com/archives/134)
 
 ### 一起完善？
 
