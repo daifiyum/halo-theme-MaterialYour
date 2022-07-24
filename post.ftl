@@ -28,6 +28,9 @@
                         </div>
                     </div>
                     <div class="pright">
+                        <button class="ptoc mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme" mdui-drawer="{overlay: true, target: '#left-drawer'}">
+                            <i class="mdui-icon material-icons">assignment</i>
+                        </button>
                         <button class="postCopyLink mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme" data-clipboard-text="${blog_url!}${post.fullPath!}">
                             <i class="mdui-icon material-icons">share</i>
                         </button>

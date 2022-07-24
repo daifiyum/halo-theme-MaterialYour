@@ -158,7 +158,7 @@ const dnxrzl = {
         $('.swmenu').css('display','none');
         $('.toc-content').css('display','block');
       }else {
-        $('.swtoc').css('display','none');
+        $('.swtoc,.ptoc').css('display','none');
       }
       $(document).on('click','.swtocl',function(){
         $('.swmenu').show();
