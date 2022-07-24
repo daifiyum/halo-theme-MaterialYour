@@ -34,10 +34,10 @@
 
 <style>
     .mdui-theme-primary-custom .mdui-text-color-theme {
-        color: ${settings.font_color!default}!important;
+        color: ${settings.font_color!default};
     }
     .mdui-theme-primary-custom .mdui-color-theme-100 {
-        background-color: ${settings.theme_color!default}!important;
+        background-color: ${settings.theme_color!default};
     }
 </style>
 
