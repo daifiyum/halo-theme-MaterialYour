@@ -42,15 +42,9 @@
   <div class="headerLogo" style="background-image: url('${settings.drawimg!'${theme_base!}/source/images/indexBack.jpg'}')">
     <img class="mdui-img-circle mdui-shadow-2" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="">
     <span class="drawTitle">${user.nickname!}</span>
-    <#--  <div class="swtoc">
-      <div class="swtocl">
-      菜单
-      </div>
-      <div class="swtocr">
-      目录
-      </div>
-    </div>  -->
+
     <div class="swtoc">
+    
       <button data-toggle="toc" class="swtocl mdui-btn mdui-color-theme-accent mdui-btn-dense mdui-ripple mdui-btn-raised">目录</button>
     </div>
   </div>
