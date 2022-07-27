@@ -102,9 +102,9 @@ const dnxrzl = {
           crossDomain: true,
           headers: {},
           success: function (data) {
-            lid.addClass("journliked");
-            lid.next().addClass("journliked");
-            lid.next().text(parseInt(lid.next().text()) + 1);
+            lid.children("i").addClass("journliked");
+            lid.children("span").addClass("journliked");
+            lid.children("span").text(parseInt(lid.children("span").text()) + 1);
           },
           timeout: 3000,
           error: function () {

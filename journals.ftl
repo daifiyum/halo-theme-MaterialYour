@@ -21,12 +21,12 @@
                 ${journal.content!}
               </div>
               <div class="journBottom">
-                <div class="jbleft">
-                  <i id="${journal.id}" class="mdui-icon material-icons likeb" clickNum="true">thumb_up</i>
+                <div id="${journal.id}" class="jbleft likeb" clickNum="true">
+                  <i class="mdui-icon material-icons">thumb_up</i>
                   <span>${journal.likes!0}</span>
                 </div>
-                <div class="jbleft">
-                  <i class="mdui-icon material-icons chatb">chat</i>
+                <div class="jbleft chatb">
+                  <i class="mdui-icon material-icons">chat</i>
                   <span>${journal.commentCount!0}</span>
                 </div>
               </div>
