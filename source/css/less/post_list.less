@@ -33,16 +33,24 @@
   a {
     padding-right: 10px;
     position: relative;
+    background: var(--themeColor);
+    border-radius: 100px;
+    padding: 4px 8px 4px 8px;
+    margin-right: 3px;
+    transition: all .3s;
+    &:hover {
+      color: var(--fontColor);
+    }
   }
-  a::after {
-    content: "·";
-    position: absolute;
-    right: 0;
-    transform: scale(2, 2);
-  }
-  a:last-child::after {
-    display: none;
-  }
+  // a::after {
+  //   content: "·";
+  //   position: absolute;
+  //   right: 0;
+  //   transform: scale(2, 2);
+  // }
+  // a:last-child::after {
+  //   display: none;
+  // }
 }
 
 .topped {
