@@ -40,6 +40,9 @@
     .mdui-theme-primary-custom .mdui-color-theme-100 {
         background-color: ${settings.theme_color!default};
     }
+    .jpadding {
+        background: url(${settings.journal_background!});
+    }
 </style>
 
 <#--  评论组件自定义css  -->

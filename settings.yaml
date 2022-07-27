@@ -266,6 +266,12 @@ style:
       label: 自定义评论css
       type: textarea
       description: '在这你可自定义评论css，css选择器第一个为 .dark 用来适配夜间样式，例如：.dark .comment-form {...}'
+    journal_background:
+      name: journal_background             
+      label: 日志背景图             
+      type: text               
+      placeholder: '默认无图白色'              
+      description: '填入背景图片url'
     footerCenter_enabled:
       name: footerCenter_enabled
       label: 页脚内容居中
