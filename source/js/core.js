@@ -42,7 +42,7 @@ const dnxrzl = {
       mdui.snackbar({
         //调用mdui前端框架里的snackbar()方法显示提示信息
         message: "已复制",
-        position: "right-top",
+        position: "left-bottom",
       });
     });
   },
