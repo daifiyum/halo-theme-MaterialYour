@@ -110,14 +110,14 @@ const dnxrzl = {
           error: function () {
             mdui.snackbar({
               message: "网络请求失败，请稍后再试",
-              position: "right-top",
+              position: "left-bottom",
             });
           },
         });
       } else {
         mdui.snackbar({
           message: "已经赞过啦~",
-          position: "right-top",
+          position: "left-bottom",
         });
       }
     });
@@ -291,7 +291,7 @@ const dnxrzl = {
             mdui.snackbar({
               //调用mdui前端框架里的snackbar()方法显示提示信息
               message: "未响应！",
-              position: "right-top",
+              position: "left-bottom",
             });
           },
         });
