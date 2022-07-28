@@ -29,10 +29,10 @@
                         </#if>
                     </a>
                 </div>
-                
+
                 <div class="post-list-bottom">
-                    <div class="mdui-card-primary-subtitle">${post.createTime?string["yyyy年MM月dd日"]!}</div>
-                    <div class="mdui-card-primary-subtitle">${post.commentCount!}条评论</div>
+                    <div class="mdui-card-primary-subtitle"><i class="mdui-icon material-icons">today</i>${post.createTime?string["yyyy年MM月dd日"]!}</div>
+                    <div class="mdui-card-primary-subtitle"><i class="mdui-icon material-icons">chat_bubble_outline</i>${post.commentCount!}条评论</div>
                 </div>
             </article>
         </#list>
@@ -46,4 +46,5 @@
         </div>
        
         </#if>
+
 </#macro>

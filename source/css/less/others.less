@@ -27,3 +27,30 @@
   body .fancybox__container {
     z-index: 5001;
   }
+  /*全局a标签*/
+  .alink {
+    a {
+      position: relative;
+    }
+    a::before {
+      position: absolute;
+      top: auto;
+      bottom: 1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--fontColor);
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      content: ' ';
+    }
+    a:hover::before,
+    a:focus::before {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  }
