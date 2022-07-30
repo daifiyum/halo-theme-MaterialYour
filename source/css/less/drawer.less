@@ -3,15 +3,14 @@
 .headerLogo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
   padding: 16px;
   background-size: cover;
   background-position: center;
   // margin: 10px;
   height: auto;
   // border-radius: 10px;
-  min-height: 200px;
+  min-height: 180px;
   span {
     margin: 20px 0 0 0;
   }
@@ -21,20 +20,7 @@
     
   }
 }
-.swtoc {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  button {
-    color: var(--fontColor);
-    border-radius: 100px;
-    background-color: var(--themeColor);
-    transition: all .3 ease-in-out;
-  }
-  .mdui-btn:hover {
-    background-color: var(--themeColor);
-  }
-}
+
 
 .drawTitle {
   color: #fff;
@@ -53,32 +39,4 @@ aside.mdui-drawer {
     background-color: rgb(0 0 0 / 4%);
   }
 }
-.toc-content {
-  display: none;
-  margin: 10px;
-  a {
-    text-decoration: none;
-  }
-  >.toc-list { 
-  overflow: hidden;
-  position: relative;
-  }
-  .is-active-link {
-    color: var(--fontColor);
-    background: var(--themeColor);
-  }
-  a.toc-link {
-    padding: 3px 6px 3px 6px;
-  }
-  .toc-list-item {
-    line-height: 2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .is-active-link::before {
-    background-color: var(--fontColor) !important;
-  }
-}
-
 /*抽屉相关结束*/

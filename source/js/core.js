@@ -53,10 +53,10 @@ const dnxrzl = {
   },
   //获取主题色
   getcolor: function () {
-    let body = $('body');
+    let body = $("body");
     let bc = $(".mdui-toolbar").css("background-color");
     let bct = $(".mdui-toolbar").css("color");
-    body.css({"--themeColor": bc, "--fontColor": bct});
+    body.css({ "--themeColor": bc, "--fontColor": bct });
   },
   //每日时间问候
   welcome: function () {
@@ -146,43 +146,40 @@ const dnxrzl = {
   },
   //文章目录随窗口变化而变化（移动端样式和PC端样式的切换）
   switchIndex: function () {
-      tocbot.init({
-        tocSelector: ".toc-content",
-        contentSelector: ".js-toc-content",
-        headingSelector: "h1, h2, h3, h4, h5, h6",
-        headingsOffset: 80,
-        scrollSmoothOffset: -80,
-      });
-      
-      if(postyes == 'true' && $('.toc-content').children().length != 0) {
-        $('.swmenu').css('display','none');
-        $('.toc-content').css('display','block');
-      }else {
-        $('.swtoc,.ptoc').css('display','none');
+    tocbot.init({
+      tocSelector: ".toc-content",
+      contentSelector: ".js-toc-content",
+      headingSelector: "h1, h2, h3, h4, h5, h6",
+      headingsOffset: 80,
+      scrollSmoothOffset: -80,
+    });
+
+    if (postyes == "true" && $(".toc-content").children().length != 0) {
+      $(".toc_drawer,.toc_button").css("display", "block");
+      $("body").addClass("mdui-drawer-body-right");
+      $('.nodesk').css('display','none');
+    }
+
+    var md = mdui.$;
+    md(".mdui-appbar").on("pin.mdui.headroom", function () {
+      console.log("pinned");
+      $(".toc_drawer").animate({ top: "64px" }, 300);
+      $(".toc-content").css("height", "calc(100vh - 125px)");
+    });
+    md(".mdui-appbar").on("unpin.mdui.headroom", function () {
+      console.log("unpinned");
+      $(".toc_drawer").animate({ top: "0px" }, 300);
+      $(".toc-content").css("height", "calc(100vh - 65px)");
+    });
+    let i = 1;
+    $(window).resize(function () {
+      if (window.innerWidth < 1024 && i == 1) {
+        $(".toc_drawer").removeClass("mdui-drawer-open");
+        i = 2;
+      } else if (window.innerWidth > 1024) {
+        i = 1;
       }
-      $(document).on('click','.swtocl',function(){
-        console.log($(this).attr('data-toggle'));
-        if($(this).attr('data-toggle') == 'toc'){
-          $('.toc-content').fadeToggle(function(){
-            $('.swmenu').fadeToggle();
-          });
-          
-          $(this).attr('data-toggle','menu');
-          $(this).text('菜单')
-        }else{
-          $('.swmenu').fadeToggle(function(){
-            $('.toc-content').fadeToggle();
-          });
-          $(this).attr('data-toggle','toc');
-          $(this).text('目录')
-        }
-        
-        
-      })
-
-
-
-      
+    });
   },
   //faccybox的实例（负责图片预览）
   mfancybox: function () {
@@ -252,7 +249,7 @@ const dnxrzl = {
                 dnxrzl.picInit(); //初始化图箱
                 darkMode.firstDark(); //评论黑暗模式重载
                 dnxrzl.dealCodeHighlight(); //代码高亮重载
-                dnxrzl.table();//表格重载
+                dnxrzl.table(); //表格重载
               } else if (currentPageUrl.search("archives") != -1) {
                 // 归档页
                 let aper = parseInt($(".archMain .archCell:last-child .archiveyear").text()); //前时间
@@ -304,14 +301,14 @@ const dnxrzl = {
     let dfinput = $(".searchInput input");
     let searchMask = $(".searchMask");
     let body = $("body");
-    let appbar = $('header .mdui-appbar');
+    let appbar = $("header .mdui-appbar");
     $(document).on("click", ".searchNew,.searchInput .back", function () {
       if (dform.css("display") == "none") {
         dform.css("display", "flex");
         dfinput.focus();
-        searchMask.css('display','block').animate({opacity: .5},300,function(){
-          body.css('overflow','hidden');
-          appbar.removeClass('mdui-headroom');
+        searchMask.css("display", "block").animate({ opacity: 0.5 }, 300, function () {
+          body.css("overflow", "hidden");
+          appbar.removeClass("mdui-headroom");
         });
       } else {
         dform.css("display", "none");
@@ -320,10 +317,10 @@ const dnxrzl = {
 
     dfinput.blur(function () {
       dform.css("display", "none");
-      searchMask.animate({opacity: 0},300,function(){
-        searchMask.css('display','none');
-        body.css('overflow','initial');
-        appbar.addClass('mdui-headroom');
+      searchMask.animate({ opacity: 0 }, 300, function () {
+        searchMask.css("display", "none");
+        body.css("overflow", "initial");
+        appbar.addClass("mdui-headroom");
       });
     });
 
@@ -424,9 +421,9 @@ const dnxrzl = {
     });
   },
   //自动黑暗模式开启一次性提示
-  autoDarkTips:function () {
-    if(localStorage.getItem("autoDark") == 'true' && localStorage.getItem("darkTipsOk") == null){
-      localStorage.setItem('darkTipsOk',0);
+  autoDarkTips: function () {
+    if (localStorage.getItem("autoDark") == "true" && localStorage.getItem("darkTipsOk") == null) {
+      localStorage.setItem("darkTipsOk", 0);
       mdui.snackbar({
         //调用mdui前端框架里的snackbar()方法显示提示信息
         message: "已自动切换黑暗模式🌙",
@@ -435,10 +432,9 @@ const dnxrzl = {
     }
   },
   //文章表格支持
-  table:function() {
-    $('.mdui-typo>table').addClass('mdui-table mdui-table-hoverable').wrap('<div class="mdui-table-fluid">')
+  table: function () {
+    $(".mdui-typo>table").addClass("mdui-table mdui-table-hoverable").wrap('<div class="mdui-table-fluid">');
   },
-
 };
 
 !(function () {

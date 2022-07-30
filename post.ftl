@@ -3,7 +3,6 @@
 <main class="my-container mdui-container line-numbers">
     <div class="animate__animated post_animate">
         <article class="my-article my-card">
-            
                 <#if post.thumbnail?? && post.thumbnail!=''>
                     <div class="mdui-card-media">
                         <div class="postBackground" style="background-image: url('${post.thumbnail!}')"></div>
@@ -24,13 +23,10 @@
                         <img class="mdui-img-circle" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="${user.nickname!}">
                         <div>
                             <span>${user.nickname!}</span>
-                            <span><i class="mdui-icon material-icons">today</i>${post.createTime?string["yyyy-MM-dd"]!} <i class="mdui-icon material-icons">visibility</i>${post.visits!}</span>
+                            <span class="pls"><i class="mdui-icon material-icons">today</i>${post.createTime?string["yyyy-MM-dd"]!} <i class="mdui-icon material-icons">visibility</i>${post.visits!}</span>
                         </div>
                     </div>
                     <div class="pright">
-                        <button class="ptoc mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme" mdui-drawer="{overlay: true, target: '#left-drawer'}">
-                            <i class="mdui-icon material-icons">assignment</i>
-                        </button>
                         <button class="postCopyLink mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme" data-clipboard-text="${blog_url!}${post.fullPath!}">
                             <i class="mdui-icon material-icons">share</i>
                         </button>
@@ -78,6 +74,7 @@
                     </div>
                     
                 </div>
+
         </article>
         <div class="nextPost">
             <#if prevPost??>
@@ -110,7 +107,5 @@
         <!--  评论区结束  -->
         </div>
     </div>
-
 </main>
-
 </@layout>

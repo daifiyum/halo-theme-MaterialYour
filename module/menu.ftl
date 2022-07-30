@@ -1,6 +1,6 @@
 <@menuTag method="list">
 <header>
-    <div class="mdui-appbar mdui-appbar-fixed ${(settings.auto_headroom!default) ? string('mdui-appbar-scroll-hide','')} mdui-shadow-0 mdui-appbar-inset mdui-drawer-full-height" id="selfAppbar">
+    <div class="mdui-appbar mdui-appbar-fixed ${(settings.auto_headroom!default) ? string('mdui-appbar-scroll-hide','')} mdui-shadow-0 mdui-drawer-full-height" id="selfAppbar">
         <div class="nse mdui-toolbar mdui-color-theme-100 mdui-text-color-theme">
             <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{overlay: true, target: '#left-drawer'}">
                 <i class="mdui-icon material-icons">menu</i>
@@ -26,6 +26,8 @@
                 <i class="mdui-icon material-icons">self_improvement</i>
             </a>
 
+            <button class="mdui-btn mdui-btn-icon toc_button mdui-ripple" mdui-drawer="{target: '#right-drawer'}"><i class="mdui-icon material-icons">assignment</i></button>
+
             <#if settings.dark_enabled!false>
               <a class="mdui-btn mdui-btn-icon darkButton">
                 <i class="mdui-icon material-icons">brightness_6</i>
@@ -43,10 +45,10 @@
     <img class="mdui-img-circle mdui-shadow-2" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="">
     <span class="drawTitle">${user.nickname!}</span>
 
-    <div class="swtoc">
+    <#--  <div class="swtoc">
     
       <button data-toggle="toc" class="swtocl mdui-btn mdui-color-theme-accent mdui-btn-dense mdui-ripple mdui-btn-raised">目录</button>
-    </div>
+    </div>  -->
   </div>
 
 
@@ -83,7 +85,11 @@
     
     </@menuTag>
   </ul>
-  <div class="toc-content"></div>
+  
 </aside>
+<div class="mdui-drawer mdui-drawer-right toc_drawer" id="right-drawer">
+    <div class="toc_title">目录</div>
+    <div class="toc-content"></div>
+</div>
       
 </@menuTag>
