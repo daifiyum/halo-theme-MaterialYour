@@ -23,7 +23,7 @@
                         <img class="mdui-img-circle" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="${user.nickname!}">
                         <div>
                             <span>${user.nickname!}</span>
-                            <span class="pls"><i class="mdui-icon material-icons">today</i>${post.createTime?string["yyyy-MM-dd"]!} <i class="mdui-icon material-icons">visibility</i>${post.visits!}</span>
+                            <span class="pls">${post.createTime?string["yyyy年MM月dd日"]!}&nbsp;&nbsp;·&nbsp;&nbsp;阅读&nbsp;${post.visits!}</span>
                         </div>
                     </div>
                     <div class="pright">
