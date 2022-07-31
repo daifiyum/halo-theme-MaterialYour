@@ -24,7 +24,7 @@
                         <img class="mdui-img-circle" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="${user.nickname!}">
                         <div>
                             <span>${user.nickname!}</span>
-                            <span>${post.createTime?string["yyyy年MM月dd日"]!}</span>
+                            <span class="pls">${post.createTime?string["yyyy年MM月dd日"]!}&nbsp;&nbsp;·&nbsp;&nbsp;阅读&nbsp;${post.visits!}</span>
                         </div>
                     </div>
                     <div class="pright">
