@@ -15,7 +15,7 @@ const darkMode = {
           commentStyle.attr("media", "all");
           for (var i = 0; i < $(this).length; i++) {
               let sf = $($(this)[i].shadowRoot).has('#comment-style').length;
-              console.log(sf);
+              // console.log(sf);
               if(sf != 1){ //避免重复注入css
                   $(this)[i].shadowRoot.appendChild(commentStyle[0]); //注入css
               }

@@ -162,12 +162,10 @@ const dnxrzl = {
 
     var md = mdui.$;
     md(".mdui-appbar").on("pin.mdui.headroom", function () {
-      console.log("pinned");
       $(".toc_drawer").animate({ top: "64px" }, 300);
       $(".toc-content").css("height", "calc(100vh - 125px)");
     });
     md(".mdui-appbar").on("unpin.mdui.headroom", function () {
-      console.log("unpinned");
       $(".toc_drawer").animate({ top: "0px" }, 300);
       $(".toc-content").css("height", "calc(100vh - 65px)");
     });
@@ -434,7 +432,7 @@ const dnxrzl = {
   //文章表格支持
   table: function () {
     $(".mdui-typo>table").addClass("mdui-table mdui-table-hoverable").wrap('<div class="mdui-table-fluid">');
-  },
+  }
 };
 
 !(function () {
