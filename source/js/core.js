@@ -63,15 +63,15 @@ const dnxrzl = {
     var welcome = $(".welcome_hello");
     var hour = new Date().getHours();
     if (hour >= 6 && hour < 12) {
-      welcome.text("早上好!");
+      welcome.text("早上好！");
     } else if (hour >= 12 && hour < 14) {
-      welcome.text("中午好!");
+      welcome.text("中午好！");
     } else if (hour >= 14 && hour < 19) {
-      welcome.text("下午好!");
+      welcome.text("下午好！");
     } else if (hour >= 19 && hour < 22) {
-      welcome.text("晚上好!");
+      welcome.text("晚上好！");
     } else {
-      welcome.text("晚安!");
+      welcome.text("晚安！");
     }
   },
   //回到顶部

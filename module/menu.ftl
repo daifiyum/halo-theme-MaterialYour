@@ -2,13 +2,13 @@
 <header>
     <div class="mdui-appbar mdui-appbar-fixed ${(settings.auto_headroom!default) ? string('mdui-appbar-scroll-hide','')} mdui-shadow-0 mdui-drawer-full-height" id="selfAppbar">
         <div class="nse mdui-toolbar mdui-color-theme-100 mdui-text-color-theme">
-            <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{overlay: true, target: '#left-drawer'}">
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{overlay: true, target: '#left-drawer'}">
                 <i class="mdui-icon material-icons">menu</i>
             </a>
             <a href="${blog_url!}" class="mdui-typo-title">${blog_title!}</a>
             <div class="mdui-toolbar-spacer"></div>
 
-            <a class="searchNew mdui-btn mdui-btn-icon">
+            <a class="searchNew mdui-btn mdui-btn-icon mdui-ripple">
                 <i class="mdui-icon material-icons">search</i>
             </a>
             <form class="searchInput dark" method="get" action="/search" role="search">
@@ -22,16 +22,16 @@
 
             
             
-            <a href="/journals" class="mdui-btn mdui-btn-icon nodesk">
+            <a href="/journals" class="mdui-btn mdui-btn-icon nodesk mdui-ripple">
                 <i class="mdui-icon material-icons">self_improvement</i>
             </a>
 
             <button class="mdui-btn mdui-btn-icon toc_button mdui-ripple" mdui-drawer="{target: '#right-drawer'}"><i class="mdui-icon material-icons">assignment</i></button>
 
             <#if settings.dark_enabled!false>
-              <a class="mdui-btn mdui-btn-icon darkButton">
+              <button class="mdui-btn mdui-btn-icon mdui-ripple darkButton">
                 <i class="mdui-icon material-icons">brightness_6</i>
-              </a>   
+              </button>   
             </#if>
                
         </div> 
@@ -44,11 +44,6 @@
   <div class="headerLogo" style="background-image: url('${settings.drawimg!'${theme_base!}/source/images/indexBack.jpg'}')">
     <img class="mdui-img-circle mdui-shadow-2" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="">
     <span class="drawTitle">${user.nickname!}</span>
-
-    <#--  <div class="swtoc">
-    
-      <button data-toggle="toc" class="swtocl mdui-btn mdui-color-theme-accent mdui-btn-dense mdui-ripple mdui-btn-raised">目录</button>
-    </div>  -->
   </div>
 
 
