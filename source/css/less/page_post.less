@@ -118,7 +118,7 @@ article a {
   }
   pre code {
     padding: 40px 10px 10px 10px !important;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 7px 7px;
   }
   pre code::before {
     position: absolute;
@@ -148,10 +148,13 @@ article a {
   pre code::-webkit-scrollbar {
     width: 5px;
     height: 10px;
-    background: inherit;
+    background: none;
   }
   pre code::-webkit-scrollbar-thumb {
-    background-color: #eee;
+    background-color: #dbdbdb;
+    &:hover {
+      background-color: #d2d2d2;
+    }
   }
 }
 
