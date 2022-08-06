@@ -17,7 +17,7 @@
                     </div>
                     </#if>
                     
-                    <a href="${post.fullPath!}" class="post-list-content">
+                    <a href="${post.fullPath!}" class="post-list-content" target="${(settings.postBlank_enabled!default) ? string('_blank','_self')}">
                         <div class="post-l-left">
                             <div class="post-list-title">${post.title}</div>
                             <div class="post-list-summary">${post.summary!}</div>

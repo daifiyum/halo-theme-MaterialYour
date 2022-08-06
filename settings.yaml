@@ -12,7 +12,7 @@ genernal:
       type: radio
       data-type: bool
       default: false
-      description: '是否开启一言，开启后，首页描述为一言，默认为关闭'
+      description: '是否开启一言，开启后，首页描述为一言，默认关闭'
       options:
         - value: true
           label: 开启
@@ -53,7 +53,7 @@ genernal:
       label: 一言类型多种组合（开启后，上面单类型将失效）
       type: text
       placeholder: '如：a,b'
-      description: '上面代号a,b分别表示，动画：a，漫画：b，其他代号请参考此网站：https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0'
+      description: 'a:动画，b:漫画'
     aWordNum:
       name: aWordNum
       label: 一言最少字数
@@ -63,11 +63,6 @@ genernal:
       name: avatarLogo
       label: 头像
       type: attachment   
-    # music:
-    #   name: music
-    #   label: 音乐（为空不显示图标）
-    #   type: textarea
-    #   placeholder: '歌曲链接1#*#歌曲名称,歌曲链接2#*#歌曲名称'
     record:
       name: record
       label: ICP备案号
@@ -77,7 +72,7 @@ genernal:
       name: record2img               
       label: 备案图标          
       type: attachment               
-      placeholder: '公安备案图标地址（修改默认）'            
+      placeholder: '公安备案图标url(修改默认？)'            
     record2:
       name: record2
       label: 公安备案号
@@ -200,7 +195,7 @@ style:
       type: radio
       data-type: bool
       default: false
-      description: '是否开启黑暗模式，默认为关闭'
+      description: '是否开启黑暗模式，默认关闭'
       options:
         - value: true
           label: 开启
@@ -253,14 +248,14 @@ style:
       name: comment_js               
       label: 评论组件CDN              
       type: text                
-      placeholder: '填入外部评论组件URL'              
-      description: '导入外部评论组件JS,推荐默认评论组件以完美支持黑暗模式' 
+      placeholder: '填入其他评论组件CDN'              
+      description: '导入其他评论组件' 
     comment_darkClass:
       name: comment_darkClass              
       label: 评论组件黑暗模式类选择器             
       type: text               
       placeholder: '默认dark'              
-      description: '由于各个评论组件黑暗模式的类选择器不同，所以在这加个自定义，我球球你们这些开发者了，评论组件的黑暗模式类选择器就不能统一下吗？有的.dark，有的.dark-mode' 
+      description: '由于各个评论组件黑暗模式的类选择器不同，所以在这加个自定义' 
     custom_commentcss:
       name: custom_commentcss
       label: 自定义评论css
@@ -272,13 +267,25 @@ style:
       type: text               
       placeholder: '默认无图白色'              
       description: '填入背景图片url'
+    postBlank_enabled:
+      name: postBlank_enabled
+      label: 文章页新窗口打开
+      type: radio
+      data-type: bool
+      default: false
+      description: '是否开启？默认关闭'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     footerCenter_enabled:
       name: footerCenter_enabled
       label: 页脚内容居中
       type: radio
       data-type: bool
       default: false
-      description: '是否开启居中？默认为关闭'
+      description: '是否开启？默认关闭'
       options:
         - value: true
           label: 开启
