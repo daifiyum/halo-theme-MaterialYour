@@ -10,7 +10,7 @@
 
 [预览](https://www.dnxrzl.com/)
 
-![屏幕截图 2022-06-29 185254.png](https://img.dnxrzl.com/2022/06/29/d80a01f02fd9f.png)
+![屏幕截图 2022-06-29 185254.png](https://img.dnxrzl.com/images/2022/08/07/d80a01f02fd9f.png)
 
 ### 功能&说明
 
