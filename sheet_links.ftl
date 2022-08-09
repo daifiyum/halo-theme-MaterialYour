@@ -15,7 +15,7 @@
                 <div class="linksBlock">
                   <#list team.links as link>
                       <a class="linkCard" href="${link.url!}" target="_blank">
-                        <img class="lazyloadImg mdui-img-circle" data-src="${link.logo}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+                        <img class="lazyloadImg mdui-img-circle" data-src="${(link.logo != '') ? string('${link.logo}','${theme_base!}/source/images/friendlink.png')}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
                         <div class="linkDesc">
                         <span>${link.name!}</span>
                         <span>${link.description!}</span>
