@@ -250,7 +250,11 @@ const dnxrzl = {
                 dnxrzl.table(); //表格重载
               } else if (currentPageUrl.search("archives") != -1) {
                 // 归档页
-                let aper = parseInt($(".archMain .archCell:last-child .archiveyear").text()); //前时间
+                let aperList = [];
+                $('.archives .archMain .archCell .archiveyear').each(function(){//通过对归档年份遍历获取每页最后一年
+                  aperList.push(parseInt($(this).text()))
+                })
+                let aper = aperList[aperList.length-1]; //前时间
                 let aafter = parseInt($(data).find(".archMain .archCell:first-child .archiveyear").text()); //后时间
                 let archCont = $(data).find(".archMain");
                 if (aper == aafter) {
