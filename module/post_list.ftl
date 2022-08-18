@@ -1,6 +1,6 @@
 <#macro post_list>
         <#if posts.content?size gt 0>
-        <div class="post-list">
+        <div class="post-list ${(settings.single_postList!default) ? string('single_postList','')}">
         <#list posts.content as post>
             <article class="mdui-card post-item wow animate__fadeIn animate__animated animate__slow">
                 <div class="post-list-main">

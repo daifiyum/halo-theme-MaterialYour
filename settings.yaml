@@ -213,6 +213,18 @@ style:
           label: 开启
         - value: false
           label: 关闭     
+    single_postList:
+      name: single_postList
+      label: 文章列表单栏模式
+      type: radio
+      data-type: bool
+      default: false
+      description: '开启单栏？默认关闭'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭     
     code_css:
       name: code_css
       label: 代码样式
