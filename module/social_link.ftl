@@ -72,4 +72,10 @@
         
     </#if>
 
+    <#if settings.myrss!true>
+            <a target="_blank" class="mdui-btn mdui-btn-icon" href="${rss_url!}" title="rss">
+                <i class="mdui-icon ri-rss-line"></i>
+            </a>
+    </#if>
+
 </#macro>

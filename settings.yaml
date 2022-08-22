@@ -126,6 +126,17 @@ sns:
       label: Instagram
       type: text
       placeholder: '填入 Instagram 用户名'
+    myrss:
+      name: myrss
+      label: 显示RSS
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭     
 style:
   label: 样式设置
   items:
