@@ -1,4 +1,5 @@
 <#macro config>
+<link rel="stylesheet" href="${settings.iconfont!}"/>
 <#--  Js的一些配置  -->
 <script>
     <#--  let my_music = '${settings.music!}';  -->

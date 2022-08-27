@@ -9,7 +9,7 @@ genernal:
     aWord_enabled:
       name:  aWord_enabled
       label: 一言
-      type: radio
+      type: switch
       data-type: bool
       default: false
       description: '是否开启一言，开启后，首页描述为一言，默认关闭'
@@ -129,7 +129,7 @@ sns:
     myrss:
       name: myrss
       label: 显示RSS
-      type: radio
+      type: switch
       data-type: bool
       default: false
       options:
@@ -179,17 +179,6 @@ style:
       type: color   
       default: '#ffa1bb'                  
       description: '自定义强调色'    
-    auto_headroom:
-      name: auto_headroom
-      label: 自动隐藏应用栏
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭     
     indeximg:
       name: indeximg               
       label: 镇站图              
@@ -200,34 +189,10 @@ style:
       label: 抽屉图              
       type: attachment               
       placeholder: '图片地址'           
-    dark_enabled:
-      name: dark_enabled
-      label: 黑暗模式
-      type: radio
-      data-type: bool
-      default: false
-      description: '是否开启黑暗模式，默认关闭'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    autoDarkOpt:
-      name: autoDarkOpt
-      label: 自动黑暗模式
-      type: radio
-      data-type: bool
-      default: false
-      description: '开启后18点-6点区间内自动黑暗模式，默认关闭'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭     
     single_postList:
       name: single_postList
       label: 文章列表单栏模式
-      type: radio
+      type: switch
       data-type: bool
       default: false
       description: '开启单栏？默认关闭'
@@ -267,6 +232,80 @@ style:
           label: "paraiso-light"
         - value: "/base16/material"
           label: "material"
+    journal_background:
+      name: journal_background             
+      label: 日志背景图             
+      type: text               
+      placeholder: '默认无图白色'              
+      description: '填入背景图片url'
+    footerCenter_enabled:
+      name: footerCenter_enabled
+      label: 页脚内容居中
+      type: switch
+      data-type: bool
+      default: false
+      description: '是否开启？默认关闭'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+fun:
+  label: 功能设置
+  items:
+    dark_enabled:
+      name: dark_enabled
+      label: 黑暗模式
+      type: switch
+      data-type: bool
+      default: false
+      description: '是否开启黑暗模式，默认关闭'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    autoDarkOpt:
+      name: autoDarkOpt
+      label: 自动黑暗模式
+      type: switch
+      data-type: bool
+      default: false
+      description: '开启后18点-6点区间内自动黑暗模式，默认关闭'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭   
+    auto_headroom:
+      name: auto_headroom
+      label: 自动隐藏应用栏
+      type: switch
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭   
+    postBlank_enabled:
+      name: postBlank_enabled
+      label: 文章页新窗口打开
+      type: switch
+      data-type: bool
+      default: false
+      description: '是否开启？默认关闭'
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    iconfont:
+      name: iconfont              
+      label: iconfont图标           
+      type: text               
+      placeholder: '填入Font class CDN链接'              
+      description: '通过iconfont自定义图标'     
     comment_js:
       name: comment_js               
       label: 评论组件CDN              
@@ -284,33 +323,3 @@ style:
       label: 自定义评论css
       type: textarea
       description: '在这你可自定义评论css，css选择器第一个为 .dark 用来适配夜间样式，例如：.dark .comment-form {...}'
-    journal_background:
-      name: journal_background             
-      label: 日志背景图             
-      type: text               
-      placeholder: '默认无图白色'              
-      description: '填入背景图片url'
-    postBlank_enabled:
-      name: postBlank_enabled
-      label: 文章页新窗口打开
-      type: radio
-      data-type: bool
-      default: false
-      description: '是否开启？默认关闭'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    footerCenter_enabled:
-      name: footerCenter_enabled
-      label: 页脚内容居中
-      type: radio
-      data-type: bool
-      default: false
-      description: '是否开启？默认关闭'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
