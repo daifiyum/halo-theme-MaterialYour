@@ -1,6 +1,7 @@
 <#include "module/macro.ftl">
 <#include "module/home_banner.ftl">
 <#include "module/post_list.ftl">
+<#--  <#include "module/post_list2.ftl">  -->
 
 <@layout title="${blog_title!}">
 <main class="my-container mdui-container">

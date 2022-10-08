@@ -264,7 +264,7 @@ const dnxrzl = {
                   $(".archMain:last-child").after(archCont);
                 }
               } else {
-                $(".post-list article:last-child").after($(data).find(".post-list > article")); //其他页面（首页、分类、标签、搜索）
+                $("#pload article:last-child").after($(data).find("#pload > article")); //其他页面（首页、分类、标签、搜索）
                 dnxrzl.mylazyload();
               }
               if (nextPageUrl == undefined) {

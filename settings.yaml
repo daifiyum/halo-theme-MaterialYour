@@ -188,19 +188,17 @@ style:
       name: drawimg               
       label: 抽屉图              
       type: attachment               
-      placeholder: '图片地址'           
-    single_postList:
-      name: single_postList
-      label: 文章列表单栏模式
-      type: switch
-      data-type: bool
-      default: false
-      description: '开启单栏？默认关闭'
+      placeholder: '图片地址'             
+    postlist_style:
+      name: postlist_style
+      label: 文章列表样式
+      type: select
+      default: 'style1'
       options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭     
+        - value: 'style1'
+          label: '样式一' 
+        - value: 'style2'
+          label: '样式二' 
     code_css:
       name: code_css
       label: 代码样式
