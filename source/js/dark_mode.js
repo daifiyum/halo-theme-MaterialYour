@@ -44,52 +44,61 @@ const darkMode = {
       }
     }
   },
-  setFlag: function () {
-    localStorage.setItem("night", "true");
-  },
-  removeFlag: function () {
-    localStorage.setItem("night", "false");
-  },
-  getFlag: function (key) {
-    return localStorage.getItem(key);
-  },
 
-  setDark: function () {
-    $("body").addClass("mdui-theme-layout-dark");
+  //黑夜模式状态标志量
+  flagCore: function (is) {
+    switch(is){
+			case 1://设置为黑夜模式
+				localStorage.setItem("night", "true");
+				break
+			case 2://关闭黑夜模式
+				localStorage.setItem("night", "false");
+				break
+			default://得到黑夜模式状态
+				return localStorage.getItem('night');
+		}
   },
-  removeDark: function () {
-    $("body").removeClass("mdui-theme-layout-dark");
+  //黑夜模式类选择器的控制
+  setCore: function (is) {
+    switch(is){
+			case 1://开启黑夜模式
+				$("body").addClass("mdui-theme-layout-dark");
+				break
+			default://关闭黑夜模式
+				$("body").removeClass("mdui-theme-layout-dark");
+		}
   },
-
+  //页面打开对黑暗模式的判断和设置
   firstDark: function () {
-    if (this.getFlag("night") == "true") {
-      this.setDark();
+    if (this.flagCore() == "true") {
+      this.setCore(1);
       let commentyes = this.commentInit();
       if (commentyes) {
         this.commentDark("true");
       }
     } else {
-      this.removeFlag();
-      this.removeDark();
+      this.flagCore(2);
+      this.setCore();
       let commentyes = this.commentInit();
       if (commentyes) {
         this.commentDark("false");
       }
     }
   },
+  //手动点击开关黑暗模式
   clickDark: function () {
     $(".darkButton").on("click", () => {
-      if (this.getFlag("night") != "true") {
-        this.setFlag();
-        this.setDark();
+      if (this.flagCore() != "true") {
+        this.flagCore(1);
+        this.setCore(1);
         dnxrzl.getcolor();
         let commentyes = this.commentInit();
         if (commentyes) {
           this.commentDark("true");
         }
       } else {
-        this.removeFlag();
-        this.removeDark();
+        this.flagCore(2);
+        this.setCore();
         dnxrzl.getcolor();
         let commentyes = this.commentInit();
         if (commentyes) {
@@ -98,16 +107,17 @@ const darkMode = {
       }
     });
   },
+  //自动开启黑暗模式
   autoDark: function () {
     if (autoDarkOpt) {
       let hour = new Date().getHours();
       if (hour >= 18 || hour < 6) {
-        this.setFlag();
+        this.flagCore(1);
         localStorage.setItem("autoDark", "true");
       } else {
         if (localStorage.getItem("autoDark") != "false") {
           localStorage.setItem("autoDark", "false");
-          this.removeFlag();
+          this.flagCore(2);
           localStorage.removeItem('darkTipsOk');
         }
       }

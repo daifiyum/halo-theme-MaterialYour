@@ -36,9 +36,11 @@
 </head>
 <body class="${settings.mdui_theme!default}">
     <script>
-        if(darkMode.getFlag('night') != null){
+        //黑夜模式
+        if(darkMode.flagCore() != null){
             darkMode.firstDark();
         }
+        
     </script>
 
     <#include "menu.ftl">
@@ -47,7 +49,7 @@
 
     <#include "footer.ftl">
     <@footer/>
-    
+
 <script src="${theme_base!}/source/libs/mdui/mdui.min.js"></script>
 <script src="${theme_base!}/source/js/min/core.min.js"></script>
 </body>
