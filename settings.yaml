@@ -248,6 +248,12 @@ style:
           label: 开启
         - value: false
           label: 关闭
+    journal_icon:
+      name: journal_icon          
+      label: 应用栏日志图标          
+      type: text               
+      placeholder: 'self_improvement'              
+      description: '填入字体图标名称（可以去 https://fonts.google.com/icons 获取）'
 fun:
   label: 功能设置
   items:

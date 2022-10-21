@@ -23,7 +23,7 @@
             
             
             <a href="/journals" class="mdui-btn mdui-btn-icon nodesk mdui-ripple">
-                <i class="mdui-icon material-icons">self_improvement</i>
+                <i class="mdui-icon material-icons">${settings.journal_icon!'self_improvement'}</i>
             </a>
 
             <button class="mdui-btn mdui-btn-icon toc_button mdui-ripple" mdui-drawer="{target: '#right-drawer'}"><i class="mdui-icon material-icons">assignment</i></button>
