@@ -1,25 +1,19 @@
-console.log("\n %c Dnxrzl " + " %c MaterialYour %c \n", "color:#fff;background:#6cf;padding:5px 0;border: 1px solid #6cf;", "color:#6cf;background:none;padding:5px 0;border: 1px solid #6cf;", "");
-console.log("菩萨保佑，没有报错🙏🙏🙏");
+console.log('%c DNXRZL %c MaterialYour ','color:#fff;background:#6cf;padding:5px 0;border: 1px solid #6cf;','color:#6cf;background:none;padding:5px 0;border: 1px solid #6cf;')
+
 const dnxrzl = {
   //顶部应用栏向下滚动加阴影
-  dnScroll: function () {
-    var i = 1;
-    $(document).scroll(function () {
-      if (i == 1) {
-        //阻止递归死循环
-        i++;
-        dnxrzl.dnScroll();
+  addShadow() {
+    let head = $("#selfAppbar");
+    $(document).scroll(function() {
+      if ($(document).scrollTop() > 1) {
+        head.removeClass("mdui-shadow-0");
+      } else {
+        head.addClass("mdui-shadow-0");
       }
     });
-    let head = $("#selfAppbar");
-    if ($(document).scrollTop() > 1) {
-      head.removeClass("mdui-shadow-0");
-    } else {
-      head.addClass("mdui-shadow-0");
-    }
   },
   //文章页内封面图片大小随窗口宽度变化而变化
-  autoImg: function () {
+  autoImg() {
     var i = 1;
     $(window).resize(function () {
       if (i == 1) {
@@ -36,7 +30,7 @@ const dnxrzl = {
     }
   },
   //文章页内分享链接复制
-  copyLink: function () {
+  copyLink() {
     let postclipboard = new ClipboardJS(".postCopyLink");
     postclipboard.on("success", function (e) {
       mdui.snackbar({
@@ -47,19 +41,19 @@ const dnxrzl = {
     });
   },
   //页脚时间：年 的显示
-  gettime: function () {
+  gettime () {
     var date = new Date();
     $("#timeyear").text(date.getFullYear());
   },
   //获取主题色
-  getcolor: function () {
+  getcolor () {
     let body = $("body");
     let bc = $(".mdui-toolbar").css("background-color");
     let bct = $(".mdui-toolbar").css("color");
     body.css({ "--themeColor": bc, "--fontColor": bct });
   },
   //每日时间问候
-  welcome: function () {
+  welcome () {
     var welcome = $(".welcome_hello");
     var hour = new Date().getHours();
     if (hour >= 6 && hour < 12) {
@@ -75,7 +69,7 @@ const dnxrzl = {
     }
   },
   //回到顶部
-  totop: function () {
+  totop () {
     $(".totop").click(function () {
       $("html,body").animate({ scrollTop: 0 }, 300);
     });
@@ -89,7 +83,7 @@ const dnxrzl = {
     });
   },
   //说说点赞
-  journlike: function () {
+  journlike () {
     $(document).on("click", ".likeb", function () {
       var likeNum = $(this).attr("id");
       let lid = $(this);
@@ -123,13 +117,13 @@ const dnxrzl = {
     });
   },
   //说说评论
-  journComment: function () {
+  journComment () {
     $(document).on("click", ".chatb", function () {
       $(this).parents(".journBottom").next().toggle();
     });
   },
   //图片预览初始化
-  picInit: function () {
+  picInit () {
     if (window.location.pathname.search("/photos") != -1) {
       var psrc = $(".grid img");
     } else {
@@ -145,7 +139,7 @@ const dnxrzl = {
     });
   },
   //文章目录随窗口变化而变化（移动端样式和PC端样式的切换）
-  switchIndex: function () {
+  switchIndex () {
     tocbot.init({
       tocSelector: ".toc-content",
       contentSelector: ".js-toc-content",
@@ -180,7 +174,7 @@ const dnxrzl = {
     });
   },
   //faccybox的实例（负责图片预览）
-  mfancybox: function () {
+  mfancybox () {
     Fancybox.bind("[data-fancybox]", {
       Thumbs: false,
       Image: {
@@ -192,7 +186,7 @@ const dnxrzl = {
     });
   },
   //相册图片的瀑布流显示和分类显示
-  mistope: function () {
+  mistope () {
     //图片瀑布流
     var $grid = $(".grid").isotope({
       itemSelector: ".grid-item",
@@ -219,86 +213,61 @@ const dnxrzl = {
     });
   },
   //一键加载内容列表
-  ajaxPostLists: function () {
-    let loadingText = $(".loadingText");
-    let loadingSvg = $(".loadingSvg");
-    let ajaxPostLists = $("button.ajaxPostLists");
-    $("button.ajaxPostLists").on("click", function () {
-      //currentPageUrl获取本页面内的下一页Url
-      let currentPageUrl = $("button.ajaxPostLists").attr("data-href");
-      if (ajaxPostLists.attr("data-href") != "null") {
-        loadingText.addClass("reloadingText");
-        loadingSvg.addClass("startLoadingSvg");
-        $.ajax({
-          url: currentPageUrl,
-          type: "GET",
-          dataType: "html",
-          async: false,
-          crossDomain: true,
-          success: function (data) {
-            //netPageUrl获取本页面下一页内的下一页Url
-            let nextPageUrl = $(data).find("button.ajaxPostLists").attr("data-href");
-            let loadTime = setTimeout(() => {
-              //加个延时好显示'正在加载...'提示
-              clearTimeout(loadTime); //加载前清除上一次点击定时器，阻止猛击时定时器时间累计
-              if (currentPageUrl.search("journals") != -1) {
-                //日志页
-                $(".journalList .journItem:last-child").after($(data).find(".journalList .journItem"));
-                dnxrzl.picInit(); //初始化图箱
-                darkMode.firstDark(); //评论黑暗模式重载
-                dnxrzl.dealCodeHighlight(); //代码高亮重载
-                dnxrzl.table(); //表格重载
-              } else if (currentPageUrl.search("archives") != -1) {
-                // 归档页
-                let aperList = [];
-                $('.archives .archMain .archCell .archiveyear').each(function(){//通过对归档年份遍历获取每页最后一年
-                  aperList.push(parseInt($(this).text()))
-                })
-                let aper = aperList[aperList.length-1]; //前时间
-                let aafter = parseInt($(data).find(".archMain .archCell:first-child .archiveyear").text()); //后时间
-                let archCont = $(data).find(".archMain");
-                if (aper == aafter) {
-                  archCont.find(".archCell:first-child .archiveyear")[0].remove();
-                  $(".archMain:last-child").after(archCont);
-                } else {
-                  $(".archMain:last-child").after(archCont);
-                }
-              } else {
-                $("#pload article:last-child").after($(data).find("#pload > article")); //其他页面（首页、分类、标签、搜索）
-                dnxrzl.mylazyload();
-              }
-              if (nextPageUrl == undefined) {
-                loadingText.text("没有啦");
-                loadingText.removeClass("reloadingText");
-                loadingSvg.removeClass("startLoadingSvg");
-              } else {
-                loadingText.removeClass("reloadingText");
-                loadingSvg.removeClass("startLoadingSvg");
-              }
-            }, 300);
+  ajaxPostLists () {
+    $("#loadData").on("click", function () {
+      $("#loadData").text('加载中...')
+      $.ajax({
+        url: $(this).attr("data-href"),
+        type: "GET",
+        success: (data)=> {
+          let nextPageUrl = $(data).find("#loadData").attr("data-href");
 
-            if (nextPageUrl == undefined) {
-              //判断本页面内是否还有下一页，没有就添加标记'null',当加载时判断是否为'null',是则不加载
-              ajaxPostLists.attr("data-href", "null");
+          if ($(this).attr("data-href").search("journals") != -1) {
+            //日志页
+            $(".journalList .journItem:last-child").after($(data).find(".journalList .journItem"));
+            dnxrzl.picInit(); //初始化图箱
+            darkMode.firstDark(); //评论黑暗模式重载
+            dnxrzl.dealCodeHighlight(); //代码高亮重载
+            dnxrzl.table(); //表格重载
+            } else if ($(this).attr("data-href").search("archives") != -1) {
+            // 归档页
+            let aperList = [];
+            $('.archives .archMain .archCell .archiveyear').each(function(){//通过对归档年份遍历获取每页最后一年
+              aperList.push(parseInt($(this).text()))
+            })
+            let aper = aperList[aperList.length-1]; //前时间
+            let aafter = parseInt($(data).find(".archMain .archCell:first-child .archiveyear").text()); //后时间
+            let archCont = $(data).find(".archMain");
+            if (aper == aafter) {
+              archCont.find(".archCell:first-child .archiveyear")[0].remove();
+              $(".archMain:last-child").after(archCont);
             } else {
-              ajaxPostLists.attr("data-href", nextPageUrl);
+              $(".archMain:last-child").after(archCont);
             }
-          },
-          timeout: 3000,
-          error: function () {
-            //加载错误时的提示信息
-            mdui.snackbar({
-              //调用mdui前端框架里的snackbar()方法显示提示信息
-              message: "未响应！",
-              position: "left-bottom",
-            });
-          },
-        });
-      }
+          } else {
+            $("#pload article:last-child").after($(data).find("#pload > article")); //其他页面（首页、分类、标签、搜索）
+            dnxrzl.mylazyload();
+          }
+
+          $("#loadData").text('加载更多');
+          if (nextPageUrl != undefined) {
+            $("#loadData").attr("data-href", nextPageUrl);
+          } else {
+            $(".nextPage").html(`<button class="mdui-ripple">没有了</button>`);
+          }
+        },
+        timeout: 3000,
+        error: ()=> {
+          mdui.snackbar({
+            message: "未响应！",
+            position: "left-bottom",
+          });
+        },
+      });
     });
   },
   //搜索按钮逻辑实现
-  searchNew: function () {
+  searchNew () {
     let dform = $(".searchInput");
     let dfinput = $(".searchInput input");
     let searchMask = $(".searchMask");
@@ -340,7 +309,7 @@ const dnxrzl = {
     });
   },
   //一言
-  oneWord: function () {
+  oneWord () {
     if (oneWord != "false") {
       $.ajax({
         url: "https://v1.hitokoto.cn/" + mconfig,
@@ -356,12 +325,12 @@ const dnxrzl = {
     }
   },
   //图片懒加载
-  mylazyload: function () {
+  mylazyload () {
     let img = $(".lazyloadImg");
     img.lazyload();
   },
   //代码复制
-  codeCopy: function () {
+  codeCopy () {
     let clipboard = new ClipboardJS(".mybtn");
     clipboard.on("success", function (e) {
       // console.log('jjj');
@@ -374,7 +343,7 @@ const dnxrzl = {
     });
   },
   //代码高亮部分处理，引用https://github.com/LIlGG/halo-theme-sakura/blob/2ea256e0bf8b55bc62c7cf942675facfb4d9c04b/script/app.js#L387
-  dealCodeHighlight: function () {
+  dealCodeHighlight () {
     var hljsNum = 1;
     $(".mdui-typo pre").each(function () {
       $(this)
@@ -423,7 +392,7 @@ const dnxrzl = {
     });
   },
   //自动黑暗模式开启一次性提示
-  autoDarkTips: function () {
+  autoDarkTips () {
     if (localStorage.getItem("autoDark") == "true" && localStorage.getItem("darkTipsOk") == null) {
       localStorage.setItem("darkTipsOk", 0);
       mdui.snackbar({
@@ -434,7 +403,7 @@ const dnxrzl = {
     }
   },
   //文章表格支持
-  table: function () {
+  table () {
     $(".mdui-typo>table").addClass("mdui-table mdui-table-hoverable").wrap('<div class="mdui-table-fluid">');
   }
 };

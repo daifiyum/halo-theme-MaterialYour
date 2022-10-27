@@ -5,7 +5,7 @@ const darkMode = {
    * normal组件，这个组件的开发版本已经支持黑暗模式了，所以，下面的css注入暂且注释掉，但以后还会用到，因为它可以实现评论样式的自定义
    *
    */
-  commentInit: function () {
+  commentInit () {
     //初始化评论组件黑暗模式css
     if ($("halo-comment").length > 0) {
       var comments = $("halo-comment");
@@ -27,7 +27,7 @@ const darkMode = {
       return false;
     }
   },
-  commentDark: function (isDark) {
+  commentDark (isDark) {
     //切换评论组件黑暗模式
     if (isDark == "true") {
       var comments = $("halo-comment");
@@ -46,7 +46,7 @@ const darkMode = {
   },
 
   //黑夜模式状态标志量
-  flagCore: function (is) {
+  flagCore (is) {
     switch(is){
 			case 1://设置为黑夜模式
 				localStorage.setItem("night", "true");
@@ -59,7 +59,7 @@ const darkMode = {
 		}
   },
   //黑夜模式类选择器的控制
-  setCore: function (is) {
+  setCore (is) {
     switch(is){
 			case 1://开启黑夜模式
 				$("body").addClass("mdui-theme-layout-dark");
@@ -69,7 +69,7 @@ const darkMode = {
 		}
   },
   //页面打开对黑暗模式的判断和设置
-  firstDark: function () {
+  firstDark () {
     if (this.flagCore() == "true") {
       this.setCore(1);
       let commentyes = this.commentInit();
@@ -86,7 +86,7 @@ const darkMode = {
     }
   },
   //手动点击开关黑暗模式
-  clickDark: function () {
+  clickDark () {
     $(".darkButton").on("click", () => {
       if (this.flagCore() != "true") {
         this.flagCore(1);
@@ -108,7 +108,7 @@ const darkMode = {
     });
   },
   //自动开启黑暗模式
-  autoDark: function () {
+  autoDark () {
     if (autoDarkOpt) {
       let hour = new Date().getHours();
       if (hour >= 18 || hour < 6) {

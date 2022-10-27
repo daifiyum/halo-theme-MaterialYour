@@ -1,6 +1,4 @@
-const gulp = require("gulp");
-const { src, dest } = require("gulp");
-const {series, parallel} = require('gulp');
+const {series, parallel, src, dest} = require('gulp');
 const header = require('gulp-header');
 const autoprefix = require("gulp-autoprefixer");
 const minifyCSS = require("gulp-csso");
@@ -68,7 +66,14 @@ function js() {
   return src(["./source/js/*.js"])
     .pipe(
       babel({
-        presets: ["@babel/env"],
+        presets: [
+          [
+            "@babel/preset-env",
+            {
+              targets: "> 2%, last 2 versions, not ie 6-9"
+            },
+          ],
+        ],
       })
     )
     .pipe(uglify())
