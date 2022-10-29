@@ -24,7 +24,7 @@ function css() {
   return src(['./source/css/less/main.less'])
   .pipe(less())
   .pipe(
-    purgecss({
+    purgecss({//删除无用css样式
       content: ["./**/*.ftl", "./source/libs/**/*.css", "./source/**/*.js"],
     })
   )

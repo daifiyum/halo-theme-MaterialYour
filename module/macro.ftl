@@ -34,7 +34,7 @@
     <script type="text/javascript" src="${theme_base!}/source/libs/lazyload/lazyload.min.js"></script>
     <script src="${theme_base!}/source/js/min/dark_mode.min.js"></script>
 </head>
-<body class="${settings.mdui_theme!default}">
+<body class="mdui-appbar-with-toolbar ${settings.mdui_theme!default}">
     <script>
         //黑夜模式
         if(darkMode.flagCore() != null){

@@ -40,7 +40,7 @@
 </header>
         
       
-<aside class="mdui-drawer mdui-drawer-close" id="left-drawer">
+<aside class="mdui-drawer mdui-drawer-close drawer-left" id="left-drawer">
   <div class="headerLogo" style="background-image: url('${settings.drawimg!'${theme_base!}/source/images/indexBack.jpg'}')">
     <img class="mdui-img-circle mdui-shadow-2" src="${settings.avatarLogo!'${theme_base!}/source/images/avatar.png'}" alt="">
     <span class="drawTitle">${user.nickname!}</span>

@@ -13,7 +13,7 @@
   body {
     /*修复抽屉打开时自增宽度*/
     width: auto !important;
-    padding-top: 74px;
+    // padding-top: 74px;
     background-color: hsl(219deg 23% 97%);
     transition: all 0.3s cubic-bezier(0, 0, 0.2, 1) !important;
     &::-webkit-scrollbar {
@@ -35,6 +35,7 @@
     transition: all 0.3s cubic-bezier(0, 0, 0.2, 1) !important;
   }
   .my-container {
+    margin-top: 15px;
     max-width: 1000px; /*窗口最大时的容器固定宽度*/
     margin-bottom: 20px;
   }
@@ -44,4 +45,10 @@
       padding: 0;
     }
   }
+  /* PC端去除left-drawer上边距 */
+@media (min-width: 1024px) {
+  .mdui-appbar-with-toolbar .drawer-left {
+      top: 0;
+  }
+}
   /*主体结束*/
