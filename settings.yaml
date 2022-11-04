@@ -327,3 +327,15 @@ fun:
       label: 自定义评论css
       type: textarea
       description: '在这你可自定义评论css，css选择器第一个为 .dark 用来适配夜间样式，例如：.dark .comment-form {...}'
+    post_copyrightText:
+      name: post_copyrightText           
+      label: 文章底部许可协议说明         
+      type: text               
+      placeholder: '没有特殊需求可不填'
+    post_copyrightLink:
+      name: post_copyrightLink           
+      label: 文章底部许可协议链接           
+      type: text               
+      placeholder: '没有特殊需求可不填'
+                  
+    

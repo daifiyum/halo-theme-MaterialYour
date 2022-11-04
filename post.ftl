@@ -69,7 +69,7 @@
                         </div>
                         <div class="cr3">
                             <span>版权声明：</span>
-                            <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"> 本文采用 CC BY-NC-SA 3.0 协议进行许可</a>
+                            <a href="${settings.post_copyrightLink!'https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh'}"> ${settings.post_copyrightText!'本文采用 CC BY-NC-SA 3.0 协议进行许可'}</a>
                         </div>
                     </div>
                     
