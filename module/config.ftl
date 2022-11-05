@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="${settings.iconfont!}"/>
 <#--  Js的一些配置  -->
 <script>
-    <#--  let my_music = '${settings.music!}';  -->
     new WOW().init();
 
     let postyes = '${is_post?? ? string('true','false')}';
@@ -31,6 +30,9 @@
 
     //自动黑暗模式
     let autoDarkOpt = ${settings.autoDarkOpt ? string('true','false')};
+
+    //触底自动加载
+    let tbl = ${settings.auto_loadPost ? string('true', 'false')}
 </script>
 
 <#--  自定义主题色  -->

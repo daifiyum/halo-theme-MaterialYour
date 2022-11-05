@@ -337,5 +337,17 @@ fun:
       label: 文章底部许可协议链接           
       type: text               
       placeholder: '没有特殊需求可不填'
+    auto_loadPost:
+      name: auto_loadPost
+      label: 触底自动加载
+      type: switch
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭   
+      description: '触底自动加载，默认关闭'
                   
     
