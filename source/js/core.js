@@ -405,14 +405,6 @@ const dnxrzl = {
   //文章表格支持
   table () {
     $(".mdui-typo>table").addClass("mdui-table mdui-table-hoverable").wrap('<div class="mdui-table-fluid">');
-  },
-  //到底自动加载
-  toBottomLoad () {
-    $(window).scroll(function(){
-      if(tbl && $(window).scrollTop() + $(window).height() >= $(document).height()-60) {
-        $('#loadData').click();
-      }
-    });
   }
 };
 

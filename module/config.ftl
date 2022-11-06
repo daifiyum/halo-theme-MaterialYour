@@ -30,9 +30,6 @@
 
     //自动黑暗模式
     let autoDarkOpt = ${settings.autoDarkOpt ? string('true','false')};
-
-    //触底自动加载
-    let tbl = ${settings.auto_loadPost ? string('true', 'false')}
 </script>
 
 <#--  自定义主题色  -->
