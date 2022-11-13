@@ -1,7 +1,7 @@
 /**
  * halo_materialyour - 一个Material风格的Halo博客主题
  * @authors Dnxrzl
- * @version v2.0.0
+ * @version v1.0.0
  * @link https://github.com/daifiyum/halo-theme-MaterialYour#readme
  * @license MIT
  */

@@ -1,6 +1,6 @@
 {
   "name": "halo_materialyour",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "一个Material风格的Halo博客主题",
   "main": "index.js",
   "scripts": {
