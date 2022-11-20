@@ -1,4 +1,4 @@
-const {series, parallel, src, dest} = require('gulp');
+const {series, parallel, src, dest, watch} = require('gulp');
 const header = require('gulp-header');
 const autoprefix = require("gulp-autoprefixer");
 const minifyCSS = require("gulp-csso");
@@ -7,6 +7,7 @@ const less = require('gulp-less');
 const rename = require("gulp-rename");
 const babel = require("gulp-babel");
 const uglify = require("gulp-uglify");
+const livereload = require('gulp-livereload');
 
 //为文件添加头部信息
 const pkg = require('./package.json');
@@ -36,11 +37,6 @@ function css() {
   )
   .pipe(minifyCSS())
   .pipe(header(template, { pkg : pkg } ))
-  .pipe(
-    rename({
-      suffix: ".min",
-    })
-  )
   .pipe(
     rename({
       basename: "style.min",
@@ -80,15 +76,22 @@ function js() {
     .pipe(header(template, { pkg : pkg } ))
     .pipe(
       rename({
-        extname: ".min.js",
+        suffix: ".min",
       })
     )
     .pipe(dest("./source/js/min"));
 }
 
+function serve() {
+  livereload.listen();
+  watch('./source/css/less/*.less', css);
+  watch('./source/js/*.js', js);
+}
 
 exports.mduiCss = mduiCss;
 exports.css = css;
 exports.js = js;
+exports.serve = serve;
 //series顺序执行，从左往右，parallel同步执行，所有一起执行
-exports.default = series(css,js);
+exports.default = series(css, js, serve);
+exports.build = series(css, js);
