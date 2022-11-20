@@ -35,6 +35,14 @@
                 <div class="typo-layout mdui-typo js-toc-content">
                     ${post.formatContent!}
                 </div>
+                <#if settings.like_post!false>
+                <div class="like_post">
+                    <div class="like_button mdui-shadow-1" id="${post.id}" clickNum="true">
+                        <i class="mdui-icon material-icons">thumb_up</i>
+                        <span>${post.likes} 赞</span>
+                    </div>
+                </div>
+                </#if>
                 <div class="pbottom mdui-card-primary-subtitle">
                     <div class="smallbu">分类:
                         <#if (post.categories)?? && post.categories?size !=0>

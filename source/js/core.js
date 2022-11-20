@@ -405,6 +405,38 @@ const dnxrzl = {
   //文章表格支持
   table () {
     $(".mdui-typo>table").addClass("mdui-table mdui-table-hoverable").wrap('<div class="mdui-table-fluid">');
+  },
+  like_post() {
+    $(document).on("click", ".like_button", function () {
+      var likeNum = $(this).attr("id");
+      let lid = $(this);
+      if (lid.attr("clickNum") == "true") {
+        lid.attr("clickNum", "false");
+        $.ajax({
+          url: "/api/content/posts/" + likeNum + "/likes",
+          type: "POST",
+          async: true,
+          crossDomain: true,
+          headers: {},
+          success: function (data) {
+            lid.addClass("activeLike");
+            lid.children("span").text(parseInt(lid.children("span").text()) + 1 + ' 赞');
+          },
+          timeout: 3000,
+          error: function () {
+            mdui.snackbar({
+              message: "网络请求失败，请稍后再试",
+              position: "left-bottom",
+            });
+          },
+        });
+      } else {
+        mdui.snackbar({
+          message: "已经赞过啦~",
+          position: "left-bottom",
+        });
+      }
+    });
   }
 };
 

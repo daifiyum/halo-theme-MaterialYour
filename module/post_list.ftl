@@ -32,8 +32,13 @@
                         </div>
 
                         <div class="post-list-bottom">
-                            <div class="mdui-card-primary-subtitle"><i class="mdui-icon material-icons">today</i>${post.createTime?string["yyyy年MM月dd日"]!}</div>
-                            <div class="mdui-card-primary-subtitle"><i class="mdui-icon material-icons">chat_bubble_outline</i>${post.commentCount!}条评论</div>
+                            <div class="plbl">
+                                <div class="mdui-card-primary-subtitle plbfc"><i class="mdui-icon material-icons">today</i>${post.createTime?string["yyyy年MM月dd日"]!}</div>
+                                <#if settings.like_post!false>
+                                    <div class="mdui-card-primary-subtitle plbfc"><i class="mdui-icon material-icons">thumb_up</i>${post.likes!}赞</div>
+                                </#if>
+                            </div>
+                            <div class="mdui-card-primary-subtitle plbfc"><i class="mdui-icon material-icons">chat_bubble_outline</i>${post.commentCount!}条评论</div>
                         </div>
                     </article>
                 </#list>
