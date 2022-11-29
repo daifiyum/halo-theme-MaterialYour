@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:fragment="html (head,content,pageType)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2" />
+    <title th:text="${site.title}"></title>
+    <link rel="stylesheet" th:href="@{/assets/libs/mdui/mdui.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/min/style.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/libs/tocbot/tocbot.css}">
+    <script th:src="@{/assets/libs/jquery/jquery.min.js}"></script>
+    <script th:src="@{/assets/libs/lazyload/lazyload.min.js}"></script>
+    <script th:src="@{/assets/libs/clipboard/clipboard.min.js}"></script>
+    <script th:src="@{/assets/libs/tocbot/tocbot.min.js}"></script>
+    <th:block th:if="${head != null}">
+      <th:block th:replace="${head}" />
+    </th:block>
+    <script th:inline="javascript">
+      var postyes = [[${pageType}]];
+    </script>
+  </head>
+  <body class="mdui-appbar-with-toolbar" th:classappend="${theme.config.style.mdui_theme}">
+      <th:block th:replace="modules/header::${header}"></th:block>
+      <th:block th:replace="${content}" /></th:block>
+      <th:block th:replace="modules/footer::${footer}"></th:block>
+      
+      <script th:src="@{/assets/libs/mdui/mdui.min.js}"></script>
+      <script th:src="@{/assets/js/min/core.min.js}"></script>
+  </body>
+</html>

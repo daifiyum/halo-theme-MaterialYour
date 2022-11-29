@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(head = null,content = ~{::content},pageType = 'post')}"
+>
+  <th:block th:fragment="content">
+    <main class="my-container mdui-container line-numbers">
+        <div class="animate__animated post_animate">
+            <article class="my-article my-card">
+                    <th:block th:if="${not #strings.isEmpty(post.spec.cover)}">
+                        <div class="mdui-card-media">
+                            <div class="postBackground" th:styleappend="${'background-image: url(' + post.spec.cover + ');'}"></div>
+                            <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title" th:text="${post.spec.title}"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </th:block>
+
+                    <th:block th:if="${#strings.isEmpty(post.spec.cover)}">
+                        <div class="noimg">
+                            <h2 class="mdui-card-primary-title" th:text="${post.spec.title}"></h2>
+                        </div>
+                    </th:block>
+                    
+    
+                    <div class="postFront">
+                        <div class="pleft">
+                            <img class="mdui-img-circle" th:src="${post.owner.avatar ?: #theme.assets('/images/avatar.png')}">
+                            <div>
+                                <span th:text="${post.owner.name}"></span>
+                                <span class="pls" th:text="${'发布于 '+#dates.format(post.spec.publishTime,'yyyy-MM-dd')}">&nbsp;&nbsp;·&nbsp;&nbsp;阅读&nbsp;0</span>
+                            </div>
+                        </div>
+                        <div class="pright">
+                            <button class="postCopyLink mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme" th:data-clipboard-text="${post.status.permalink}">
+                                <i class="mdui-icon material-icons">share</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="typo-layout mdui-typo js-toc-content" th:utext="${post.content.content}"></div>
+                    
+                    <div class="pbottom mdui-card-primary-subtitle">
+                        <div class="smallbu">分类:
+                                        
+                            <a
+                            th:if="${#lists.size(post.categories)} gt 0"
+                            th:href="@{${post.categories[0].status.permalink}}"
+                            th:title="${post.categories[0].spec.displayName}"
+                            th:text="${post.categories[0].spec.displayName}"
+                            >
+                            </a>
+                        
+                            <!-- <span>无</span> -->
+             
+                        </div>
+                        <div class="smallbu2">标签:
+                            
+                            <a
+                            th:if="${#lists.size(post.tags)} gt 0"
+                            th:href="@{${post.tags[0].status.permalink}}"
+                            th:title="${post.tags[0].spec.displayName}"
+                            th:text="${post.tags[0].spec.displayName}"
+                            >
+                            </a>
+                                
+                                    <!-- <span>无</span> -->
+                           
+                        </div>
+                    </div>
+    
+                    <div class="copyright">
+                        <svg class="copyricon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 2c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 3c1.82 0 3.413.973 4.288 2.428l-1.714 1.029A3 3 0 1 0 12 15a2.998 2.998 0 0 0 2.573-1.456l1.715 1.028A4.999 4.999 0 0 1 7 12c0-2.76 2.24-5 5-5z"/></svg>
+                        <div class="crbox alink">
+                            <div class="cr1">
+                                <span th:text="${'本文作者：' + post.owner.name}"></span>
+                            </div>
+                            <div class="cr2">
+                                <span>本文链接：</span>
+                                <a th:href="${post.status.permalink}" th:text="${post.status.permalink}"></a>
+                            </div>
+                            <div class="cr3">
+                                <span>版权声明：</span>
+                                <a th:href="${theme.config.function.post_copyrightLink ?: 'https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh'}" th:text="${theme.config.function.post_copyrightText ?: '本文采用 CC BY-NC-SA 3.0 协议进行许可'}"></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+            </article>
+            <div class="nextPost" th:with="postCursor = ${postFinder.cursor(post.metadata.name)}">
+                <a
+                th:if="${postCursor.hasPrevious()}"
+                role="navigation"
+                th:href="@{${postCursor.previous.status.permalink}}"
+                th:title="${postCursor.previous.spec.title}"
+                >
+                    <button class="mdui-btn">
+                        上一篇
+                    </button>
+                    <!-- <span th:text="${#strings.abbreviate(postCursor.previous.spec.title,20)}"></span> -->
+                </a>
+                <a
+                th:if="${!postCursor.hasPrevious()}"
+                role="navigation"
+                >
+                    <button class="mdui-btn">
+                        没有啦
+                    </button>
+                </a>
+                
+                <a
+                th:if="${postCursor.hasNext()}"
+                role="navigation"
+                th:href="@{${postCursor.next.status.permalink}}"
+                th:title="${postCursor.next.spec.title}"
+                >
+                <button class="mdui-btn">
+                    下一篇
+                </button>
+                </a>
+                <a
+                th:if="${!postCursor.hasNext()}"
+                role="navigation"
+                >
+                <button class="mdui-btn">
+                    没有啦
+                </button>
+                </a>
+                
+                
+            </div>
+            <div class="comments my-card">
+                <div th:if="${pluginFinder.available('PluginCommentWidget')}">
+                    <halo:comment
+                    group="content.halo.run"
+                    kind="Post"
+                    th:attr="name=${post.metadata.name}"
+                    />
+                </div>
+            </div>
+        </div>
+    </main>
+  </th:block>
+
+</html>

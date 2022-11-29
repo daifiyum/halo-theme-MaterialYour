@@ -1,0 +1,40 @@
+<th:block th:fragment="banner">
+<div class="home-banner animate__animated">
+    <div class="welcome_media">
+        <img th:src="${theme.config.style.indeximg}" alt="">
+    </div>
+    <div class="welcome">
+        <div class="welcome_hello"></div>
+        <div class="welcome_descr" th:text="${theme.config.genernal.index_notice}"></div>
+        <div class="welcome_contact">
+            <th:block th:replace="modules/socialLink :: socialLink"></th:block>
+        </div>
+    </div>
+    <div class="welcome__figures" th:with="stats = ${siteStatsFinder.getStats()}">
+        <div class="welcome__stat">
+            
+                <span class="welcome__count" th:text="${stats.post}"></span> 
+            
+            <span class="welcome__count-descr">文章数</span>
+        </div>
+        <div class="welcome__stat">
+            
+                <span class="welcome__count" th:text="${stats.category}"></span> 
+            
+            <span class="welcome__count-descr">分类数</span>
+        </div>
+        <div class="welcome__stat">
+            
+                <span class="welcome__count" th:text="${stats.visit}"></span> 
+            
+            <span class="welcome__count-descr">浏览数</span>
+        </div>
+        <div class="welcome__stat">
+            
+                <span class="welcome__count" th:text="${stats.comment}"></span> 
+            
+            <span class="welcome__count-descr">评论数</span>
+        </div>
+    </div>
+</div>
+</th:block>

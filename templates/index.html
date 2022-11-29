@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(head = null,content = ~{::content},pageType = 'index')}"
+>
+  <th:block th:fragment="content">
+    <main class="my-container mdui-container">
+      <th:block th:replace="~{modules/banner :: banner}"></th:block>
+      <th:block th:replace="~{modules/postList :: postList}"></th:block>     
+      <th:block th:if="${posts.total gt 0}">
+        <div class="nextPage" th:if="${posts.hasNext()}">
+          <button id="loadData" th:data-href="${posts.nextUrl}" class="mdui-ripple">加载更多</button>
+        </div> 
+      </th:block>
+    </main>
+  </th:block>
+
+</html>

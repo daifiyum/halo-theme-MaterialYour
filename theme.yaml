@@ -1,11 +1,17 @@
-id: halo_MaterialYour
-name: MaterialYour
-author:
-  name: dnxrzl
-  website: https://www.dnxrzl.com/
-description: MaterialYour theme for halo
-logo: https://use.sevencdn.com/avatar/6e412b94f92443acc015ead3cca2c7b1?s=32&r=G&d=identicon
-website: https://www.dnxrzl.com/
-repo: https://github.com/daifiyum/halo-theme-MaterialYour
-version: 1.0.0
-require: 1.4.2
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+metadata:
+  name: theme-materialyour
+spec:
+  displayName: MaterialYour
+  author:
+    name: dnxrzl
+    website: "https://www.dnxrzl.com/"
+  description: Halo 2.0 Theme base on Thymeleaf
+  logo: "https://halo.run/logo"
+  website: "https://www.dnxrzl.com/"
+  repo: "https://github.com/daifiyum/halo-theme-MaterialYour/blob/next/"
+  settingName: "theme-materialyour-setting"
+  configMapName: "theme-materialyour-configMap"
+  version: "2.0"
+  require: "*"
