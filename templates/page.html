@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(head = null,content = ~{::content},pageType = 'page')}"
+>
+  <th:block th:fragment="content">
+    <main class="my-container mdui-container">
+        <div class="animate__animated post_animate">
+            <article class="my-article my-card">
+                <!-- 有封面图 -->
+                <th:block th:if="${not #strings.isEmpty(singlePage.spec.cover)}">
+                    <div class="mdui-card-media">
+                        <div class="postBackground" th:styleappend="${'background-image: url(' + singlePage.spec.cover + ');'}"></div>
+                        <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
+                            <div class="mdui-card-primary">
+                                <div class="mdui-card-primary-title" th:text="${singlePage.spec.title}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </th:block>
+                <!-- 无封面图 -->
+                <th:block th:if="${#strings.isEmpty(singlePage.spec.cover)}">
+                    <div class="noimg">
+                        <h2 class="mdui-card-primary-title" th:text="${singlePage.spec.title}"></h2>
+                    </div>
+                </th:block>
+                <!-- 作者、发布时间、分享 -->
+                <div class="postFront">
+                    <div class="pleft">
+                        <img class="mdui-img-circle" th:src="${singlePage.owner.avatar ?: #theme.assets('/images/avatar.png')}">
+                        <div>
+                            <span th:text="${singlePage.owner.name}"></span>
+                            <span class="pls" th:text="${'发布于 '+#dates.format(singlePage.spec.publishTime,'yyyy-MM-dd')}">&nbsp;&nbsp;·&nbsp;&nbsp;阅读&nbsp;0</span>
+                        </div>
+                    </div>
+                    <div class="pright">
+                        <button class="postCopyLink mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-theme" th:data-clipboard-text="${singlePage.status.permalink}">
+                            <i class="mdui-icon material-icons">share</i>
+                        </button>
+                    </div>
+                </div>
+                <!-- 页面正文   -->
+                <div class="mdui-typo typo-layout" th:utext="${singlePage.content.content}"></div>
+            </article>
+            <!-- 评论 -->
+            <div class="comments my-card">
+                <div th:if="${pluginFinder.available('PluginCommentWidget')}">
+                    <halo:comment
+                    group="content.halo.run"
+                    kind="Post"
+                    th:attr="name=${singlePage.metadata.name}"
+                    />
+                </div>
+            </div>
+        </div>
+    </main>
+  </th:block>
+
+</html>

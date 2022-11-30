@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(head = null,content = ~{::content},pageType = 'tags')}"
+>
+  <th:block th:fragment="content">
+    <main class="my-container mdui-container">
+        <div class="animate__animated post_animate">
+            <article class="my-article my-card">
+                <!-- 标签集合部分 -->
+                <div class="tags">
+                    <!-- 页面标题 -->
+                    <h3 class="pagetitle">标签</h3>
+                    <!-- 标签列表 -->
+                    <ul th:each="tag : ${tags}">
+                        <li>
+                            <a th:href="@{${tag.status.permalink}}" class="tagsa">
+                                <div class="mdui-chip">
+                                    <span class="mdui-chip-title" th:text="${tag.spec.displayName + '（' + tag.status.postCount + '）'}"></span>
+                                </div>
+                            </a>
+                        </li>  
+                    </ul>
+                </div>
+            </article>
+        </div>  
+    </main>
+  </th:block>
+
+</html>

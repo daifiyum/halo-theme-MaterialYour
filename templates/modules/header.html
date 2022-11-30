@@ -1,0 +1,83 @@
+<th:block th:fragment="header">
+    
+<header>
+    <div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0 mdui-drawer-full-height" id="selfAppbar">
+        <div class="mdui-toolbar mdui-color-theme-100 mdui-text-color-theme">
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{overlay: true, target: '#left-drawer'}">
+                <i class="mdui-icon material-icons">menu</i>
+            </a>
+            <a href="/" class="mdui-typo-title" th:text="${site.title}"></a>
+            <div class="mdui-toolbar-spacer"></div>
+
+            <th:block th:if="${pluginFinder.available('PluginSearchWidget')}">
+            <a class="mdui-btn mdui-btn-icon mdui-ripple" href="javascript:SearchWidget.open()">
+                <i class="mdui-icon material-icons">search</i>
+            </a>
+            </th:block>
+
+            
+            
+            <!-- <a href="/journals" class="mdui-btn mdui-btn-icon nodesk mdui-ripple">
+                <i class="mdui-icon material-icons">self_improvement</i>
+            </a> -->
+
+            <button class="mdui-btn mdui-btn-icon toc_button mdui-ripple" mdui-drawer="{target: '#right-drawer'}"><i class="mdui-icon material-icons">assignment</i></button>
+            <th:block th:if="${theme.config.function.dark_enabled == true}">
+              <button class="mdui-btn mdui-btn-icon mdui-ripple darkButton">
+                <i class="mdui-icon material-icons">brightness_6</i>
+              </button>   
+            </th:block>
+            
+               
+        </div> 
+    </div>
+</header>
+        
+      
+<aside class="mdui-drawer mdui-drawer-close drawer-left" id="left-drawer">
+  <div class="headerLogo" th:styleappend="${'background-image: url(' + theme.config.style.drawimg + ');'}">
+    <th:block th:with="currentUser = ${contributorFinder.getContributor(#authentication.name)}"> 
+      <img class="mdui-img-circle mdui-shadow-2" th:src="${currentUser.avatar ?: theme.config.genernal.avatarLogo}" alt="">
+    </th:block>
+      <span class="drawTitle" th:text="${site.title}"></span>
+  </div>
+
+  <ul class="mdui-list swmenu" mdui-collapse="{accordion: true}">
+    <th:block th:each="menuItem : ${menuFinder.getPrimary()?.menuItems}">
+      <th:block th:if="${#lists.isEmpty(menuItem.children)}">
+        <a th:href="${menuItem.spec.href}">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons" th:text="${#strings.substringAfter(menuItem.spec.displayName,'#')}"></i>
+            <div class="mdui-list-item-content" th:text="${#strings.substringBefore(menuItem.spec.displayName,'#')}"></div>
+          </li>
+        </a>
+      </th:block>
+      <th:block th:if="${not #lists.isEmpty(menuItem.children)}"> 
+        <li class="mdui-collapse-item">
+          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons" th:text="${#strings.substringAfter(menuItem.spec.displayName,'#')}"></i>
+            <div class="mdui-list-item-content" th:text="${#strings.substringBefore(menuItem.spec.displayName,'#')}"></div>
+            <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+          </div>
+          <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+            <th:block th:each="childMenuItem : ${menuItem.children}">
+              <a th:href="${childMenuItem.spec.href}">
+                <li class="mdui-list-item mdui-ripple" th:text="${childMenuItem.spec.displayName}"></li>
+              </a>
+            </th:block>
+          </ul>
+        </li>
+      </th:block>
+    </th:block>
+  </ul>
+  
+</aside>
+<div class="mdui-drawer mdui-drawer-right toc_drawer" id="right-drawer">
+    <div class="toc_title">目录</div>
+    <div class="toc-content"></div>
+</div>
+</th:block>
+
+
+
+

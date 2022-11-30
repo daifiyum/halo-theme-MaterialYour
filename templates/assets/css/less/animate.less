@@ -1,0 +1,44 @@
+/*载入动画自定义*/
+
+/*首页横幅动画*/
+@keyframes fadeInDown_self {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -10%, 0);
+    transform: translate3d(0, -10%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.home-banner {
+  animation: fadeInDown_self;
+  animation-duration: 1s;
+}
+
+/*页面动画*/
+@keyframes slideInDown_self {
+  from {
+    -webkit-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.post_animate {
+  animation: slideInDown_self;
+  animation-duration: 1.5s !important;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.6s;
+}
+/*自定义动画结束*/

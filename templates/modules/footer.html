@@ -1,0 +1,34 @@
+<th:block th:fragment="footer">
+    <footer class="footer-container">
+        <div class="innerfooter mdui-container alink" th:styleappend="${theme.config.style.footerCenter_enabled == true ? 'align-items: center;':''}">
+            <div class="mdui-typo-title" th:text="${site.title}"></div>
+            <div class="fitem" th:if="${not #strings.isEmpty(theme.config.genernal.copyrightFor)} or ${not #strings.isEmpty(theme.config.genernal.record)}">
+                © 
+                <span id="timeyear"></span> 
+                <th:block th:text="${theme.config.genernal.copyrightFor}"></th:block>
+                <a href="https://beian.miit.gov.cn/" target="_blank" th:text="${theme.config.genernal.record}"></a>
+             </div>
+            <th:block th:if="${not #strings.isEmpty(theme.config.genernal.record2)}">
+                <div class="record2 fitem">
+                    <a id="record" href="" target="_blank">
+                        <img th:src="${theme.config.genernal.record2img ?: #theme.assets('/images/record2.png')}"/>
+                        <p th:text="${theme.config.genernal.record2}"></p>
+                    </a>
+                    <script>
+                        let record2 = "${settings.record2!}"
+                        let record2_num = +(record2.replace(/[^0-9]/ig,""));
+                        let url = "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" + record2_num
+                        $("#record").attr("href", url)
+                    </script>
+                </div>
+            </th:block>
+            <div class="fitem">Powered by <a href="https://halo.run/" target="_blank">Halo</a>. Theme <a href="https://github.com/daifiyum/halo-MaterialYour" target="_blank">MaterialYour</a> by <a href="https://www.dnxrzl.com/" target="_blank">dnxrzl</a>.</div>
+            
+                <div class="fitem"></div>
+            
+        </div>
+        <div class="totop mdui-shadow-3 mdui-color-theme-100 mdui-text-color-theme">
+            <i class="mdui-icon material-icons">expand_less</i>
+        </div>
+    </footer>
+</th:block>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(head = null,content = ~{::content},pageType = 'archives')}"
+>
+  <th:block th:fragment="content">
+    <main class="my-container mdui-container">
+    <div class="animate__animated post_animate">
+        <article class="my-article my-card archivesPadding">
+            <!-- 归档部分 -->
+            <div class="archives">
+                <!-- 页面标题 -->
+                <h3 class="pagetitle">归档</h3>
+                <!-- 归档列表 -->
+                <div class="archMain">
+                    <th:block th:each="archive : ${archives.items}">
+                    <div class="archCell wow animate__animated post_animate">
+                        <!-- 年份 -->
+                        <div class="archiveyear" th:text="${archive.year}"></div>
+                        <!-- 年份文章 -->
+                        <th:block th:each="month : ${archive.months}">
+                            <th:block th:each="post : ${month.posts}">
+                                <div class="timenode">
+                                    <a th:href="@{${post.status.permalink}}" class="focircle">
+                                        <time th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"></time>
+                                        <span th:text="${post.spec.title}"></span>
+                                    </a>
+                                </div>
+                            </th:block>
+                        </th:block>
+                    </div>
+                    </th:block>
+                </div>        
+            </div>
+
+            <!-- TODO: 加载更多 -->
+        
+        </article>
+
+
+    </div>  
+    </main>
+  </th:block>
+
+</html>

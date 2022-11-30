@@ -1,353 +1,312 @@
-genernal:
-  label: 基本设置
-  items:
-    index_notice:
-      name: index_notice
-      label: 首页描述
-      type: textarea
-      default: '我看到那些岁月如何奔驰，挨过了冬季，便迎来了春天。——梭罗《瓦尔登湖》' 
-    aWord_enabled:
-      name:  aWord_enabled
-      label: 一言
-      type: switch
-      data-type: bool
-      default: false
-      description: '是否开启一言，开启后，首页描述为一言，默认关闭'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    aWordType:
-      name: aWordType
-      label: 一言类型
-      type: select
-      default: 'd'
-      options:
-        - value: 'a'
-          label: 'a 动画'
-        - value: 'b'
-          label: 'b 漫画'
-        - value: 'c'
-          label: 'c 游戏'
-        - value: 'd'
-          label: 'd 文学'
-        - value: 'e'
-          label: 'e 原创'
-        - value: 'f'
-          label: 'f 来自网络'
-        - value: 'g'
-          label: 'g 其他'
-        - value: 'h'
-          label: 'h 影视'
-        - value: 'i'
-          label: 'i 诗词'
-        - value: 'j'
-          label: 'j 网易云'
-        - value: 'k'
-          label: 'k 哲学'
-        - value: 'l'
-          label: 'l 抖机灵'
-    aWordTypes:
-      name: aWordTypes
-      label: 一言类型多种组合（开启后，上面单类型将失效）
-      type: text
-      placeholder: '如：a,b'
-      description: 'a:动画，b:漫画'
-    aWordNum:
-      name: aWordNum
-      label: 一言最少字数
-      type: text
-      placeholder: '默认10个'
-    avatarLogo:
-      name: avatarLogo
-      label: 头像
-      type: attachment   
-    record:
-      name: record
-      label: ICP备案号
-      type: text
-      placeholder: '填写ICP备案号'
-    record2img:
-      name: record2img               
-      label: 备案图标          
-      type: attachment               
-      placeholder: '公安备案图标url(修改默认？)'            
-    record2:
-      name: record2
-      label: 公安备案号
-      type: text
-      placeholder: '填写公安备案号'
-sns:
-  label: 社交资料
-  items:
-    github:
-      name: github
-      label: GitHub
-      type: text
-      placeholder: '填入 GitHub 用户名'
-    email:
-      name: email
-      label: Email
-      type: text
-      placeholder: '填入邮箱地址'
-    bilibili:
-      name: bilibili
-      label: Bilibili
-      type: text
-      placeholder: '填入bilibili Uid'
-    telegram:
-      name: telegram
-      label: Telegram
-      type: text
-      placeholder: '填入 Telegram Id'
-    weibo:
-      name: weibo
-      label: 微博
-      type: text
-      placeholder: '填入微博 Id'
-    qq:
-      name: qq
-      label: QQ
-      type: text
-      placeholder: '填入 QQ 号'
-    twitter:
-      name: twitter
-      label: Twitter
-      type: text
-      placeholder: '填入 Twitter 用户名'
-    facebook:
-      name: facebook
-      label: Facebook
-      type: text
-      placeholder: '填入 Facebook 用户名'
-    instagram:
-      name: instagram
-      label: Instagram
-      type: text
-      placeholder: '填入 Instagram 用户名'
-    myrss:
-      name: myrss
-      label: 显示RSS
-      type: switch
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭     
-style:
-  label: 样式设置
-  items:
-    mdui_theme:
-      name: mdui_theme
-      label: 主题色
-      type: select
-      default: 'mdui-theme-primary-blue'
-      options:
-        - value: 'mdui-theme-primary-blue'
-          label: '宝石蓝'
-        - value: 'mdui-theme-primary-green'
-          label: '清新绿'
-        - value: 'mdui-theme-primary-red'
-          label: '姨妈红'
-        - value: 'mdui-theme-primary-pink'
-          label: '少女粉'
-        - value: 'mdui-theme-primary-purple'
-          label: '基佬紫'
-        - value: 'mdui-theme-primary-orange'
-          label: '大橘观'
-        - value: 'mdui-theme-primary-blue-grey'
-          label: '萧条灰'
-        - value: 'mdui-theme-primary-brown'
-          label: '低调棕'
-        - value: 'mdui-theme-primary-cyan'
-          label: '靛蓝青'
-        - value: 'mdui-theme-primary-custom'
-          label: '自定义'
-      description: '没有喜欢的主题色？你可以往下滑选择‘自定义’，然后在下面的颜色选择面板里配置适合自己的主题色'    
-    theme_color:
-      name: theme_color         
-      label: 主题色              
-      type: color   
-      default: '#ffe7ed'                  
-      description: '自定义主题色'           
-    font_color:
-      name: font_color         
-      label: 强调色              
-      type: color   
-      default: '#ffa1bb'                  
-      description: '自定义强调色'    
-    indeximg:
-      name: indeximg               
-      label: 镇站图              
-      type: attachment               
-      placeholder: '图片地址'                       
-    drawimg:
-      name: drawimg               
-      label: 抽屉图              
-      type: attachment               
-      placeholder: '图片地址'             
-    postlist_style:
-      name: postlist_style
-      label: 文章列表样式
-      type: select
-      default: 'style1'
-      options:
-        - value: 'style1'
-          label: '样式一' 
-        - value: 'style2'
-          label: '样式二' 
-    code_css:
-      name: code_css
-      label: 代码样式
-      type: select
-      default: 'default'
-      data-type: string
-      options:
-        - value: "agate"
-          label: "agate"
-        - value: "androidstudio"
-          label: "androidstudio"
-        - value: "atom-one-dark"
-          label: "atom-one-dark"
-        - value: "default"
-          label: "default"
-        - value: "github"
-          label: "github"
-        - value: "github-dark"
-          label: "github-dark"
-        - value: "gradient-dark"
-          label: "gradient-dark"
-        - value: "gradient-light"
-          label: "gradient-light"
-        - value: "nord"
-          label: "nord"
-        - value: "/base16/nova"
-          label: "nova"
-        - value: "paraiso-light"
-          label: "paraiso-light"
-        - value: "/base16/material"
-          label: "material"
-    journal_background:
-      name: journal_background             
-      label: 日志背景图             
-      type: text               
-      placeholder: '默认无图白色'              
-      description: '填入背景图片url'
-    footerCenter_enabled:
-      name: footerCenter_enabled
-      label: 页脚内容居中
-      type: switch
-      data-type: bool
-      default: false
-      description: '是否开启？默认关闭'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    journal_icon:
-      name: journal_icon          
-      label: 应用栏日志图标          
-      type: text               
-      placeholder: 'self_improvement'              
-      description: '填入字体图标名称（可以去 https://fonts.google.com/icons 获取）'
-fun:
-  label: 功能设置
-  items:
-    dark_enabled:
-      name: dark_enabled
-      label: 黑暗模式
-      type: switch
-      data-type: bool
-      default: false
-      description: '是否开启黑暗模式，默认关闭'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    autoDarkOpt:
-      name: autoDarkOpt
-      label: 自动黑暗模式
-      type: switch
-      data-type: bool
-      default: false
-      description: '开启后18点-6点区间内自动黑暗模式，默认关闭'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭   
-    auto_headroom:
-      name: auto_headroom
-      label: 自动隐藏应用栏
-      type: switch
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭   
-    postBlank_enabled:
-      name: postBlank_enabled
-      label: 文章页新窗口打开
-      type: switch
-      data-type: bool
-      default: false
-      description: '是否开启？默认关闭'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    iconfont:
-      name: iconfont              
-      label: iconfont图标           
-      type: text               
-      placeholder: '填入Font class CDN链接'              
-      description: '通过iconfont自定义图标'     
-    comment_js:
-      name: comment_js               
-      label: 评论组件CDN              
-      type: text                
-      placeholder: '填入其他评论组件CDN'              
-      description: '导入其他评论组件' 
-    comment_darkClass:
-      name: comment_darkClass              
-      label: 评论组件黑暗模式类选择器             
-      type: text               
-      placeholder: '默认dark'              
-      description: '由于各个评论组件黑暗模式的类选择器不同，所以在这加个自定义' 
-    custom_commentcss:
-      name: custom_commentcss
-      label: 自定义评论css
-      type: textarea
-      description: '在这你可自定义评论css，css选择器第一个为 .dark 用来适配夜间样式，例如：.dark .comment-form {...}'
-    post_copyrightText:
-      name: post_copyrightText           
-      label: 文章底部许可协议说明         
-      type: text               
-      placeholder: '没有特殊需求可不填'
-    post_copyrightLink:
-      name: post_copyrightLink           
-      label: 文章底部许可协议链接           
-      type: text               
-      placeholder: '没有特殊需求可不填'
-    like_post:
-      name: like_post
-      label: 文章点赞
-      type: switch
-      data-type: bool
-      default: false
-      description: '是否开启？默认关闭'
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-                  
-    
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: theme-materialyour-setting
+spec:
+  forms:
+    - group: genernal
+      label: 基本设置
+      formSchema:
+        - $formkit: textarea
+          name: index_notice
+          label: 首页描述
+          value: "我看到那些岁月如何奔驰，挨过了冬季，便迎来了春天。——梭罗《瓦尔登湖》"
+        - $formkit: radio
+          name: aWord_enabled
+          label: 一言
+          value: false
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
+          help: "是否开启一言，开启后，首页描述为一言，默认关闭"
+        - $formkit: select
+          name: aWordType
+          label: 一言类型
+          value: i
+          options:
+            - label: a 动画
+              value: a
+            - label: b 漫画
+              value: b
+            - label: c 游戏
+              value: c
+            - label: d 文学
+              value: d
+            - label: e 原创
+              value: e
+            - label: f 来自网络
+              value: f
+            - label: g 其他
+              value: g
+            - label: h 影视
+              value: h
+            - label: i 诗词
+              value: i
+            - label: j 网易云
+              value: j
+            - label: k 哲学
+              value: k
+            - label: l 抖机灵
+              value: l
+               
+        - $formkit: text
+          name: aWordTypes
+          label: 一言类型多种组合（开启后，上面单类型将失效）
+          placeholder: a,b
+        - $formkit: text
+          name: aWordNum
+          label: 一言最少字数
+          placeholder: 默认10个
+        - $formkit: attachment
+          name: avatarLogo
+          label: 头像
+          value: 
+        - $formkit: text
+          name: copyrightFor
+          label: 所有者
+          placeholder: 页脚底部版权归属
+        - $formkit: text
+          name: record
+          label: ICP备案号
+          placeholder: 填写ICP备案号
+        - $formkit: attachment
+          name: record2img 
+          label: 备案图标 
+          value: 
+          placeholder: 公安备案图标url(修改默认？)
+        - $formkit: text
+          name: record2
+          label: 公安备案号
+          placeholder: 填写公安备案号
+          
+
+    - group: sns
+      label: 社交资料
+      formSchema:
+        - $formkit: radio
+          name: myrss
+          label: RSS
+          value: false
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
+          help: "官方暂不支持！"
+        - $formkit: text
+          name: github
+          label: GitHub
+          placeholder: 填入 GitHub 用户名
+        - $formkit: text
+          name: email
+          label: Email
+          placeholder: 填入邮箱地址
+        - $formkit: text
+          name: bilibili
+          label: Bilibili
+          placeholder: 填入bilibili Uid
+        - $formkit: text
+          name: telegram
+          label: Telegram
+          placeholder: 填入 Telegram Id
+        - $formkit: text
+          name: weibo
+          label: 微博
+          placeholder: 填入微博 Id
+        - $formkit: text
+          name: qq
+          label: QQ
+          placeholder: 填入 QQ 号
+        - $formkit: text
+          name: twitter
+          label: Twitter
+          placeholder: 填入 Twitter 用户名
+        - $formkit: text
+          name: facebook
+          label: Facebook
+          placeholder: 填入 Facebook 用户名
+        - $formkit: text
+          name: instagram
+          label: Instagram
+          placeholder: 填入 Instagram 用户名
+          
+    - group: style
+      label: 样式设置
+      formSchema:
+        - $formkit: select
+          name: mdui_theme
+          label: 主题色
+          value: mdui-theme-primary-blue
+          options:
+              - label: 宝石蓝
+                value: mdui-theme-primary-blue
+              - label: 清新绿
+                value: mdui-theme-primary-green
+              - label: 姨妈红
+                value: mdui-theme-primary-red
+              - label: 少女粉
+                value: mdui-theme-primary-pink
+              - label: 基佬紫
+                value: mdui-theme-primary-purple
+              - label: 大橘观
+                value: mdui-theme-primary-orange
+              - label: 萧条灰
+                value: mdui-theme-primary-blue-grey
+              - label: 低调棕
+                value: mdui-theme-primary-brown
+              - label: 靛蓝青
+                value: mdui-theme-primary-cyan
+              - label: 自定义
+                value: mdui-theme-primary-custom
+          description: 没有喜欢的主题色？你可以往下滑选择‘自定义’，然后在下面的颜色选择面板里配置适合自己的主题色
+        - $formkit: color
+          name: theme_color      
+          label: 主题色
+          value: ""
+        - $formkit: color
+          name: font_color     
+          label: 强调色  
+          value: ""
+        - $formkit: attachment
+          name: indeximg     
+          label: 镇站图
+          value: 
+          placeholder: 
+        - $formkit: attachment
+          name: drawimg    
+          label: 抽屉图
+          value: 
+          placeholder: 
+        - $formkit: select
+          name: postlist_style
+          label: 文章列表样式
+          value: style1
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
+        - $formkit: select
+          name: code_css
+          label: 代码样式
+          value: default
+          options:
+            - label: "agate"
+              value: "agate"
+            - label: "androidstudio"   
+              value: "androidstudio"
+            - label: "atom-one-dark"   
+              value: "atom-one-dark"
+            - label: "default"   
+              value: "default"
+            - label: "github"   
+              value: "github"
+            - label: "github-dark"   
+              value: "github-dark"
+            - label: "gradient-dark"   
+              value: "gradient-dark"
+            - label: "gradient-light"   
+              value: "gradient-light"
+            - label: "nord"   
+              value: "nord"
+            - label: "nova"   
+              value: "/base16/nova"
+            - label: "paraiso-light"   
+              value: "paraiso-light"
+            - label: "material"   
+              value: "/base16/material"    
+        - $formkit: attachment
+          name: journal_background       
+          label: 日志背景图 
+          value: 
+          placeholder:  默认无图白色
+        - $formkit: radio
+          name: footerCenter_enabled
+          label: 页脚内容居中
+          value: false
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
+        - $formkit: text
+          name: journal_icon     
+          label: 应用栏日志图标
+          placeholder: 填入字体图标名称（可以去 https://fonts.google.com/icons 获取）
+        
+    - group: function
+      label: 功能设置
+      formSchema:
+        - $formkit: radio
+          name: dark_enabled
+          label: 黑暗模式
+          value: false
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
+        - $formkit: radio
+          name: autoDarkOpt
+          label: 自动黑暗模式
+          value: false
+          help: "开启后18点-6点区间内自动黑暗模式，默认关闭"
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
+        - $formkit: radio
+          name: auto_headroom
+          label: 自动隐藏应用栏
+          value: false
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
+        - $formkit: radio
+          name: postBlank_enabled
+          label: 文章页新窗口打开
+          value: false
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
+        - $formkit: text
+          name: iconfont              
+          label: iconfont图标           
+          placeholder: '填入Font class CDN链接'              
+        - $formkit: text
+          name: comment_js               
+          label: 评论组件CDN                         
+          placeholder: '填入其他评论组件CDN'              
+        - $formkit: text
+          name: comment_darkClass              
+          label: 评论组件黑暗模式类选择器                         
+          placeholder: '默认dark'              
+          help: "由于各个评论组件黑暗模式的类选择器不同，所以在这加个自定义" 
+        - $formkit: textarea
+          name: custom_commentcss
+          label: 自定义评论css
+          help: " .dark 选择器用来适配夜间样式，例如：.dark .comment-form {...}"
+        - $formkit: text
+          name: post_copyrightText           
+          label: 文章底部许可协议说明            
+          placeholder: "没有特殊需求可不填"
+        - $formkit: text
+          name: post_copyrightLink           
+          label: 文章底部许可协议链接                     
+          placeholder: "没有特殊需求可不填"
+        - $formkit: radio
+          name: like_post
+          label: 文章点赞
+          value: false
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false

@@ -22,11 +22,11 @@ const template = ['/**',
 ].join('\n');
 
 function css() {
-  return src(['./source/css/less/main.less'])
+  return src(['./templates/assets/css/less/main.less'])
   .pipe(less())
   .pipe(
     purgecss({//删除无用css样式
-      content: ["./**/*.ftl", "./source/libs/**/*.css", "./source/**/*.js"],
+      content: ["./templates/**/*.html", "./templates/assets/libs/**/*.css", "./templates/assets/**/*.js"],
     })
   )
   .pipe(
@@ -42,24 +42,24 @@ function css() {
       basename: "style.min",
     })
   )
-  .pipe(dest("./source/css/min"));
+  .pipe(dest("./templates/assets/css/min"));
 }
 
 //由于可能对mdui框架内的mdui.css进行更改，所以加入mdui.css的压缩
 function mduiCss() {
-  return src(["./source/libs/mdui/mdui.css"])
+  return src(["./templates/assets/libs/mdui/mdui.css"])
     .pipe(minifyCSS())
     .pipe(
       rename({
         suffix: ".min",
       })
     )
-    .pipe(dest("./source/libs/mdui/"));
+    .pipe(dest("./templates/assets/libs/mdui/"));
 }
 
 //./source/js/*.js内的js压缩
 function js() {
-  return src(["./source/js/*.js"])
+  return src(["./templates/assets/js/*.js"])
     .pipe(
       babel({
         presets: [
@@ -79,13 +79,13 @@ function js() {
         suffix: ".min",
       })
     )
-    .pipe(dest("./source/js/min"));
+    .pipe(dest("./templates/assets/js/min"));
 }
 
 function serve() {
   livereload.listen();
-  watch('./source/css/less/*.less', css);
-  watch('./source/js/*.js', js);
+  watch('./templates/assets/css/less/*.less', css);
+  watch('./templates/assets/js/*.js', js);
 }
 
 exports.mduiCss = mduiCss;

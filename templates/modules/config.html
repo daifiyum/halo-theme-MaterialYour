@@ -1,0 +1,29 @@
+<th:block th:fragment="config">
+    <script th:inline="javascript">
+        // 文章目录
+        var postyes = [[${pageType}]];
+        // 黑暗模式相关配置
+        let comment_darkClass = [[${theme.config.function.comment_darkClass ?: 'dark'}]];
+        //一言相关
+        let oneWord = [[${theme.config.genernal.aWord_enabled ? 'true':'false'}]];
+        let wordType = [[${theme.config.genernal.aWordType}]];
+        let multipleWType = [[${theme.config.genernal.aWordTypes}]];
+        let wordNum = [[${theme.config.genernal.aWordNum ?: 10}]];
+        let mconfig = '';
+        let aWordConfig = {};
+        [#th:block th:if="${not #strings.isEmpty(theme.config.genernal.aWordTypes)}"]
+        let mulWT = multipleWType.split(',');
+        for(var i = 0;i < mulWT.length;i++){
+            mulWT[i] = 'c='  + mulWT[i] + '&';
+            mconfig = mconfig + mulWT[i];
+        }
+        mconfig = '?' + mconfig + 'min_length=' + wordNum;
+        [/th:block]
+        [#th:block th:if="${#strings.isEmpty(theme.config.genernal.aWordTypes)}"]
+        aWordConfig = {
+          c: wordType,
+          min_length: wordNum,
+        };
+        [/th:block]
+      </script>
+</th:block>
