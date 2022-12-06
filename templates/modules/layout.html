@@ -7,13 +7,21 @@
     <title th:text="${site.title}"></title>
     <link rel="stylesheet" th:href="@{/assets/libs/mdui/mdui.min.css}"/>
     <link rel="stylesheet" th:href="@{/assets/css/min/style.min.css}">
-    <link rel="stylesheet" th:href="@{/assets/libs/tocbot/tocbot.css}">
+    <!-- <link rel="stylesheet" th:href="@{/assets/libs/tocbot/tocbot.css}"> -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/tocbot/4.19.0/tocbot.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/assets/libs/fancybox/fancybox.css}">
-    <script th:src="@{/assets/libs/jquery/jquery.min.js}"></script>
+    <!-- <script th:src="@{/assets/libs/jquery/jquery.min.js}"></script> -->
+    <link rel="stylesheet" th:href="@{/assets/libs/highlight/styles/agate.min.css}">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script th:src="@{/assets/libs/lazyload/lazyload.min.js}"></script>
-    <script th:src="@{/assets/libs/clipboard/clipboard.min.js}"></script>
-    <script th:src="@{/assets/libs/tocbot/tocbot.min.js}"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script> -->
+    <!-- <script th:src="@{/assets/libs/clipboard/clipboard.min.js}"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+    <!-- <script th:src="@{/assets/libs/tocbot/tocbot.min.js}"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.19.0/tocbot.min.js"></script>
     <script th:src="@{/assets/libs/fancybox/fancybox.umd.js}"></script>    
+    <script th:src="@{/assets/libs/highlight/highlight.min.js}"></script>
+    <script th:src="@{/assets/libs/highlight/highlightjs-line-numbers.min.js}"></script>
     <script th:src="@{/assets/js/min/dark_mode.min.js}"></script>
     <th:block th:if="${head != null}">
       <th:block th:replace="${head}" />
@@ -32,7 +40,8 @@
       <th:block th:replace="${content}" /></th:block>
       <th:block th:replace="modules/footer::${footer}"></th:block>
       
-      <script th:src="@{/assets/libs/mdui/mdui.min.js}"></script>
+      <!-- <script th:src="@{/assets/libs/mdui/mdui.min.js}"></script> -->
+      <script src="https://cdn.bootcdn.net/ajax/libs/mdui/1.0.2/js/mdui.min.js"></script>
       <script th:src="@{/assets/js/min/core.min.js}"></script>
   </body>
 </html>

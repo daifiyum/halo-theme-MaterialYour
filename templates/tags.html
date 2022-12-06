@@ -12,8 +12,8 @@
                     <!-- 页面标题 -->
                     <h3 class="pagetitle">标签</h3>
                     <!-- 标签列表 -->
-                    <ul th:each="tag : ${tags}">
-                        <li>
+                    <ul>
+                        <li th:each="tag : ${tags}">
                             <a th:href="@{${tag.status.permalink}}" class="tagsa">
                                 <div class="mdui-chip">
                                     <span class="mdui-chip-title" th:text="${tag.spec.displayName + '（' + tag.status.postCount + '）'}"></span>

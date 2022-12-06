@@ -12,8 +12,8 @@
                     <!-- 页面标题 -->
                     <h3 class="pagetitle">分类</h3>
                     <!-- 分类列表 -->
-                    <ul th:each="category : ${categories}">
-                        <div class="catelist">
+                    <ul>
+                        <div class="catelist" th:each="category : ${categories}">
                             <i class="mdui-icon material-icons">folder_open</i>
                             <li><a th:href="@{${category.status.permalink}}" th:text="${category.spec.displayName + '（' + category.status.postCount + '）'}"></a></li>
                         </div> 

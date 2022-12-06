@@ -34,6 +34,12 @@
             </div>
 
             <!-- TODO: 加载更多 -->
+            <!-- 分页   -->
+            <th:block th:if="${archives.total gt 0}">
+                <div class="nextPage" th:if="${archives.hasNext()}">
+                <button id="loadData" th:data-href="${archives.nextUrl}" class="mdui-ripple">加载更多</button>
+                </div> 
+            </th:block>
         
         </article>
 

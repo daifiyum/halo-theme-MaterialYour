@@ -455,5 +455,9 @@ const dnxrzl = {
     dnxrzl.oneWord();
     dnxrzl.picInit();
     dnxrzl.mfancybox();
+    dnxrzl.table();
+    dnxrzl.dealCodeHighlight();
+    dnxrzl.codeCopy();
+    dnxrzl.totop();
   });
 })();

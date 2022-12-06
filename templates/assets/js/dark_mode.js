@@ -22,21 +22,26 @@ const darkMode = {
     }
   },
   commentDark (isDark) {
-    //切换评论组件黑暗模式
-    if (isDark == "true") {
-      var comments = $("#comment>div");
-      for (var i = 0; i < comments.length; i++) {
-        var shadowDom = comments[i].shadowRoot.querySelector(".halo-comment-widget");
-        $(shadowDom).removeClass("light"); //halo-comment-normal去掉默认light
-        $(shadowDom).addClass(comment_darkClass);
-      }
-    } else {
-      var comments = $("#comment>div");
-      for (var i = 0; i < comments.length; i++) {
-        var shadowDom = comments[i].shadowRoot.querySelector(".halo-comment-widget");
-        $(shadowDom).removeClass(comment_darkClass);
+    function cdc(){
+      if(isDark == "true"){
+        $(comment).removeClass('light');
+        $(comment).addClass('dark');
+      }else {
+        $(comment).removeClass('dark');
       }
     }
+    var comment = $("#comment>div")[0].shadowRoot.querySelector(".halo-comment-widget");
+    if(comment == null){
+      var scanElement = setInterval(function(){
+          comment = $("#comment>div")[0].shadowRoot.querySelector(".halo-comment-widget");
+          if(comment != null){
+            clearInterval(scanElement);
+            cdc();
+          }
+      },1);
+    }
+    cdc();
+    
   },
 
   //黑夜模式状态标志量
