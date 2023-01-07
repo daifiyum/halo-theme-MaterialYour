@@ -18,7 +18,9 @@
 
 **菜单设置：**
 官方已支持菜单元数据，菜单图标可以更方的设置了
-注意：菜单图标名称请前往https://fonts.google.com/icons获取，部分图标无效
+
+注意：菜单图标名称请前往[Google fontIcons](https://fonts.google.com/icons)获取，部分图标无效
+
 ```
 key:icon
 value:home(菜单图标名称)
@@ -51,6 +53,3 @@ value:home(菜单图标名称)
 ### 我的建议
 
 稳定使用再等等~
-
-
-
