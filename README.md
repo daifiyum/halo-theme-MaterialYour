@@ -2,7 +2,7 @@
 
 ### 使用必看
 
-**下载主题：**[不稳定版](https://github.com/daifiyum/halo-theme-MaterialYour/archive/refs/heads/next.zip)
+**下载主题：**[开发版](https://github.com/daifiyum/halo-theme-MaterialYour/archive/refs/heads/next.zip)
 
 **安装：**
 
@@ -17,21 +17,11 @@
 主题设置项只有部分设置有效
 
 **菜单设置：**
-
-将默认的所有菜单删掉，然后按照严格规则新建，规则如下
-
+官方已支持菜单元数据，菜单图标可以更方的设置了
+注意：菜单图标名称请前往https://fonts.google.com/icons获取，部分图标无效
 ```
-类型：自定义链接
-名称：菜单名称#图标名称
-链接地址：/
-
-例子：
-类型：自定义链接
-名称：首页#home
-链接地址：/
-
-注意：子菜单不可设置图标，正常命名菜单
-菜单图标（访问获取）：https://fonts.google.com/icons
+key:icon
+value:home(菜单图标名称)
 ```
 
 **头像设置：**
@@ -54,13 +44,13 @@
 
 **注意：**
 
-由于haloNext目前还处于开发阶段，问题还有很多，所以主题也只是适配部分功能且不完善
+由于haloNext目前还处于初始阶段，功能还需完善，所以主题也只是适配部分功能
 
 1. 支持归档、分类、标签、单页面、文章页面（目前不支持友链、相册、日志）
 
 ### 我的建议
 
-强烈不建议将haloNext作为稳定版本使用，不然你会疯掉的
+稳定使用再等等~
 
 
 

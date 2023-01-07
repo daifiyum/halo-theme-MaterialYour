@@ -47,16 +47,16 @@
       <th:block th:if="${#lists.isEmpty(menuItem.children)}">
         <a th:href="${menuItem.spec.href}">
           <li class="mdui-list-item mdui-ripple">
-            <i class="mdui-list-item-icon mdui-icon material-icons" th:text="${#strings.substringAfter(menuItem.spec.displayName,'#')}"></i>
-            <div class="mdui-list-item-content" th:text="${#strings.substringBefore(menuItem.spec.displayName,'#')}"></div>
+            <i class="mdui-list-item-icon mdui-icon material-icons" th:text="${#annotations.get(menuItem, 'icon')}"></i>
+            <div class="mdui-list-item-content" th:text="${menuItem.spec.displayName}"></div>
           </li>
         </a>
       </th:block>
       <th:block th:if="${not #lists.isEmpty(menuItem.children)}"> 
         <li class="mdui-collapse-item">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-            <i class="mdui-list-item-icon mdui-icon material-icons" th:text="${#strings.substringAfter(menuItem.spec.displayName,'#')}"></i>
-            <div class="mdui-list-item-content" th:text="${#strings.substringBefore(menuItem.spec.displayName,'#')}"></div>
+            <i class="mdui-list-item-icon mdui-icon material-icons" th:text="${#annotations.get(menuItem, 'icon')}"></i>
+            <div class="mdui-list-item-content" th:text="${menuItem.spec.displayName}"></div>
             <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
           </div>
           <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
