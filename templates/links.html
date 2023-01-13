@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(head = null,content = ~{::content},pageType = 'links')}"
+>
+  <th:block th:fragment="content">
+    <main class="my-container mdui-container">
+        <div class="animate__animated post_animate">
+            <article class="my-article my-card">
+                <div class="links">
+                    <h3 class="pagetitle">链接</h3>
+                    <th:block th:each="group : ${groups}">
+                        <h4 th:text="${group.spec.displayName}"></h4>
+                        <div class="linksBlock">
+                            <a th:each="link : ${group.links}" :key="i" class="linkCard" th:href="${link.spec.url}" target="_blank">
+                                <img class="lazyloadImg mdui-img-circle" th:data-src="${not #strings.isEmpty(link.spec.logo) ? link.spec.logo:#theme.assets('/images/friendlink.png')}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+                                <div class="linkDesc">
+                                <span th:text="${link.spec.displayName}"></span>
+                                <span th:text="${link.spec.description}"></span>
+                                </div>
+                            </a>
+                        </div>
+                    </th:block>
+                </div>
+            </article>
+        </div>  
+    </main>
+  </th:block>
+
+</html>
